@@ -14,23 +14,43 @@ SAU KHI SỬA XONG THÌ XÓA HẾT CÁC COMMENT
 VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA NHƯ VẬY
  -->
 <body>
+    <header class="container-fluid p-0">
+        <!-- Header -->
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
 
-    <!-- Header -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="#">
+                    logo
+                </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Khuyến mãi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
-                </ul>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Khuyến mãi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- Banner -->
+        <banner class="bg-light text-center py-5">
+            <div class="container">
+                <h2 class="text-success">Rau tươi mỗi ngày</h2>
+                <p>Giao nhanh trong 2 giờ tại TP.HCM</p>
+                <button class="btn btn-success">Mua ngay</button>
             </div>
         </div>
     </header>
@@ -102,16 +122,6 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
                         </div>
 
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="card text-center h-100">
-                                <img src="../img/cachua.webp" class="card-img-top p-3" style="height:150px; object-fit:contain;">
-                                <div class="card-body">
-                                    <h6>Cà chua</h6>
-                                    <p class="text-success">20.000đ</p>
-                                    <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-12 col-sm-6 col-lg-3">
                             <div class="card text-center h-100">
                                 <img src="../img/cachua.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                 <div class="card-body">
