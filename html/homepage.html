@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Website bán rau sạch</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/homepagecss.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
 </head>
@@ -19,9 +19,8 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
     <header class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <img src="../img/logo.png" alt="Rau Sạch" width="100px ">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                
-                 <span class="fw-bold">Rau Sạch</span>
+            <a class="navbar-brand d-flex align-items-center" href="#">  
+            <span class="fw-bold ">Rau Sạch</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -32,7 +31,7 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
                     <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Khuyến mãi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Đăng nhập/Đăng ký</a></li>
                 </ul>
             </div>
         </div>
@@ -44,11 +43,47 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
 
             <aside class="col-lg-3">
                 <ul class="nav flex-column bg-light p-3 h-100">
-                    <li class="nav-item"><a class="nav-link" href="#">Rau củ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Rau lá</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Trái cây</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Thực phẩm hữu cơ</a></li>
+                    <li>
+                        <p>Giá</p>
+                    </li>
+                    <li>
+                        <select class="form-select" aria-label="Default select example">
+                        <option selected>Không ràng buộc</option>
+                        <option value="1">0-10.000VND</option>
+                        <option value="2">10.000VND-20.000VND</option>
+                        <option value="3">20.000VND-30.000VND</option>
+                        <option value="4">30.000VND-50.000VND</option>
+                        <option value="5">Trên 50.000VND</option>
+                    </select>
+                    </li>
+                    <li>
+                        <p>Nhãn hiệu</p>
+                    </li>
+                    <li>
+                        <select class="form-select" aria-label="Default select example">
+                        <option selected>Không ràng buộc</option>
+                        <option value="1">Organic</option>
+                        <option value="2">Cần Giờ</option>
+                        <option value="3">Khác</option>
+                        </select>
+                    </li>
+                    <li>
+                        <p>Khuyến mãi</p>
+                    </li>
+                    <li>
+                        <select class="form-select" aria-label="Default select example">
+                        <option selected>Không ràng buộc</option>
+                        <option value="1">Có</option>
+                        <option value="2">Không</option>
+         
+                        </select>
+                    </li>
+                    
+                    <button type="button" class="btn btn-success center">Tìm kiếm</button>
+                    <button type="button" class="btn btn-danger">Giỏ hàng</button>
+                    
                 </ul>
+                
             </aside>
 
             <div class="col-lg-9">
@@ -64,8 +99,13 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
                 <section>
 
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h4 class="fw-bold">Sản phẩm nổi bật</h4>
-                        <input type="text" class="form-control w-50" placeholder="Tìm kiếm...">
+                        <h4 class="fw-bold">Tất cả sản phẩm</h4>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Tìm sản phẩm...">
+                            <button type="button" class="btn btn-light">Tìm</button>
+                        </form>
+
+                         
                     </div>
 
                     <div class="row g-4">
@@ -96,7 +136,7 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
                             <div class="card text-center h-100">
                                 <img src="../img/carot.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                 <div class="card-body">
-                                    <h6>Cà rốt</h6>
+                                    <h6>Cà rốt 300gr</h6>
                                     <p class="text-success">18.000đ</p>
                                     <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
                                 </div>
@@ -105,30 +145,60 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
 
                         <div class="col-12 col-sm-6 col-lg-3">
                             <div class="card text-center h-100">
-                                <img src="../img/cachua.webp" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                <img src="../img/khoqua.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                 <div class="card-body">
-                                    <h6>Cà chua</h6>
-                                    <p class="text-success">20.000đ</p>
+                                    <h6>Khổ qua 300gr</h6>
+                                    <p class="text-success">30.000đ</p>
                                     <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
                                 </div>
                             </div>
                         </div>
                          <div class="col-12 col-sm-6 col-lg-3">
                             <div class="card text-center h-100">
-                                <img src="../img/cachua.webp" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                <img src="../img/mongtoi.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                 <div class="card-body">
-                                    <h6>Cà chua</h6>
-                                    <p class="text-success">20.000đ</p>
+                                    <h6>Mồng tơi 300gr</h6>
+                                    <p class="text-success">13.000đ</p>
                                     <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
                                 </div>
                             </div>
                         </div>
                          <div class="col-12 col-sm-6 col-lg-3">
                             <div class="card text-center h-100">
-                                <img src="../img/cachua.webp" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                <img src="../img/táo.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                 <div class="card-body">
-                                    <h6>Cà chua</h6>
-                                    <p class="text-success">20.000đ</p>
+                                    <h6>Táo 1kg</h6>
+                                    <p class="text-success">50.000đ</p>
+                                    <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card text-center h-100">
+                                <img src="../img/bi-do.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                <div class="card-body">
+                                    <h6>Bí đỏ 1kg</h6>
+                                    <p class="text-success">40.000đ</p>
+                                    <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card text-center h-100">
+                                <img src="../img/rauden.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                <div class="card-body">
+                                    <h6>Rau đền 300gr</h6>
+                                    <p class="text-success">18.000đ</p>
+                                    <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card text-center h-100">
+                                <img src="../img/rautan.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                <div class="card-body">
+                                    <h6>Rau tần 300gr</h6>
+                                    <p class="text-success">17.000đ</p>
                                     <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
                                 </div>
                             </div>
@@ -144,7 +214,7 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
 
     <!-- Footer -->
     <footer class="bg-success text-white text-center py-3">
-                        © 2026 Rau Sạch 
+        © 2026 Rau Sạch 
     </footer>
 
 </body>

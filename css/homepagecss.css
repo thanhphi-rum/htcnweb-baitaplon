@@ -5,18 +5,23 @@
     letter-spacing: 2px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
-.nav-link {
-    color: rgb(251, 255, 251);
+.navbar .nav-link {
+    color: rgb(255, 255, 255) !important;
 }
 
-.nav-link:hover {
+.navbar .nav-link:hover {
+    border-bottom: 2px solid white;
+}
+.nav .nav-link{
+    color: black;
+}
+.nav .nav-link:hover {
     background-color: rgb(131, 131, 131);
     color: white;
 }
 .banner {
     background-image: url("../img/banner.jpeg");
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     height: 350px;
     display: flex;
