@@ -14,64 +14,52 @@ SAU KHI SỬA XONG THÌ XÓA HẾT CÁC COMMENT
 VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA NHƯ VẬY
  -->
 <body>
-    <div class="container-fluid p-0">
-        <!-- Header -->
-        <header class="navbar navbar-expand-lg navbar-dark bg-success">
-            <div class="container">
 
-                <a class="navbar-brand logo-text" href="#">logo</a>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="menu">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Trang chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sản phẩm</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Khuyến mãi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Liên hệ</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Khuyến mãi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
             </div>
-        </header>
-        <!-- Banner -->
-        <nav class="bg-light text-center py-5">
-            <div class="container">
-                <h2 class="text-success">Rau tươi mỗi ngày</h2>
-                <p>Giao nhanh trong 2 giờ tại TP.HCM</p>
-                <button class="btn btn-success">Mua ngay</button>
-            </div>
-        </nav>
-        <!-- Nav -->
-        <nav class="container my-5">
-            <div class="row">
-                <div class="col-3">
-                    <ul class="nav flex-column bg-light p-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Rau củ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Rau lá</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Trái cây</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Thực phẩm hữu cơ</a>
-                        </li>
-                    </ul>
+        </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <div class="container my-4">
+        <div class="row">
+
+            <!-- Nav trái -->
+            <aside class="col-lg-3">
+                <ul class="nav flex-column bg-light p-3 h-100">
+                    <li class="nav-item"><a class="nav-link active" href="#">Rau củ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Rau lá</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Trái cây</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Thực phẩm hữu cơ</a></li>
+                </ul>
+            </aside>
+
+            <div class="col-lg-9">
+
+                <!-- Banner -->
+                <div class="bg-light text-center py-5 mb-4">
+                    <h2 class="text-success">Rau tươi mỗi ngày</h2>
+                    <p>Giao nhanh trong 2 giờ tại TP.HCM</p>
+                    <button class="btn btn-success">Mua ngay</button>
                 </div>
+
                 <!-- Section -->
-                <section class="col-lg-9">
+                <section>
 
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4 class="fw-bold">Sản phẩm nổi bật</h4>
@@ -123,7 +111,17 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-3">
+                         <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card text-center h-100">
+                                <img src="../img/cachua.webp" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                <div class="card-body">
+                                    <h6>Cà chua</h6>
+                                    <p class="text-success">20.000đ</p>
+                                    <button class="btn btn-success btn-sm">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-12 col-sm-6 col-lg-3">
                             <div class="card text-center h-100">
                                 <img src="../img/cachua.webp" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                 <div class="card-body">
@@ -137,12 +135,15 @@ VD: NẾU "Sửa lại thành Header" THÌ GHI "Header" thôi VÀ CÁC CMT SỬA
                     </div>
 
                 </section>
+
             </div>
-        </nav>
-        <!-- Footer -->
-        <footer class="bg-success text-white text-center py-3">
-            © 2026 Rau Sạch Thanh Phi | Hotline: 0909 xxx xxx
-        </footer>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-success text-white text-center py-3">
+        © 2026 Rau Sạch 
+    </footer>
+
 </body>
 </html>
