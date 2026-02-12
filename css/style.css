@@ -5,3 +5,13 @@
     letter-spacing: 2px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
+.nav-link {
+    color: rgb(251, 255, 251);
+}
+
+.nav-link:hover {
+    background-color: rgb(131, 131, 131);
+    color: white;
+}
+
+
