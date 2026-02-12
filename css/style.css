@@ -13,5 +13,15 @@
     background-color: rgb(131, 131, 131);
     color: white;
 }
+.banner {
+    background-image: url("../img/banner.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 
