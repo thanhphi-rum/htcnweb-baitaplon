@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="../html/homepage.html">
+                    <img src="../img/logo.png" alt="Rau Sạch" width="100px"> 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/homepage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a class="nav-link" href="#">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a class="nav-link" href="#">Khuyến mãi</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a class="nav-link" href="#">Đăng nhập/Đăng ký</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="mt-5">
+            <div class="container">
+                <!--  -->
+                <div class="row fw-bold border-bottom py-2 bg-light d-none d-md-flex">
+                    <div class="col-md-2 text-center">Sản phẩm</div>
+                    <div class="col-md-3">Thông tin</div>
+                    <div class="col-md-2 text-center">Đơn giá</div>
+                    <div class="col-md-2 text-center">Số lượng</div>
+                    <div class="col-md-2 text-center">Thành tiền</div>
+                    <div class="col-md-1 text-center">Xóa</div>
+                </div>
+                <!--  -->
+                <div class="row align-items-center border rounded my-3 py-3 shadow-sm bg-white">
+                    <div class="col-md-2 text-center">
+                        <img src="../img/cachua.jpg" class="img-fluid" style="max-width: 100px;" alt="Cà chua">
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <h6 class="mb-0">Cà chua Organic 300gr</h6>
+                        </a>
+                    </div>
+                    <div class="col-md-2 text-center text-primary fw-bold">
+                        <span>50.000đ</span>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group input-group-sm w-50 mx-auto">
+                            <button class="btn btn-outline-secondary">-</button>
+                            <input type="text" class="form-control text-center" value="1">
+                            <button class="btn btn-outline-secondary">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center fw-bold text-danger">
+                        <span>50.000đ</span>
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <button class="btn btn-link text-muted p-0">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
