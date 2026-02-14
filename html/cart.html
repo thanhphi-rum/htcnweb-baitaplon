@@ -6,10 +6,12 @@
     <title>Giỏ hàng</title>
     <link rel="stylesheet" href="../css/mainstyle.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <div class="container-fluid p-0">
+        <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="../html/homepage.html">
@@ -37,23 +39,24 @@
                 </div>
             </div>
         </header>
+        <!-- Section -->
         <section class="mt-5">
             <div class="container">
                 <!--  -->
                 <div class="row fw-bold border-bottom py-2 bg-light d-none d-md-flex">
                     <div class="col-md-2 text-center">Sản phẩm</div>
-                    <div class="col-md-3">Thông tin</div>
+                    <div class="col-md-3 text-center">Thông tin</div>
                     <div class="col-md-2 text-center">Đơn giá</div>
                     <div class="col-md-2 text-center">Số lượng</div>
                     <div class="col-md-2 text-center">Thành tiền</div>
                     <div class="col-md-1 text-center">Xóa</div>
                 </div>
                 <!--  -->
-                <div class="row align-items-center border rounded my-3 py-3 shadow-sm bg-white">
+                <div class="row align-items-center border rounded mt-3 mb-2 py-3 shadow-sm bg-white">
                     <div class="col-md-2 text-center">
                         <img src="../img/cachua.jpg" class="img-fluid" style="max-width: 100px;" alt="Cà chua">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 text-center">
                         <a href="#" style="text-decoration: none; color: black;">
                             <h6 class="mb-0">Cà chua Organic 300gr</h6>
                         </a>
@@ -77,8 +80,108 @@
                         </button>
                     </div>
                 </div>
+                <div class="row align-items-center border rounded py-3 shadow-sm bg-white">
+                    <div class="col-md-2 text-center">
+                        <img src="../img/rauden.jpg" class="img-fluid" style="max-width: 100px;" alt="Cà chua">
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <h6 class="mb-0">Rau dền 250gr</h6>
+                        </a>
+                    </div>
+                    <div class="col-md-2 text-center text-primary fw-bold">
+                        <span>20.000đ</span>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group input-group-sm w-50 mx-auto">
+                            <button class="btn btn-outline-secondary">-</button>
+                            <input type="text" class="form-control text-center" value="1">
+                            <button class="btn btn-outline-secondary">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center fw-bold text-danger">
+                        <span>20.000đ</span>
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <button class="btn btn-link text-muted p-0">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-end mt-5">
+                    <div class="col-md-4 text-end">
+                        <h5>Tổng tiền: <span class="fw-bold">70.000đ</span></h5>
+                        <div class="d-flex justify-content-end gap-2 mt-3">
+                            <a href="../html/homepage.html" class="btn btn-light border px-3 py-2">
+                                Tiếp tục mua hàng
+                            </a>
+                            <button type="button" class="btn btn-success px-5 py-2">
+                                Đặt hàng
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <!-- Footer -->
+        <footer class="mt-5 pt-5">
+            <div class="container-fluid bg-success">
+                <div class="row">
+                    <div class="col-md-3 mt-5 text-white">
+                        <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
+                        <ul>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Giới thiệu</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mt-5" style="color: white;">
+                        <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
+                        <ul>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Chính sách cộng tác viên</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mt-5 text-white">
+                        <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
+                        <p>
+                            <i class="bi bi-geo-alt-fill me-2"></i>
+                                12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
+                        </p>
+                        <p>
+                            <i class="bi bi-telephone-fill me-2"></i>
+                                0123 456 789
+                        </p>
+                        <p>
+                            <i class="bi bi-envelope-fill me-2"></i>
+                                support@rauxanh.com
+                        </p>
+                    </div>
+                    <div class="col-md-3 mt-5">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
