@@ -26,64 +26,19 @@
                         <input type="text" name="password" id="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" onclick="login()">
+                        <button type="button" class="btn btn-primary">
                             Đăng Nhập
                         </button>
                         <a href="homepage.html" class="btn btn-outline-secondary ">Trang Chủ</a>
-                        <!-- <div class="alert alret-success alret-dismissible fade-show">
-                            <strong>✅ Đăng nhập thành công!</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div> -->
-            
                     </div>
                     <div class="text-center">
                         <a class="" href="#">Quên mật khẩu?</a>
                     </div>
                     <hr>
                     <div class="text-center ">
-                        <button type="button" class="btn btn-success">Đăng ký Tài Khoản Mới</button>
+                        <a href="register.html" type="button" class="btn btn-outline-secondary">Đăng Ký</a>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-      <!-- POPUP -->
-    <div class="modal fade" id="popup">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">Thông báo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body" id="noidung">
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Đóng
-                    </button>
-                </div>
-                <!--JS -->
-                <script>
-                    function login() {
-                        var user = document.getElementById("username").value;
-                        var pass = document.getElementById("password").value;
-
-                        var modal = new bootstrap.Modal(document.getElementById('popup'));
-
-                        if(user === "admin" && pass === "123") {
-                            document.getElementById("noidung").innerHTML =
-                                "✅ Đăng nhập thành công!";
-                        } else {
-                            document.getElementById("noidung").innerHTML =
-                                "❌ Sai tài khoản hoặc mật khẩu!";
-                        }
-
-                        modal.show();
-                    }
-            </script>
             </div>
         </div>
     </div>
