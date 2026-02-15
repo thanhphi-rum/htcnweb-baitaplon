@@ -3,89 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        p{
+            padding-left: 50px;
+        }
+        .login-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: green;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div class="wapper">
-        <div class="container ">
-            <div class="row justify-content-around">
-                <form action="" class="col-md-6 bg-light p-3">
-                    <h1 class="text-center h3 text-uppercase py-3">Đăng Nhập</h1>
-                    <div class="form-group py-2">
-                        <label for="username">
-                            Tên Đăng Nhập
-                        </label>
-                        <input type="text" name="username" id="username" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="form-group py-2">
-                        <label for="password">
-                            Mật Khẩu
-                        </label>
-                        <input type="text" name="password" id="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" onclick="login()">
-                            Đăng Nhập
-                        </button>
-                        <a href="homepage.html" class="btn btn-outline-secondary ">Trang Chủ</a>
-                        <!-- <div class="alert alret-success alret-dismissible fade-show">
-                            <strong>✅ Đăng nhập thành công!</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div> -->
-            
-                    </div>
-                    <div class="text-center">
-                        <a class="" href="#">Quên mật khẩu?</a>
-                    </div>
-                    <hr>
-                    <div class="text-center ">
-                        <button type="button" class="btn btn-success">Đăng ký Tài Khoản Mới</button>
-                    </div>
-                </form>
+    <div class="header bg-success">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../img/logo.png" alt="" width="100" height="">
+        <span class="fw-bold text-white">Rau Sạch</span>
+        </a>
+    </div>
+    <div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+        <!-- left content -->
+        <div class="col-md-6">
+            <div class="mb-3">
+                <h1>Đăng nhập</h3>
+                <div class="logo">Web bán rau siêu sạch</div>
+                <p>cam kết bù tiền khi rau hỏng</p>
             </div>
         </div>
-    </div>
-      <!-- POPUP -->
-    <div class="modal fade" id="popup">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
 
-                <div class="modal-header">
-                    <h5 class="modal-title">Thông báo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <!-- right content -->
+        <div class="col-md-4">
+            <div class="login-box">
+                <label for="" class="p-1">Tên Tài Khoản</label>
+                <input type="text" class="form-control mb-3 w-120" placeholder="User name">
+                <label for="" class="p-1">Mật Khẩu</label>
+                <input type="password" class="form-control mb-3" placeholder="Password">
+
+                <button class="btn btn-primary w-100 mb-3">Đăng nhập</button>
+
+                <div class="mb-3">
+                    <a href="#">Quên mật khẩu?</a> 
+                    <a class="return" href="homepage.html">Trở về trang chủ</a>
                 </div>
-
-                <div class="modal-body" id="noidung">
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Đóng
-                    </button>
-                </div>
-                <!--JS -->
-                <script>
-                    function login() {
-                        var user = document.getElementById("username").value;
-                        var pass = document.getElementById("password").value;
-
-                        var modal = new bootstrap.Modal(document.getElementById('popup'));
-
-                        if(user === "admin" && pass === "123") {
-                            document.getElementById("noidung").innerHTML =
-                                "✅ Đăng nhập thành công!";
-                        } else {
-                            document.getElementById("noidung").innerHTML =
-                                "❌ Sai tài khoản hoặc mật khẩu!";
-                        }
-
-                        modal.show();
-                    }
-            </script>
+                <hr>
+                <button class="btn btn-success w-100">Tạo tài khoản mới</button>
             </div>
         </div>
-    </div>
+    </div>    
+</div>
+    <footer class=" bg-success text-white text-center py-3">
+        © 2026 Rau Sạch 
+    </footer>
 </body>
 </html>
