@@ -28,5 +28,8 @@
     flex-direction: column;
     justify-content: center;
 }
+footer a:hover {
+    color: #ffc107 !important;
+}
 
 
