@@ -28,8 +28,23 @@
     flex-direction: column;
     justify-content: center;
 }
-footer a:hover {
-    color: #ffc107 !important;
+/* tui thêm vào nhé */
+.payment-option {
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.payment-option:hover {
+    background-color: #f8f9fa;
+}
+
+.payment-option input:checked + strong {
+    color: #198754;
+}
+
+.payment-option input:checked {
+    accent-color: #198754;
+}
+
 
 
