@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thanh toán - Rau Sạch</title>
+
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+</head>
+
+<body>
+
+
+<header class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <img src="../img/logo.png" width="80">
+        <a class="navbar-brand fw-bold ms-2" href="homepage.html">Rau Sạch</a>
+    </div>
+</header>
+
+
+<div class="container my-5">
+    <div class="row">
+
+        
+        <div class="col-lg-7">
+            <div class="card shadow-sm p-4">
+                <h4 class="mb-4">Thông tin giao hàng</h4>
+
+                <form action="success.html">
+                    <div class="mb-3">
+                        <label class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Số điện thoại</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Địa chỉ</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Ghi chú</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+
+                    
+
+                <h5 class="mt-4 mb-3">Phương thức thanh toán</h5>
+
+                <div class="payment-method">
+
+    
+                    <label class="payment-option d-block mb-3 p-3 border rounded">
+                        <input type="radio" name="payment" value="COD" class="form-check-input me-2" required>
+                        <strong>Thanh toán khi nhận hàng (COD)</strong>
+                        <p class="mb-0 text-muted small">Thanh toán tiền mặt khi nhận hàng.</p>
+                    </label>
+
+    
+                    <label class="payment-option d-block mb-3 p-3 border rounded">
+                        <input type="radio" name="payment" value="Bank" class="form-check-input me-2">
+                        <strong>Chuyển khoản ngân hàng</strong>
+                        <p class="mb-0 text-muted small">Chuyển khoản trước khi giao hàng.</p>
+                    </label>
+
+                </div>
+
+
+
+                    <button type="submit" class="btn btn-success w-100 mt-4">
+                        Xác nhận thanh toán
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        
+        <div class="col-lg-5">
+            <div class="card shadow-sm p-4">
+                <h4 class="mb-4">Đơn hàng của bạn</h4>
+
+                <div class="d-flex justify-content-between">
+                    <span>Rau muống x1</span>
+                    <span>15.000đ</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <span>Cà rốt x1</span>
+                    <span>18.000đ</span>
+                </div>
+
+                <hr>
+
+                <div class="d-flex justify-content-between fw-bold">
+                    <span>Tổng cộng</span>
+                    <span class="text-success">33.000đ</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<footer class="bg-success text-white text-center py-3">
+    © 2026 Rau Sạch
+</footer>
+
+
+<script src="../javascript/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
