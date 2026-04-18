@@ -15,7 +15,8 @@
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="../html/homepage.html">
-                    <img src="../img/logo.png" alt="Rau Sạch" width="100px"> 
+                    <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
+                    <span class="fw-bold">Rau Sạch</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                     <span class="navbar-toggler-icon"></span>
@@ -26,23 +27,31 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../html/homepage.html">Trang chủ</a>
                         </li>
-                        <li class="nav-item ps-3">
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Sản phẩm</a>
                         </li>
-                        <li class="nav-item ps-3">
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Khuyến mãi</a>
                         </li>
-                        <li class="nav-item ps-3">
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Đăng nhập/Đăng ký</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold" href="cart.html" style="position:relative;">
+                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                                <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </header>
+
         <!-- Section -->
         <section class="mt-5">
             <div class="container">
-                <!--  -->
+
+                <!-- Header bảng -->
                 <div class="row fw-bold border-bottom py-2 bg-light d-none d-md-flex">
                     <div class="col-md-2 text-center">Sản phẩm</div>
                     <div class="col-md-3 text-center">Thông tin</div>
@@ -51,72 +60,25 @@
                     <div class="col-md-2 text-center">Thành tiền</div>
                     <div class="col-md-1 text-center">Xóa</div>
                 </div>
-                <!--  -->
-                <div class="row align-items-center border rounded mt-3 mb-2 py-3 shadow-sm bg-white">
-                    <div class="col-md-2 text-center">
-                        <img src="../img/cachua.jpg" class="img-fluid" style="max-width: 100px;" alt="Cà chua">
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <a href="#" style="text-decoration: none; color: black;">
-                            <h6 class="mb-0">Cà chua Organic 300gr</h6>
-                        </a>
-                    </div>
-                    <div class="col-md-2 text-center text-primary fw-bold">
-                        <span>50.000đ</span>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="input-group input-group-sm w-50 mx-auto">
-                            <button class="btn btn-outline-secondary">-</button>
-                            <input type="text" class="form-control text-center" value="1">
-                            <button class="btn btn-outline-secondary">+</button>
-                        </div>
-                    </div>
-                    <div class="col-md-2 text-center fw-bold text-danger">
-                        <span>50.000đ</span>
-                    </div>
-                    <div class="col-md-1 text-center">
-                        <button class="btn btn-link text-muted p-0">
-                            <img class="w-50" src="../icon/icons8-trash-48.png" alt="Xóa">
-                        </button>
-                    </div>
+
+                <!-- Danh sách sản phẩm (render bằng JS) -->
+                <div id="cart-items"></div>
+
+                <!-- Thông báo giỏ trống -->
+                <div id="cart-empty" class="text-center py-5" style="display:none;">
+                    <p class="text-muted fs-5"><img src="../icon/icons8-cart-48.png" alt="" style="width:32px;vertical-align:middle;">  Giỏ hàng của bạn đang trống</p>
+                    <a href="../html/homepage.html" class="btn btn-success mt-2">Mua ngay</a>
                 </div>
-                <div class="row align-items-center border rounded py-3 shadow-sm bg-white">
-                    <div class="col-md-2 text-center">
-                        <img src="../img/rauden.jpg" class="img-fluid" style="max-width: 100px;" alt="Cà chua">
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <a href="#" style="text-decoration: none; color: black;">
-                            <h6 class="mb-0">Rau dền 250gr</h6>
-                        </a>
-                    </div>
-                    <div class="col-md-2 text-center text-primary fw-bold">
-                        <span>20.000đ</span>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="input-group input-group-sm w-50 mx-auto">
-                            <button class="btn btn-outline-secondary">-</button>
-                            <input type="text" class="form-control text-center" value="1">
-                            <button class="btn btn-outline-secondary">+</button>
-                        </div>
-                    </div>
-                    <div class="col-md-2 text-center fw-bold text-danger">
-                        <span>20.000đ</span>
-                    </div>
-                    <div class="col-md-1 text-center">
-                        <button class="btn btn-link text-muted p-0">
-                            <img class="w-50" src="../icon/icons8-trash-48.png" alt="Xóa">
-                        </button>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="row justify-content-end mt-5">
+
+                <!-- Tổng tiền & nút hành động -->
+                <div class="row justify-content-end mt-5" id="cart-summary">
                     <div class="col-md-4 text-end">
-                        <h5>Tổng tiền: <span class="fw-bold">70.000đ</span></h5>
+                        <h5>Tổng tiền: <span class="fw-bold text-danger" id="cart-total">0đ</span></h5>
                         <div class="custom-hover d-flex justify-content-end gap-2 mt-3">
                             <a href="../html/homepage.html" class="btn btn-secondary border px-3 py-2">
                                 Tiếp tục mua hàng
                             </a>
-                            <button type="button" class="btn btn-success px-5 py-2">
+                            <button type="button" class="btn btn-success px-5 py-2" id="btn-order">
                                 Đặt hàng
                             </button>
                         </div>
@@ -124,6 +86,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Footer -->
         <footer class="mt-5 pt-5">
             <div class="container-fluid bg-success">
@@ -190,11 +153,140 @@
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+
+    <script>
+        // ===== GIỎ HÀNG - localStorage =====
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function formatPrice(price) {
+            return price.toLocaleString('vi-VN') + 'đ';
+        }
+
+        function updateBadge() {
+            const cart = getCart();
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = totalQty;
+        }
+
+        function renderCart() {
+            const cart = getCart();
+            const container = document.getElementById('cart-items');
+            const emptyMsg  = document.getElementById('cart-empty');
+            const summary   = document.getElementById('cart-summary');
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyMsg.style.display  = 'block';
+                summary.style.display   = 'none';
+                document.getElementById('cart-total').textContent = '0đ';
+                updateBadge();
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+            summary.style.display  = '';
+
+            let total = 0;
+
+            cart.forEach(function(item) {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+
+                const row = document.createElement('div');
+                row.className = 'row align-items-center border rounded mt-3 mb-2 py-3 shadow-sm bg-white';
+                row.innerHTML = `
+                    <div class="col-md-2 text-center">
+                        <img src="${item.img}" class="img-fluid" style="max-width:100px;" alt="${item.name}">
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h6 class="mb-0">${item.name}</h6>
+                    </div>
+                    <div class="col-md-2 text-center text-primary fw-bold">
+                        <span>${formatPrice(item.price)}</span>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group input-group-sm w-75 mx-auto">
+                            <button class="btn btn-outline-secondary btn-decrease" data-id="${item.id}">-</button>
+                            <input type="text" class="form-control text-center qty-input" value="${item.qty}" data-id="${item.id}" readonly>
+                            <button class="btn btn-outline-secondary btn-increase" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center fw-bold text-danger">
+                        <span>${formatPrice(subtotal)}</span>
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <button class="btn btn-link text-danger p-0 btn-remove" data-id="${item.id}" title="Xóa">
+                            <img class="w-50" src="../icon/icons8-trash-48.png" alt="Xóa">
+                        </button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+
+            document.getElementById('cart-total').textContent = formatPrice(total);
+            updateBadge();
+
+            // Gắn sự kiện sau khi render
+            document.querySelectorAll('.btn-increase').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    changeQty(this.dataset.id, 1);
+                });
+            });
+            document.querySelectorAll('.btn-decrease').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    changeQty(this.dataset.id, -1);
+                });
+            });
+            document.querySelectorAll('.btn-remove').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    removeItem(this.dataset.id);
+                });
+            });
+        }
+
+        function changeQty(id, delta) {
+            let cart = getCart();
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            saveCart(cart);
+            renderCart();
+        }
+
+        function removeItem(id) {
+            let cart = getCart().filter(i => i.id !== id);
+            saveCart(cart);
+            renderCart();
+        }
+
+        // Nút đặt hàng
+        document.getElementById('btn-order').addEventListener('click', function() {
+            const cart = getCart();
+            if (cart.length === 0) {
+                alert('Giỏ hàng đang trống!');
+                return;
+            }
+            window.location.href = 'payment.html';
+        });
+
+        // Khởi tạo
+        renderCart();
+    </script>
 </body>
 </html>
