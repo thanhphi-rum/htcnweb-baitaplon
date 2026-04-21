@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giới Thiệu</title>
+    <meta name="description"
+        content="Tìm hiểu về Rau Sạch Xanh - cam kết mang đến rau củ sạch, tươi ngon mỗi ngày. Gặp gỡ đội ngũ thành viên tâm huyết của chúng tôi.">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <style>
+        /* ===== Hero Section ===== */
+        .hero-about {
+            background: linear-gradient(135deg, #1a6632 0%, #28a745 60%, #52c97c 100%);
+            padding: 80px 0 60px;
+            color: white;
+        }
+
+        .hero-about h1 {
+            font-size: 45px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero-about p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        /* ===== Stats ===== */
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
+        }
+
+        .stat-number {
+            font-size: 38px;
+            font-weight: 700;
+            color: #198754;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            font-size: 15px;
+            margin-top: 4px;
+        }
+
+        /* ===== Story Section ===== */
+        .section-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #1a6632;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: #28a745;
+            border-radius: 2px;
+        }
+
+        .story-img {
+            border-radius: 20px;
+            object-fit: cover;
+            width: 100%;
+            height: 320px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ===== Values ===== */
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 14px;
+        }
+
+        .value-card {
+            border: none;
+            border-radius: 16px;
+            padding: 28px 20px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ===== Team Section ===== */
+        .team-section {
+            background-color: #f8fdf9;
+        }
+
+        .member-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .member-avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #28a745;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto;
+        }
+
+        .member-role {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .badge-green {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .badge-blue {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .badge-purple {
+            background-color: #e8d5f5;
+            color: #6f42c1;
+        }
+
+        .badge-orange {
+            background-color: #fde8d0;
+            color: #c45e0a;
+        }
+
+        /* ===== Footer ===== */
+        footer a:hover {
+            color: #d4edda !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                <img src="../img/logo.png" alt="Rau Sạch" width="80px" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="homepage.html#product-list">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-semibold" href="about.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
+                            <img src="../icon/icons8-cart-48.png" alt="Giỏ hàng"
+                                style="width:28px;vertical-align:middle;">
+                            <span id="cart-badge" class="badge bg-danger"
+                                style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-about">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Cột trái chứa nội dung chữ -->
+                <div class="col-md-6 text-start">
+                    <h1>Về Chúng Tôi</h1>
+                    <p class="mt-3">
+                        Rau Sạch ra đời với sứ mệnh mang đến bữa ăn an toàn, tươi ngon cho mọi gia đình Việt.<br>
+                        Chúng tôi tin rằng sức khỏe bắt đầu từ những gì bạn ăn mỗi ngày.
+                    </p>
+                    <a href="#our-story" class="btn btn-light btn-lg mt-4 px-5 fw-semibold">Khám phá ngay</a>
+                </div>
+
+                <div class="col-md-6 mt-4 mt-md-0 d-flex justify-content-end">
+                    <video autoplay loop muted playsinline style="width: 82%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                        <source src="../video/Video_Rau_Sạch_Đã_Sẵn_Sàng.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Khách hàng tin tưởng</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Loại rau củ quả</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Sản phẩm sạch, an toàn</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">2h</div>
+                        <div class="stat-label">Giao hàng nhanh tại HCM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STORY ===== -->
+    <section id="our-story" class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img src="../img/banner.jpeg" alt="Câu chuyện Rau Sạch Xanh" class="story-img">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Câu chuyện của chúng tôi</h2>
+                    <p class="mt-4 text-secondary lh-lg">
+                        Dự án bắt đầu vào cuối năm 2025 và hoàn thiện vào cuối tháng 4 năm 2026, <strong>Rau Sạch Xanh</strong> là dự án học thuật xuất phát từ niềm đam
+                        mê của những sinh viên CNTT muốn ứng dụng công nghệ vào lĩnh vực thực phẩm sạch.
+                    </p>
+                    <p class="text-secondary lh-lg">
+                        Chúng tôi hướng đến việc xây dựng một nền tảng thương mại điện tử đơn giản, thân thiện — nơi
+                        người dùng có thể tìm mua rau củ quả tươi sạch một cách dễ dàng và minh bạch.
+                    </p>
+                    <p class="text-secondary lh-lg">
+                        Dự án được thực hiện trong khuôn khổ môn học <em>Hệ thống & Công nghệ Web</em>, với mục tiêu học
+                        hỏi và thực hành các kỹ thuật phát triển web hiện đại.
+                    </p>
+                    <a href="homepage.html" class="btn btn-success mt-3 px-4">
+                        <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                        Xem sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VALUES ===== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mx-auto" style="display:block;">Giá trị cốt lõi</h2>
+                <p class="text-secondary mt-3">Những điều chúng tôi luôn đặt lên hàng đầu</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card text-center">
+                        <div class="value-icon bg-success bg-opacity-10 mx-auto">
+                            <img src="../icon/icons8-group-of-vegetables-96.png" alt="" style="width: 28px; vertical-align: middle;">
+                        </div>
+                        <h5 class="fw-bold">Sạch &amp; An Toàn</h5>
+                        <p class="text-secondary small mb-0">Tất cả sản phẩm đều được kiểm định, không hóa chất độc hại.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card text-center">
+                        <div class="value-icon bg-primary bg-opacity-10 mx-auto">
+                            <img src="../icon/icons8-delivery-truck-94.png" alt="" style="width:28px;vertical-align:middle;">
+                        </div>
+                        <h5 class="fw-bold">Giao Hàng Nhanh</h5>
+                        <p class="text-secondary small mb-0">Giao trong 2 giờ tại TP.HCM — tươi ngon từ vườn đến bàn ăn.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card text-center">
+                        <div class="value-icon bg-warning bg-opacity-10 mx-auto">
+                            <img src="../icon/icons8-money-96.png" alt="" style="width: 28px;vertical-align:middle;">
+                        </div>
+                        <h5 class="fw-bold">Giá Cả Hợp Lý</h5>
+                        <p class="text-secondary small mb-0">Cam kết giá tốt nhất, không trung gian để tiết kiệm cho
+                            bạn.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card text-center">
+                        <div class="value-icon bg-danger bg-opacity-10 mx-auto">
+                            <img src="../icon/icons8-heart-94.png" alt="" style="width: 28px; vertical-align: middle;">
+                        </div>
+                        <h5 class="fw-bold">Tận Tâm Phục Vụ</h5>
+                        <p class="text-secondary small mb-0">Đội ngũ hỗ trợ nhiệt tình, sẵn sàng giải đáp mọi thắc mắc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="py-5 team-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mx-auto" style="display:block;">Thành viên nhóm</h2>
+                <p class="text-secondary mt-3">Những người đã xây dựng nên website Rau Sạch 🌿</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Thành viên 1 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="member-card text-center">
+                        <img src="../img/menber1.png" alt="Bùi Nguyễn Thanh Phi" class="member-img">
+                        <div class="p-4">
+                            <h6 class="fw-bold mb-1">Bùi Nguyễn Thanh Phi</h6>
+                            <span class="member-role badge-green">Nhóm trưởng</span>
+                            <p class="text-secondary small mt-3 mb-2">Phân chia nhiệm vụ cho các thành viên &amp; xây
+                                dựng trang giỏi hàng, giới thiệu</p>
+                            <div class="d-flex justify-content-center gap-2 mt-2">
+                                <span class="badge bg-success bg-opacity-10 text-white">HTML</span>
+                                <span class="badge bg-success bg-opacity-10 text-white">CSS</span>
+                                <span class="badge bg-success bg-opacity-10 text-white">BS5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 2 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="member-card text-center">
+                        <img src="../img/member2.png" alt="Nguyễn Phước Tân" class="member-img">
+                        <div class="p-4">
+                            <h6 class="fw-bold mb-1">Nguyễn Phước Tân</h6>
+                            <span class="member-role badge-blue">Nhóm phó</span>
+                            <p class="text-secondary small mt-3 mb-2">Xây dựng chức năng giỏ hàng localStorage &amp; xử
+                                lý logic trang.</p>
+                            <div class="d-flex justify-content-center gap-2 mt-2">
+                                <span class="badge bg-primary bg-opacity-10 text-white">JavaScript</span>
+                                <span class="badge bg-primary bg-opacity-10 text-white">DOM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 3 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="member-card text-center">
+                        <img src="../img/member3.png" alt="Nguyễn Đăng Khánh" class="member-img">
+                        <div class="p-4">
+                            <h6 class="fw-bold mb-1">Nguyễn Đăng Khánh</h6>
+                            <span class="member-role badge-orange">Thành viên</span>
+                            <p class="text-secondary small mt-3 mb-2">Biên soạn nội dung sản phẩm, kiểm thử &amp; viết
+                                tài liệu dự án.</p>
+                            <div class="d-flex justify-content-center gap-2 mt-2">
+                                <span class="badge bg-warning bg-opacity-10 text-white">Content</span>
+                                <span class="badge bg-warning bg-opacity-10 text-white">Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 4 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="member-card text-center">
+                        <img src="../img/menber4.png" alt="Hồ Nhật Ninh" class="member-img">
+                        <div class="p-4">
+                            <h6 class="fw-bold mb-1">Hồ Nhật Ninh</h6>
+                            <span class="member-role badge-purple">Thành viên</span>
+                            <p class="text-secondary small mt-3 mb-2">Thiết kế layout, chọn màu sắc &amp; xử lý
+                                responsive cho toàn trang.</p>
+                            <div class="d-flex justify-content-center gap-2 mt-2">
+                                <span class="badge bg-opacity-10 text-white" style="background:#6f42c1;">CSS</span>
+                                <span class="badge bg-opacity-10 text-white" style="background:#6f42c1;">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="mt-5 pt-4">
+        <div class="container-fluid bg-success">
+            <div class="row align-items-start px-5 pb-3">
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
+                    <ul class="ps-4">
+                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="about.html">Giới
+                                thiệu</a></li>
+                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Tầm nhìn và
+                                Sứ mệnh</a></li>
+                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
+                    <ul class="ps-4">
+                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Chính sách
+                                đổi trả</a></li>
+                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Chính sách
+                                giao hàng</a></li>
+                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Hướng dẫn mua
+                                hàng</a></li>
+                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Câu hỏi
+                                thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
+                    <p><img style="width:22px;" src="../icon/icons8-address-48.png" alt=""> 12 Nguyễn Văn Bảo, Gò Vấp,
+                        TP.HCM</p>
+                    <p><img style="width:22px;" src="../icon/icons8-phone-48.png" alt=""> 0123 456 789</p>
+                    <p><img style="width:22px;" src="../icon/icons8-email-48.png" alt=""> support@rauxanh.com</p>
+                </div>
+                <div class="col-md-3 mt-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">Địa chỉ</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s"
+                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cập nhật số lượng giỏ hàng từ localStorage
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = totalQty;
+        }
+        updateBadge();
+    </script>
+
+</body>
+
+</html>
