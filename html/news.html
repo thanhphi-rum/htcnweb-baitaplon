@@ -35,62 +35,54 @@
             </div>
         </div>
     </header>
-    <!-- Nội dung -->
-<div class="container my-5">
+    <h1 class="text-center text-success fw-bold mb-5 mt-4">Tin tức & Kiến thức</h1>
+    <div class="container">
+    <div class="row justify-content-center g-4">
 
-    <!-- Tiêu đề -->
-    <div class="text-center mb-5">
-        <h1 class="fw-bold text-success">Giới thiệu về Rau Sạch</h1>
-        <p class="text-muted">Thực phẩm sạch – Cuộc sống xanh</p>
+            <!-- Bài 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="../img/raumuong.jpg" class="card-img-top" style="height:200px;object-fit:cover;">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Lợi ích của việc ăn rau mỗi ngày</h5>
+                        <p class="text-muted">Rau xanh cung cấp vitamin, khoáng chất và giúp tăng cường sức khỏe...</p>
+                        <button class="btn btn-success btn-sm" onclick="showModal('detail1')">Xem thêm</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bài 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="../img/cai.jpg" class="card-img-top" style="height:200px;object-fit:cover;">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Cách chọn rau sạch đúng chuẩn</h5>
+                        <p class="text-muted">Không phải ai cũng biết cách chọn rau sạch...</p>
+                        <button class="btn btn-success btn-sm" onclick="showModal('detail2')">Xem thêm</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bài 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="../img/carot.jpg" class="card-img-top" style="height:200px;object-fit:cover;">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Thực phẩm sạch và sức khỏe</h5>
+                        <p class="text-muted">Sử dụng thực phẩm sạch giúp giảm nguy cơ bệnh tật...</p>
+                        <button class="btn btn-success btn-sm" onclick="showModal('detail3')">Xem thêm</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <!-- Giới thiệu -->
-    <div class="row align-items-center mb-5">
-        <div class="col-md-6">
-            <img src="../img/raumuong.jpg" class="img-fluid rounded shadow">
-        </div>
-        <div class="col-md-6 bg-light ">
-            <h3 class="fw-bold text-success">Chúng tôi là ai?</h3>
-            <p>
-                Rau Sạch là cửa hàng chuyên cung cấp các loại rau củ quả tươi, an toàn và có nguồn gốc rõ ràng. Chúng tôi được hình thành với mong muốn mang đến cho người tiêu dùng những sản phẩm nông sản chất lượng cao, đảm bảo tiêu chuẩn vệ sinh an toàn thực phẩm.
-
-                Tất cả sản phẩm tại cửa hàng đều được lựa chọn kỹ lưỡng từ các nhà cung cấp uy tín, ưu tiên các vùng trồng đạt chuẩn như rau hữu cơ (Organic) hoặc sản phẩm được canh tác theo quy trình sạch. Mỗi loại rau củ trước khi đến tay khách hàng đều trải qua quá trình kiểm tra về chất lượng, độ tươi và nguồn gốc.
-
-                Không chỉ đơn thuần là một cửa hàng bán thực phẩm, Rau Sạch còn hướng đến việc trở thành người bạn đồng hành của mỗi gia đình trong hành trình xây dựng lối sống lành mạnh. Chúng tôi luôn đặt lợi ích và sức khỏe của khách hàng lên hàng đầu.
-            </p>
-        </div>
-    </div>
-
-    <!-- Sứ mệnh -->
-    <div class="bg-light p-4 rounded mb-5">
-        <h3 class="fw-bold text-success">Sứ mệnh</h3>
-        <p>
-            Sứ mệnh của Rau Sạch là mang đến nguồn thực phẩm sạch, an toàn và đáng tin cậy cho mọi gia đình. Trong bối cảnh vấn đề an toàn thực phẩm ngày càng được quan tâm, chúng tôi hiểu rằng mỗi bữa ăn không chỉ là nhu cầu thiết yếu mà còn ảnh hưởng trực tiếp đến sức khỏe lâu dài.Bên cạnh việc đồng hành cùng bạn trong bữa cơm gia đình hằng ngày, chúng tôi còn mong muốn làm cầu nối đưa các loại rau củ quả từ các vùng miền được các cô chú, các bạn trẻ yêu nông nghiệp canh tác tự nhiên đến gần hơn với người tiêu dùng, gắn kết những người nông dân cùng chung chí hướng để nông nghiệp hữu cơ ngày càng được mở rộng.
-        </p>
-    </div>
-
-    <!-- Tầm nhìn -->
-    <div class="bg-light p-4 rounded mb-5">
-        <h3 class="fw-bold text-success">Tầm nhìn</h3>
-        <p>
-            Rau Sạch hướng đến mục tiêu trở thành thương hiệu cung cấp thực phẩm sạch hàng đầu tại Việt Nam, được khách hàng tin tưởng và lựa chọn trong mỗi bữa ăn hằng ngày.Chúng tôi không chỉ muốn phát triển về quy mô mà còn tập trung xây dựng uy tín lâu dài, trở thành biểu tượng của chất lượng và sự an tâm trong lĩnh vực thực phẩm sạch.
-        </p>
-    </div>
-
-    <!-- Giá trị -->
-    <div class="row text-center">
-        <div class="col-md-4">
-            <h5 class="fw-bold">🌱 Chất lượng</h5>
-            <p>Luôn đặt chất lượng lên hàng đầu</p>
-        </div>
-        <div class="col-md-4">
-            <h5 class="fw-bold">🚚 Nhanh chóng</h5>
-            <p>Giao hàng nhanh trong 2 giờ</p>
-        </div>
-        <div class="col-md-4">
-            <h5 class="fw-bold">💚 Uy tín</h5>
-            <p>Luôn giữ chữ tín với khách hàng</p>
-        </div>
+    <!-- Chi tiết bài viết -->
+    <div id="detail" class="mt-5" style="display:none;">
+        <h3 id="detail-title" class="fw-bold text-success"></h3>
+        <p id="detail-content"></p>
+        <button class="btn btn-secondary" onclick="hideDetail()">Đóng</button>
     </div>
 
 </div>
@@ -166,6 +158,126 @@
                 </div>
             </div>
     </footer>
+        <!-- Modal -->
+        <div class="modal fade" id="newsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p id="modal-content"></p>
+            </div>
+
+            </div>
+        </div>
+        </div>
+    <script>
+        function showModal(id) {
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+
+            
+            if (id === 'detail1') {
+                title.innerText = "Lợi ích khi ăn rau mỗi ngày";
+                content.innerHTML = `
+                    <p>Rau giàu vitamin, khoáng chất và chất chống oxy hóa giúp bảo vệ sức khỏe tim mạch, làn da và ngăn ngừa bệnh mạn tính.</p>
+
+                    <h6 class="fw-bold mt-3 text-success">1. Giảm nguy cơ mắc bệnh tim</h6>
+                    <p>Rau giúp giảm cholesterol xấu, chống viêm và stress oxy hóa. Các loại như bắp cải, bông cải xanh chứa nhiều vitamin C, carotenoid hỗ trợ tim mạch.</p>
+
+                    <h6 class="fw-bold mt-3 text-success">2. Duy trì làn da khỏe mạnh</h6>
+                    <p>Vitamin C, beta-carotene giúp sản sinh collagen, làm chậm lão hóa và bảo vệ da khỏi tia UV.</p>
+
+                    <h6 class="fw-bold mt-3 text-success">3. Tốt cho mắt</h6>
+                    <p>Lutein và zeaxanthin giúp giảm nguy cơ thoái hóa điểm vàng và đục thủy tinh thể.</p>
+
+                    <h6 class="fw-bold mt-3 text-success">4. Tăng cường miễn dịch</h6>
+                    <p>Chất xơ trong rau giúp hệ tiêu hóa khỏe mạnh và tăng cường vi khuẩn có lợi.</p>
+
+                    <h6 class="fw-bold mt-3 text-success">5. Giúp xương chắc khỏe</h6>
+                    <p>Rau lá xanh cung cấp canxi, vitamin K, magie giúp xương chắc khỏe và ngăn ngừa loãng xương.</p>
+                `;
+            }
+
+            if (id === 'detail2') {
+                title.innerText = "Cách chọn rau sạch đúng chuẩn";
+                content.innerHTML = `
+                    <p>Để chọn rau sạch, an toàn và tươi ngon, bạn cần chú ý đến màu sắc, hình dáng và cảm giác khi cầm. Rau sạch thường không quá "hoàn hảo" như rau sử dụng nhiều hóa chất.</p>
+
+                    <h6 class="fw-bold mt-3 text-success">1. Quan sát màu sắc và vẻ ngoài</h6>
+                    <ul>
+                        <li><b>Màu sắc:</b> Chọn rau có màu tự nhiên, không quá xanh đậm hoặc bóng loáng.</li>
+                        <li><b>Hình dáng:</b> Tránh rau quá to, đều bất thường.</li>
+                        <li><b>Sâu bệnh:</b> Rau sạch thường có vài lỗ sâu nhỏ, không dập nát.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-3 text-success">2. Cảm nhận khi cầm nắm</h6>
+                    <ul>
+                        <li><b>Thân và lá:</b> Thân nhỏ, chắc, hơi dai.</li>
+                        <li><b>Cuống rau:</b> Giòn, không héo hay thâm.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-3 text-success">3. Mẹo chọn theo từng loại</h6>
+                    <ul>
+                        <li><b>Rau ăn lá:</b> Lá tươi, không dập.</li>
+                        <li><b>Củ, quả:</b> Kích thước vừa phải, không trầy xước.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-3 text-success">4. Lưu ý khi mua</h6>
+                    <ul>
+                        <li>Mua rau đúng mùa để hạn chế hóa chất.</li>
+                        <li>Chọn nơi bán uy tín, có nguồn gốc rõ ràng.</li>
+                    </ul>
+
+                    <div class="alert alert-success mt-3">
+                        <b>Kết luận:</b> Rau sạch không cần quá đẹp. Màu tự nhiên, thân chắc và có dấu hiệu sâu nhẹ là lựa chọn an toàn.
+                    </div>
+                `;
+            }
+            if (id === 'detail3') {
+                title.innerText = "Thực phẩm sạch và sức khỏe";
+                content.innerHTML = `
+                    <p>Thực phẩm sạch là nguồn thực phẩm an toàn, không chứa độc tố, hóa chất bảo quản hay vi khuẩn gây hại. Việc sử dụng thực phẩm sạch giúp tăng cường hệ miễn dịch, bảo vệ tim mạch và nâng cao sức khỏe toàn diện.</p>
+
+                    <h6 class="fw-bold mt-3 text-success">1. Vai trò của thực phẩm sạch</h6>
+                    <ul>
+                        <li><b>Tăng cường đề kháng:</b> Cung cấp đầy đủ vitamin và khoáng chất giúp cơ thể khỏe mạnh.</li>
+                        <li><b>Giảm gánh nặng cho cơ thể:</b> Ít độc tố giúp gan, thận hoạt động hiệu quả hơn.</li>
+                        <li><b>Phát triển toàn diện:</b> Hỗ trợ cả thể chất và trí tuệ.</li>
+                        <li><b>Phòng bệnh mãn tính:</b> Giảm nguy cơ ung thư, tim mạch và tiểu đường.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-3 text-success">2. Tiêu chí nhận biết thực phẩm sạch</h6>
+                    <ul>
+                        <li><b>Nguồn gốc rõ ràng:</b> Có tem nhãn, chứng nhận an toàn (VietGAP, hữu cơ...).</li>
+                        <li><b>Tươi ngon tự nhiên:</b> Rau củ không úa, thịt có độ đàn hồi.</li>
+                        <li><b>Quy trình an toàn:</b> Không dùng hóa chất, thuốc kích thích.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-3 text-success">3. Cách lựa chọn và sử dụng</h6>
+                    <ul>
+                        <li>Mua tại siêu thị hoặc cửa hàng uy tín.</li>
+                        <li>Ưu tiên thực phẩm theo mùa.</li>
+                        <li>Rửa sạch, ngâm nước muối hoặc dung dịch chuyên dụng trước khi dùng.</li>
+                    </ul>
+
+                    <div class="alert alert-success mt-3">
+                        <b>Kết luận:</b> Lựa chọn thực phẩm sạch là bước quan trọng để bảo vệ sức khỏe lâu dài cho bạn và gia đình.
+                    </div>
+                `;
+            }
+
+            // GỌI MODAL
+            const modal = new bootstrap.Modal(document.getElementById('newsModal'));
+            modal.show();
+        }
+
+</script>
+
 
     
 </body>
