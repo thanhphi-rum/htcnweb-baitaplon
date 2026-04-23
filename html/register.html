@@ -1,257 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản - Rau Sạch</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/bootstrap.js"></script>
-    <title>Login</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body {
+            background-color: #f4f7f6;
         }
-        .nav-brand-custom{
-            display: flex;
-            text-align: center;
-        }
-        .bg-drkgreen{
-            background: #1a2e1a;
-        }
-        ul,li{
-            list-style: none;
-        }
-        a{
-            text-decoration: none;
-        }  
-        .nav-link{
-            width: 100%;
-            color: white;
-            border: 1px;
-            border-radius: 10px;
-        }
-        .nav-link:hover{
-            position: relative;
-            display: block;
+        /* Style đơn giản cho menu */
+        .nav-link:hover {
             background-color: #3ea066;
-            border: 1px;
-            border-radius: 10px;
-           color: #fbbf24;
+            color: #fbbf24 !important;
+            border-radius: 8px;
         }
-        .nav-sreach{
-            background-color: black;
-            padding: 4px;
-            border: 1px;
-            border-radius:25px;
-            width: 250px
-        }
-        .btn-warning-light{
-            background-color: #f59e0b;
-        }
-        .row2{
-            background-image: url(/htcnweb-baitaplon/img/banner.jpeg);
-            background: linear-gradient(135deg, rgba(26, 46, 26, 0.85) 0%, rgba(45, 122, 79, 0.5) 100%);
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 650px;
-        }
-        .container-form h4 img{
-            padding-right: 10px;
-        }
-
-        .box-about span{
-            background-color: rgba(245, 158, 11, 0.1);;
-            border: 1px solid rgba(245, 158, 11, 0.4);
-            color: #fbbf24;
-            border-radius: 20px;
-            width: 120px;
-            padding: 6px;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-        .box-about h1{
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            text-align: left;
+        /* Màu nền cột giới thiệu bên trái */
+        .sidebar-green {
+            background-color: #1a4a2e;
             color: white;
-            text-transform: capitalize;
+            border-radius: 15px 0 0 15px;
         }
-        .button-about button{
-            text-transform: capitalize;
-            font-weight: bold;
-        }
-
     </style>
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark bg-success text-light">
-        <div class="container ">
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
+        <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="homepage.html">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
+                <img src="../img/logo.png" alt="Logo" width="80px" class="me-2">
                 <span class="fw-bold">Rau Sạch</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Khuyến mãi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">Đăng nhập / Đăng ký</a></li>
                 </ul>
             </div>
         </div>
     </header>
-        <!-- content -->
-    <div class="row2 justify-content-between d-flex col-sm-12" style="padding:70px">
-            <!-- left-Content -->
-             <div class="container-form justify-content-between col-sm-5" style="margin-left: 150px;padding: 36px 32px;;background: rgba(255, 255, 255, 0.95);border-radius: 20px;">    
-                <form onsubmit="return validateForm()" >
-                    <div class="" style="background-image: url(/htcnweb-baitaplon/img/banner.jpeg); width: auto; border-radius: 20px;">
-                        <h4 class="text-center"><img src="/htcnweb-baitaplon/img/icons8-lock-48.png" alt=""><b>Đăng Ký</b></h4>
-                        <p class="form-text text-light" style="text-align: center;">Đăng ký để có nhiều voucher ưu đãi</p>
-                    </div>
-                    <div class="row_dk d-flex">
-                        <div class="col-sm-6 " style="margin-right: 3px;">
-                            <label>Tên Đăng Nhập</label>
-                            <input type="text" id="name" class="form-control" placeholder="Nhập tên đăng nhập">
-                            <span id="errName" style="font-size:14px"></span>
-                            <br>
-                            <!-- Mật khẩu -->
-                            <label>Mật Khẩu</label>
-                            <input type="password" id="pass" class="form-control" placeholder="Nhập mật khẩu">
-                            <span id="errPass" style="font-size:14px"></span>
-                            <br>
-                            <label for="">Gmail</label>
-                            <input type="email" name="" id="" class="form-control" placeholder="Nhập Gmail">
-                            <span id="errGmail" style="font-size:14px"></span>
-                            <br>
-                        </div>
-                        <div class="col-sm-6">
-                            <label>Tên Đăng Nhập</label>
-                            <input type="text" id="name" class="form-control" placeholder="Nhập tên đăng nhập">
-                            <span id="errName" style="font-size:14px"></span>
-                            <br>
-                            <!-- Mật khẩu -->
-                            <label>Mật Khẩu</label>
-                            <input type="password" id="pass" class="form-control" placeholder="Nhập mật khẩu">
-                            <span id="errPass" style="font-size:14px"></span>
-                            <br>
-                            <label for="">Gmail</label>
-                            <input type="email" name="" id="" class="form-control" placeholder="Nhập Gmail">
-                            <span id="errGmail" style="font-size:14px"></span>
-                            <br>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success w-100 mt-3">
-                        Đăng Ký
-                    </button>
 
-                    <p class="mt-3 text-center">
-                        Đã có tài khoản? <a href="login.html">Đăng nhập</a>
-                    </p>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 shadow-lg bg-white rounded-4 overflow-hidden">
+                <div class="row g-0">
+                    
+                    <div class="col-md-4 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center">
+                        <h2 class="fw-bold">Chào mừng!</h2>
+                        <p>Đăng ký thành viên Rau Sạch để nhận ngay ưu đãi 15% cho đơn hàng đầu tiên.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li>✔ Rau tươi mỗi ngày</li>
+                            <li>✔ Tích điểm đổi quà</li>
+                            <li>✔ Giao hàng siêu tốc</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-8 p-4 p-md-5">
+                        <h3 class="fw-bold text-success mb-3">Tạo Tài Khoản</h3>
+                        <p class="text-muted">Đã có tài khoản? <a href="login.html" class="text-decoration-none fw-bold text-success">Đăng nhập</a></p>
+
+                        <form id="registerForm" class="mt-4" onsubmit="return validateForm()">
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Họ và Tên</label>
+                                <input type="text" class="form-control" id="fullname" placeholder="VD: Nguyễn Văn An" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Ngày sinh</label>
+                                <input type="date" class="form-control" id="dob">
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="an@example.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Số điện thoại</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="09xxxxxxxx" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Địa chỉ giao hàng</label>
+                                <input type="text" class="form-control" id="address" placeholder="Số nhà, tên đường, quận/huyện...">
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Mật khẩu</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Nhập lại mật khẩu</label>
+                                    <input type="password" class="form-control" id="confirm_password" required>
+                                </div>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="agree" required>
+                                <label class="form-check-label small" for="agree">
+                                    Tôi đồng ý với các điều khoản và chính sách của Rau Sạch.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 py-2 fw-bold">ĐĂNG KÝ NGAY</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-            <!-- right-content -->
-            
     </div>
-    <div class="footer bg-light"style="padding-top:100px">
-        <div class=" d-flex align-items-center justify-content-between"  style="text-align: left;">
-                 <div class="box-about"  >
-                    <span><b>Về chúng tôi - rau sạch </b></span>
-                    <h1 >Rau Củ Sạch</h1>
-                    <h1 style="color: #f59e0b;">Chất Lượng Hàng Đầu</h1>
-                    <h1>Cho Mọi Người Tiêu Dùng</h1>
-                    <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, nobis. Aperiam illum fuga sint debitis, molestiae tenetur inventore odit reiciendis temporibus blanditiis, possimus libero ab aliquid. Est deserunt illum iste!</p>
-                    <div class="button-about justify-content-between align-items-center d-flex">
-                        <div class="col-sm-3" >
-                            <button class="btn btn-warning-light" style="border-radius: 20px;"><img src="/htcnweb-baitaplon/img/icons8-cart-24.png" alt="" ><a href="#" style="color: black;">Mua Sắm Ngay</a></button>
-                        </div>
-                        <div class="col-sm-8">
-                            <button class="btn btn-light" style="border-radius: 20px; background:linear-gradient(135deg, rgba(234, 238, 234, 0.85) 0%, rgba(213, 222, 217, 0.5) 100%)"><a href="#" style="color: black;">XXXXXXX</a></button>
-                        </div>
-                    </div>
-                 </div>   
-            </div></div>
-    <div class="footer-container bg-success justify-content-between d-flex align-items-center" style="padding-left: 50px">
-            <div class="col-sm-3" style="color: white;">
-                <span style="text-align: left; " ><b style="font-size: 1.3rem;">Rau Sạch</b></span> <br>
-                <span style="padding-left: 10px;" class="text-warning">Sạch từ Gốc • Tươi từ Vườn</span>
-                <p style="padding-left: 40px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio natus autem sit possimus velit debitis necessitatibus at facere obcaecati cupiditate nulla esse quas reiciendis, vitae?</p>
-            </div>
-            <div class="col-sm-3" style="color: white;text-align: center;">
-            <div class="home-footer" style="padding: 10px 0;">
-                    <span class="text-warning" style="font-weight: 600; text-transform: uppercase;">
-                    Chính sách hỗ trợ
-                </span>
-                <ul>
-                    <li style="margin-bottom: 5px;">Chính sách đổi trả</li>
-                    <li style="margin-bottom: 5px;">Chính sách giao hàng</li>
-                    <li style="margin-bottom: 5px;">Hướng dẫn mua hàng</li>
-                    <li style="margin-bottom: 5px;">Câu hỏi thường gặp</li>
-                    <li style="margin-bottom: 5px;">Chính sách cộng tác viên</li>
-                </ul>
-            </div>
-            </div>
-            <div class="col-sm-3" style="color: white;">
-                <span class="text-warning" style="font-weight: 600; text-transform: uppercase;">
-                    Thông tin liên hệ
-                </span>
-                <ul>
-                    <li>12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM</li>
-                    <li> 0123 456 789</li>
-                    <li>support@rauxanh.com</li>
-                </ul>
-            </div>
-            <div class="col-sm-3" style="color: white;">
-                <span class="text-warning" style="font-weight: 600; text-transform: uppercase;">
-                    Địa chỉ <br>
-                </span>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
-                width="300px" 
-                height="130" 
-                style="border:0;"
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            </div>
-    </div>
-    <div class="footer-bottom">
 
-    </div>
+    <footer class="bg-success text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold">RAU SẠCH</h5>
+                    <p class="small text-warning">Sạch từ Gốc • Tươi từ Vườn</p>
+                    <p class="small">Chúng tôi cam kết mang đến nguồn thực phẩm xanh, sạch và an toàn cho mọi gia đình Việt.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="text-warning fw-bold text-uppercase">Chính sách hỗ trợ</h6>
+                    <ul class="list-unstyled small mt-3">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Chính sách đổi trả</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Chính sách giao hàng</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Hướng dẫn mua hàng</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="text-warning fw-bold text-uppercase">Thông tin liên hệ</h6>
+                    <p class="small mt-3">📍 12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM</p>
+                    <p class="small">📞 0123 456 789</p>
+                    <p class="small">✉ support@rauxanh.com</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <h6 class="text-warning fw-bold text-uppercase">Địa chỉ</h6>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
+                        width="100%" height="120" style="border:0; border-radius: 8px;"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center small mb-0">© 2026 Dự án Website Rau Sạch Xanh - Nhóm sinh viên CNTT</p>
+        </div>
+    </footer>
+
     <script>
         function validateForm() {
-        let name = document.getElementById("name").value.trim();
-        let pass = document.getElementById("pass").value;
+            var pass = document.getElementById("password").value;
+            var confirmPass = document.getElementById("confirm_password").value;
 
-        let userRegex = /^[a-zA-Z0-9_]{6,}$/;
+            // Kiểm tra độ dài mật khẩu
+            if (pass.length < 6) {
+                alert("Mật khẩu phải có ít nhất 6 ký tự!");
+                return false;
+            }
 
-        // reset lỗi
-        document.getElementById("errName").innerHTML = "";
-        document.getElementById("errPass").innerHTML = "";
+            // Kiểm tra mật khẩu khớp nhau
+            if (pass !== confirmPass) {
+                alert("Mật khẩu nhập lại không khớp!");
+                return false;
+            }
 
-        // kiểm tra username
-        if(!userRegex.test(name)) {
-            document.getElementById("errName").innerHTML = "Tên đăng nhập phải lớn hơn 6 ký tự";
-            document.getElementById("errName").style.color = "red";
-            document.getElementById("name").focus();
-            return false;
-        }
-
-        // kiểm tra password
-        if(pass.length < 6) {
-            document.getElementById("errPass").innerHTML = "Mật khẩu phải lớn hơn 6 ký tự";
-            document.getElementById("errPass").style.color = "red";
-            document.getElementById("pass").focus();
-            return false;
-        }
-        alert("Đăng nhập thành công!");
-        return true;
+            alert("Đăng ký thành công!");
+            window.location.href = "login.html"; // Chuyển trang sau khi xong
+            return false; // Ngăn chặn load lại trang thực tế
         }
     </script>
 </body>
