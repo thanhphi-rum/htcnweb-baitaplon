@@ -91,10 +91,9 @@
 
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-lg-9 shadow-lg bg-white rounded-4 overflow-hidden">
-                <div class="row g-0">
-                    
-                    <div class="col-md-5 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center">
+            <div class="col-lg-8 shadow-lg bg-white" style="border-radius: 10px 0px 0px  10px;">
+                <div class="row">
+                    <div class="col-md-5 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center" style="border-radius: 10px 0px 0px  10px;">
                         <div class="text-center mb-4">
                             <img src="../icon/icons8-group-of-vegetables-96.png" alt="Lock" style=" width: 60px;">
                         </div>
@@ -102,9 +101,9 @@
                         <p class="mt-3 text-center small" style="opacity: 0.9;">Đăng nhập để tiếp tục mua sắm những sản phẩm rau sạch tươi ngon nhất cho gia đình bạn.</p>
                         
                         <ul class="mt-4 p-0 small" style="opacity: 0.9;">
-                            <li class="mb-3" style="color: #fbbf24;">Quản lý đơn hàng dễ dàng</li>
-                            <li class="mb-3">Nhận thông báo khuyến mãi</li>
-                            <li class="mb-3" style="color: blueviolet;">Tích điểm đổi voucher</li>
+                            <li class="mb-3" style="color: green;">✔ Quản lý đơn hàng dễ dàng</li>
+                            <li class="mb-3" style="color: blue;">✔ Nhận thông báo khuyến mãi</li>
+                            <li class="mb-3" style="color: red;">✔ Tích điểm đổi voucher</li>
                         </ul>
                     </div>
 
@@ -203,31 +202,39 @@
     </div>
 
     <script>
-
         function validateForm() {
-            let name = document.getElementById("name").value.trim();
-            let pass = document.getElementById("pass").value;
-            let userRegex = /^[a-zA-Z0-9_]{6,}$/;
+    let name = document.getElementById("name").value.trim();
+    let pass = document.getElementById("pass").value;
+    let userRegex = /^[a-zA-Z0-9_]{6,}$/;
 
-            document.getElementById("errName").innerHTML = "";
-            document.getElementById("errPass").innerHTML = "";
+    // Reset thông báo lỗi cũ
+    document.getElementById("errName").innerHTML = "";
+    document.getElementById("errPass").innerHTML = "";
 
-            if(!userRegex.test(name)) {
-                document.getElementById("errName").innerHTML = "Tên đăng nhập không hợp lệ (tối thiểu 6 ký tự)";
-                document.getElementById("name").focus();
-                return false;
-            }
+    // Kiểm tra tên đăng nhập
+    if (name === "") {
+        document.getElementById("errName").innerHTML = "Tên đăng nhập không được để trống";
+        return false;
+    }
+    if (!userRegex.test(name)) {
+        document.getElementById("errName").innerHTML = "Tên đăng nhập phải từ 6 ký tự trở lên";
+        return false;
+    }
 
-            if(pass.length < 6) {
-                document.getElementById("errPass").innerHTML = "Mật khẩu phải lớn hơn 6 ký tự";
-                document.getElementById("pass").focus();
-                return false;
-            }
+    // Kiểm tra mật khẩu
+    if (pass === "") {
+        document.getElementById("errPass").innerHTML = "Mật khẩu không được để trống";
+        return false;
+    }
+    if (pass.length < 6) {
+        document.getElementById("errPass").innerHTML = "Mật khẩu phải từ 6 ký tự trở lên";
+        return false;
+    }
 
-            alert("Đăng nhập thành công!");
-            window.location.href = "homepage.html";
-            return false;
-        }
+    alert("Đăng nhập thành công!");
+    window.location.href = "homepage.html";
+    return false;
+}
     </script>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
