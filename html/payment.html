@@ -12,11 +12,43 @@
 <body>
 <!-- HEADER -->
 <header class="navbar navbar-expand-lg navbar-dark bg-success">
-    <div class="container">
-        <img src="../img/logo.png" width="80">
-        <a class="navbar-brand fw-bold ms-2" href="homepage.html">Rau Sạch</a>
-    </div>
-</header>
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
+                <span class="fw-bold">Rau Sạch</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Sản phẩm
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Rau củ</a></li>
+                            <li><a class="dropdown-item" href="#">Trái cây</a></li>
+                            <li><a class="dropdown-item" href="#">Rau lá</a></li>
+             
+                            <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
+                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
 <div class="container my-5">
     <div class="row">
         <!--  -->
