@@ -92,10 +92,10 @@
 
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 shadow-lg bg-white rounded-4 overflow-hidden">
-                <div class="row g-0">
+            <div class="col-lg-10 shadow-lg bg-white rounded-4 overflow-hidden" style="border-radius: 10px 0px 0px  10px;">
+                <div class="row">
                     
-                    <div class="col-md-4 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center">
+                    <div class="col-md-4 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center" style="border-radius: 10px 0px 0px  10px;">
                         <h2 class="fw-bold">Chào mừng!</h2>
                         <p class="mt-2">Đăng ký thành viên Rau Sạch để nhận ngay ưu đãi 15% cho đơn hàng đầu tiên.</p>
                         <ul class="mt-4 p-0">
@@ -223,33 +223,55 @@
     <div class="footer-bottom"></div>
 
     <script>
-        function validateForm() {
-            let name = document.getElementById("username").value.trim();
-            let pass = document.getElementById("password").value;
-            let userRegex = /^[a-zA-Z0-9_]{6,}$/;
+       function validateForm() {
+    // Lấy dữ liệu từ các input
+    let name = document.getElementById("fullname").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let user = document.getElementById("username").value.trim();
+    let pass = document.getElementById("password").value;
+    let confirmPass = document.getElementById("confirm_password").value;
+    let agree = document.getElementById("agree").checked;
 
-            // Reset lỗi
-            document.getElementById("errName").innerHTML = "";
-            document.getElementById("errPass").innerHTML = "";
+    // Biểu thức chính quy (Regex)
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phoneRegex = /^(0[3|5|7|8|9])([0-9]{8})$/; // Kiểm tra đầu số VN và 10 số
+    let userRegex = /^[a-zA-Z0-9_]{6,}$/; // Tối thiểu 6 ký tự, không dấu
 
-            // Kiểm tra username
-            if(!userRegex.test(name)) {
-                document.getElementById("errName").innerHTML = "Tên đăng nhập phải lớn hơn 6 ký tự (không dấu)";
-                document.getElementById("username").focus();
-                return false;
-            }
+    // Bắt đầu kiểm tra
+    if (name === "") {
+        alert("Vui lòng nhập họ và tên!");
+        return false;
+    }
+    if (!emailRegex.test(email)) {
+        alert("Email không đúng định dạng!");
+        return false;
+    }
+    if (!phoneRegex.test(phone)) {
+        alert("Số điện thoại phải có 10 số và đúng đầu số Việt Nam!");
+        return false;
+    }
+    if (!userRegex.test(user)) {
+        alert("Tên đăng nhập phải từ 6 ký tự trở lên và không chứa ký tự đặc biệt!");
+        return false;
+    }
+    if (pass.length < 6) {
+        alert("Mật khẩu phải có ít nhất 6 ký tự!");
+        return false;
+    }
+    if (pass !== confirmPass) {
+        alert("Mật khẩu nhập lại không khớp!");
+        return false;
+    }
+    if (!agree) {
+        alert("Bạn phải đồng ý với điều khoản sử dụng!");
+        return false;
+    }
 
-            // Kiểm tra password
-            if(pass.length < 6) {
-                document.getElementById("errPass").innerHTML = "Mật khẩu phải lớn hơn 6 ký tự";
-                document.getElementById("password").focus();
-                return false;
-            }
-
-            alert("Đăng ký thành công!");
-            window.location.href = "login.html";
-            return false; 
-        }
+    alert("Đăng ký thành công!");
+    window.location.href = "login.html";
+    return false; 
+}
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
