@@ -32,7 +32,7 @@
                             <li><a class="dropdown-item" href="#">Trái cây</a></li>
                             <li><a class="dropdown-item" href="#">Rau lá</a></li>
              
-                            <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                            <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
@@ -51,46 +51,50 @@
     <div class="container my-4">
         <div class="row">
             <div class="col-lg-12">
-                <!-- Banner -->
-                <div class="banner mb-4">
-                    <div class="banner-content text-center text-white">
-                        <h1 class="fw-bold">Rau tươi mỗi ngày</h1>
-                        <p>Giao nhanh trong 2 giờ tại TP.HCM</p>
-                        <a href="news.html" class="btn btn-light btn-lg mt-3">Tin Tức</a>
-                     </div>
-                </div>
-                <div class="container my-5">
-                    <div class="p-5 rounded-4 shadow bg-light text-center">
-                            <h2 class="fw-bold mb-3">Trở thành thành viên ngay hôm nay!</h2>
-                            <p class="fs-5 text-muted mb-4">
-                                Đăng ký để nhận ưu đãi độc quyền, tích điểm và mua sắm nhanh chóng hơn
-                            </p>
-                            <div class="row justify-content-center mb-4">
-                                <div class="col-md-3">
-                                    <p> Ưu đãi riêng</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <p> Tích điểm đổi quà</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <p> Đặt hàng nhanh</p>
-                                </div>
+                <div class="row">
+                    <aside class="col-lg-3">
+                        <nav class="nav flex-column bg-light p-3 h-100">
+                            <h4 class="fw-bold">Lọc sản phẩm</h4>                   
+                            <p>Giá</p>
+                            <select class="form-select" id="filter-price" aria-label="Default select example">
+                                <option value="0" selected>Không ràng buộc</option>
+                                <option value="1">0-10.000VND</option>
+                                <option value="2">10.000VND-20.000VND</option>
+                                <option value="3">20.000VND-30.000VND</option>
+                                <option value="4">30.000VND-50.000VND</option>
+                                <option value="5">Trên 50.000VND</option>
+                            </select><br>
+    
+                        <p>Nhãn hiệu</p>
+
+                            <select class="form-select" id="filter-brand" aria-label="Default select example">
+                                <option value="0" selected>Không ràng buộc</option>
+                                <option value="organic">Organic</option>
+                                <option value="cangio">Cần Giờ</option>
+                                <option value="khac">Khác</option>
+                            </select><br>
+
+                            <p>Khuyến mãi</p>
+
+                            <select class="form-select" id="filter-sale" aria-label="Default select example">
+                                <option value="0" selected>Không ràng buộc</option>
+                                <option value="yes">Có</option>
+                                <option value="no">Không</option>
+            
+                            </select><br>   
+                    </nav>
+                </aside>
+                    <section class="col-lg-9">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="fw-bold">Tất cả sản phẩm</h4>
+                            <div class="input-group" style="max-width:280px;">
+                                <input class="form-control shadow-none" type="search" placeholder="Tìm sản phẩm..." id="search-input">
+                                <button class="btn btn-success" type="button" id="search-btn">
+                                    <img src="../icon/icons8-search-30.png" alt="Tìm" style="width:20px; height:20px;">
+                                </button>
                             </div>
+                        </div>
 
-                            <a href="register.html" class="btn btn-success btn-lg ">
-                                Đăng ký ngay
-                            </a>
-
-                    </div>
-                </div>
-                    <div class="d-flex">
-                        <h4 class="fw-bold py-3">Thực phẩm bán chạy</h4>
-                        <ul class="nav ms-auto ">
-                            <li class="nav-item"><a class="nav-link fs-4" href="produce.html">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </div>
-                
-                     
                         <div class="row g-4" id="product-list">
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
@@ -111,7 +115,94 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/cai.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Bông cải</h6>
+                                        <p class="text-success">25.000đ</p>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp002"
+                                            data-name="Bông cải"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-price="25000"
+                                            data-img="../img/cai.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/carot.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Cà rốt 300gr</h6>
+                                        <p class="text-success">18.000đ</p>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp003"
+                                            data-name="Cà rốt 300gr"
+                                            data-price="18000"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-img="../img/carot.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/khoqua.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Khổ qua 300gr</h6>
+                                        <p class="text-success">30.000đ</p>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp004"
+                                            data-name="Khổ qua 300gr"
+                                            data-price="30000"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-img="../img/khoqua.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/mongtoi.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Mồng tơi 300gr</h6>
+                                        <h6 class="text-decoration-line-through text-muted">19.500đ</h6>
+                                        <span class="text-success">9.500đ</span>
+                                        <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-49%</span><br>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp005"
+                                            data-name="Mồng tơi 300gr"
+                                            data-price="9500"
+                                            data-brand="organic"
+                                            data-sale=49
+                                            data-img="../img/mongtoi.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/táo.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Táo 1kg</h6>
+                                        <p class="text-success">50.000đ</p>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp006"
+                                            data-name="Táo 1kg"
+                                            data-price="50000"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-img="../img/táo.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
                                     <img src="../img/bi-do.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
@@ -129,6 +220,119 @@
                                 </div>
                             </div>
 
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/rauden.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Rau đền 300gr</h6>
+                                        
+                                        <h6 class="text-decoration-line-through text-muted">16.000đ</h6>
+                                        <span class="text-success">8.000đ</span>
+                                        <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-50%</span> <br>
+
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp008"
+                                            data-name="Rau đền 300gr"
+                                            data-price="8000"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-img="../img/rauden.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/rautan.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Rau tần 300gr</h6>
+                                        <p class="text-success">17.000đ</p>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp009"
+                                            data-name="Rau tần 300gr"
+                                            data-price="17000"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-img="../img/rautan.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/rau_lang.png" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Rau lang 300gr</h6>
+                                        
+                                        <h6 class="text-decoration-line-through text-muted">19.500đ</h6>
+                                        <span class="text-success pt-1">9.500đ</span>
+                                        <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-49%</span><br>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp010"
+                                            data-name="Rau lang 300gr"
+                                            data-price="9500"
+                                            data-brand="organic"
+                                            data-sale=49
+                                            data-img="../img/rau_lang.png">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/cam.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Cam 1kg</h6>
+
+                                        <p class="text-success">29.000đ</p>
+                                       
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp011"
+                                            data-name="Cam 1kg"
+                                            data-price="29000"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-img="../img/cam.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/dua_luoi.png" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Dưa lưới 1kg</h6>
+                                        <h6 class="text-decoration-line-through text-muted">119.000đ</h6>
+                                        <span class="text-success">69.000đ</span>
+                                        <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-42%</span>
+                                        <br><button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp012"
+                                            data-name="Dưa lưới 1kg"
+                                            data-price="69000"
+                                            data-brand="organic"
+                                            data-sale=42
+                                            data-img="../img/dua_luoi.png">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="card text-center h-100">
+                                    <img src="../img/rau-ngot.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <div class="card-body">
+                                        <h6>Rau ngót</h6>
+                                        <p class="text-success">13.000đ</p>
+                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                            data-id="sp013"
+                                            data-name="Rau ngót 300g"
+                                            data-price="13000"
+                                            data-brand="organic"
+                                            data-sale=0
+                                            data-img="../img/rau-ngot.jpg">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
                                     <img src="../img/khoai-tay.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
@@ -149,86 +353,42 @@
                                 </div>
                             </div>
                             
-                            
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/hanh-la.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/khoai-lang.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                     <div class="card-body">
-                                        <h6>Hành lá 300g</h6>
-                                        <h6 class="text-success">18.000đ</h6>
+                                        <h6>Khoai lang 500g</h6>
+                                        <h6 class="text-success">20.000đ</h6>
                                         <button class="btn btn-success btn-sm btn-add-cart"
-                                            data-id="sp018"
-                                            data-name="Hành lá 300g"
-                                            data-price="18000"
+                                            data-id="sp015"
+                                            data-name="Khoai lang 500g"
+                                            data-price="20000"
                                             data-brand="organic"
                                             data-sale=0
-                                            data-img="../img/hanh-la.jpg">Thêm vào giỏ</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    
-                </div>
-                <h4 class="fw-bold py-3">Thực phẩm bán chạy</h4>
-                        <div class="row g-4" id="product-list">
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="card text-center h-100">
-                                    <img src="../img/raumuong.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
-                                    <div class="card-body">
-                                        <h6>Rau muống 300g</h6>
-                                        
-                                        <h6 class="text-decoration-line-through text-muted">27.000đ</h6>
-                                        <span class="text-success">19.000đ</span>
-                                        <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-30%</span><br>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
-                                            data-id="sp001"
-                                            data-name="Rau muống 300g"
-                                            data-price="19000"
-                                            data-brand="organic"
-                                            data-sale=30
-                                            data-img="../img/raumuong.jpg">Thêm vào giỏ</button>
+                                            data-img="../img/khoai-lang.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/bi-do.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rau-ram.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                     <div class="card-body">
-                                        <h6>Bí đỏ 1kg</h6>
-                                        <p class="text-success">40.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
-                                            data-id="sp007"
-                                            data-name="Bí đỏ 1kg"
-                                            data-price="40000"
-                                            data-brand="organic"
-                                            data-sale=0
-                                            data-img="../img/bi-do.jpg">Thêm vào giỏ</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="card text-center h-100">
-                                    <img src="../img/khoai-tay.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
-                                    <div class="card-body">
-                                        <h6>Khoai tây 500g</h6>
+                                        <h6>Rau răm 50g</h6>
                                         
-                                        <h6 class="text-decoration-line-through text-muted">20.000đ</h6>
-                                        <span class="text-success">15.000đ</span>
-                                        <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-25%</span>
+                                        <h6 class="text-decoration-line-through text-muted">5.000đ</h6>
+                                        <span class="text-success">2.500đ</span>
+                                        <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-50%</span>
                                         <br><button class="btn btn-success btn-sm btn-add-cart"
-                                            data-id="sp014"
-                                            data-name="Khoai tây 500g"
-                                            data-price="15000"
+                                            data-id="sp016"
+                                            data-name="Rau răm 50g"
+                                            data-price="2500"
                                             data-brand="organic"
-                                            data-sale=15
-                                            data-img="../img/khoai-tay.jpg">Thêm vào giỏ</button>
+                                            data-sale=50
+                                            data-img="../img/rau-ram.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
                             </div>
-                            
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
@@ -248,7 +408,7 @@
                             </div>
 
                         </div>
-                    
+                    </section>
                 </div>
             </div>
         </div>
