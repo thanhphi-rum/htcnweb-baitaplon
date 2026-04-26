@@ -7,12 +7,26 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        .detail-product-img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        #add-cart-message {
+            min-height: 20px;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
                 <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -47,6 +61,62 @@
             </div>
         </div>
     </header>
+
+    <section class="container my-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="homepage.html" class="text-decoration-none">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="homepage.html" class="text-decoration-none">Sản phẩm</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="product-breadcrumb">Chi tiết sản phẩm</li>
+            </ol>
+        </nav>
+
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-5">
+                <div class="border rounded-3 p-3 bg-white shadow-sm detail-image-wrap d-flex align-items-center justify-content-center h-100">
+                    <img id="product-image" src="../img/raumuong.jpg" alt="Ảnh sản phẩm" class="img-fluid detail-product-img">
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="p-4 border rounded-3 shadow-sm bg-white detail-info-card h-100 d-flex flex-column justify-content-center">
+                    <h2 class="fw-bold mb-2 lh-sm" id="product-name">Rau muống 300g</h2>
+                    <p class="text-muted mb-3">Mã sản phẩm: <span id="product-id">SP001</span></p>
+
+                    <div class="mb-3 pb-2 border-bottom">
+                        <span id="product-old-price" class="text-decoration-line-through text-muted me-2"></span>
+                        <span id="product-price" class="text-success fw-bold" style="font-size: 2rem;">19.000đ</span>
+                        <span id="product-sale-badge" class="badge bg-danger ms-2"></span>
+                    </div>
+
+                    <p class="mb-3 text-secondary" id="product-description">
+                        Sản phẩm tươi sạch mỗi ngày, nguồn gốc rõ ràng và được giao nhanh trong ngày.
+                    </p>
+
+                    <ul class="mb-4 ps-3 text-secondary">
+                        <li id="product-brand">Thương hiệu: Organic</li>
+                        <li id="product-unit">Đơn vị tính: Gói</li>
+                        <li id="product-origin">Xuất xứ: Việt Nam</li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+                        <label for="qty-input" class="mb-0">Số lượng:</label>
+                        <div class="input-group" style="max-width: 140px;">
+                            <button type="button" class="btn btn-outline-secondary" id="btn-qty-minus">-</button>
+                            <input type="text" class="form-control text-center" id="qty-input" value="1" readonly>
+                            <button type="button" class="btn btn-outline-secondary" id="btn-qty-plus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <button type="button" class="btn btn-success px-4" id="btn-add-cart">Thêm vào giỏ</button>
+                        <a href="cart.html" class="btn btn-outline-success px-4">Xem giỏ hàng</a>
+                    </div>
+                    <p class="text-success mt-3 mb-0 small text-break" id="add-cart-message"></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="mt-5 pt-5">
@@ -118,6 +188,124 @@
             </div>
         </div>
     </footer>
-    
+
+    <script>
+        const products = {
+            sp001: { id: "sp001", name: "Rau muống 300g", price: 19000, oldPrice: 27000, sale: 30, brand: "Organic", unit: "300g", origin: "TP.HCM", img: "../img/raumuong.jpg", description: "Rau muống non, giòn ngọt, phù hợp luộc hoặc xào tỏi." },
+            sp002: { id: "sp002", name: "Bông cải", price: 25000, oldPrice: 0, sale: 0, brand: "Organic", unit: "500g", origin: "Đà Lạt", img: "../img/cai.jpg", description: "Bông cải xanh tươi, giàu vitamin, thích hợp nấu súp và xào." },
+            sp003: { id: "sp003", name: "Cà rốt 300gr", price: 18000, oldPrice: 0, sale: 0, brand: "Organic", unit: "300g", origin: "Đà Lạt", img: "../img/carot.jpg", description: "Cà rốt ngọt, chắc củ, phù hợp ăn sống và chế biến món hầm." },
+            sp004: { id: "sp004", name: "Khổ qua 300gr", price: 30000, oldPrice: 0, sale: 0, brand: "Organic", unit: "300g", origin: "Long An", img: "../img/khoqua.jpg", description: "Khổ qua tươi, vị đắng nhẹ, phù hợp nhồi thịt hoặc xào trứng." },
+            sp005: { id: "sp005", name: "Mồng tơi 300gr", price: 9500, oldPrice: 19500, sale: 49, brand: "Organic", unit: "300g", origin: "Củ Chi", img: "../img/mongtoi.jpg", description: "Mồng tơi lá xanh mướt, phù hợp nấu canh giải nhiệt." },
+            sp006: { id: "sp006", name: "Táo 1kg", price: 50000, oldPrice: 0, sale: 0, brand: "Organic", unit: "1kg", origin: "Ninh Thuận", img: "../img/táo.jpg", description: "Táo giòn ngọt tự nhiên, phù hợp ăn trực tiếp hoặc ép nước." },
+            sp007: { id: "sp007", name: "Bí đỏ 1kg", price: 40000, oldPrice: 0, sale: 0, brand: "Organic", unit: "1kg", origin: "Lâm Đồng", img: "../img/bi-do.jpg", description: "Bí đỏ dẻo thơm, phù hợp nấu cháo, nấu canh và làm bánh." },
+            sp008: { id: "sp008", name: "Rau đền 300gr", price: 8000, oldPrice: 16000, sale: 50, brand: "Organic", unit: "300g", origin: "Long An", img: "../img/rauden.jpg", description: "Rau dền đỏ tươi, giàu sắt, thích hợp nấu canh." },
+            sp009: { id: "sp009", name: "Rau tần 300gr", price: 17000, oldPrice: 0, sale: 0, brand: "Organic", unit: "300g", origin: "Bình Dương", img: "../img/rautan.jpg", description: "Rau tần thơm nhẹ, thường dùng nấu canh thịt bằm." },
+            sp010: { id: "sp010", name: "Rau lang 300gr", price: 9500, oldPrice: 19500, sale: 49, brand: "Organic", unit: "300g", origin: "Củ Chi", img: "../img/rau_lang.png", description: "Rau lang non, giòn, ngon khi luộc hoặc xào tỏi." },
+            sp011: { id: "sp011", name: "Cam 1kg", price: 29000, oldPrice: 0, sale: 0, brand: "Organic", unit: "1kg", origin: "Vĩnh Long", img: "../img/cam.jpg", description: "Cam mọng nước, vị ngọt thanh, giàu vitamin C." },
+            sp012: { id: "sp012", name: "Dưa lưới 1kg", price: 69000, oldPrice: 119000, sale: 42, brand: "Organic", unit: "1kg", origin: "Ninh Thuận", img: "../img/dua_luoi.png", description: "Dưa lưới thơm ngọt, thịt dày, thích hợp tráng miệng." },
+            sp013: { id: "sp013", name: "Rau ngót 300g", price: 13000, oldPrice: 0, sale: 0, brand: "Organic", unit: "300g", origin: "Hóc Môn", img: "../img/rau-ngot.jpg", description: "Rau ngót sạch, lá non, nấu canh tôm hoặc thịt rất ngon." },
+            sp014: { id: "sp014", name: "Khoai tây 500g", price: 15000, oldPrice: 20000, sale: 25, brand: "Organic", unit: "500g", origin: "Đà Lạt", img: "../img/khoai-tay.jpg", description: "Khoai tây bở vừa, ngon khi chiên, hầm hoặc nướng." },
+            sp015: { id: "sp015", name: "Khoai lang 500g", price: 20000, oldPrice: 0, sale: 0, brand: "Organic", unit: "500g", origin: "Đồng Nai", img: "../img/khoai-lang.jpg", description: "Khoai lang ngọt bùi, tốt cho sức khỏe và dễ chế biến." },
+            sp016: { id: "sp016", name: "Rau răm 50g", price: 2500, oldPrice: 5000, sale: 50, brand: "Organic", unit: "50g", origin: "Cần Giờ", img: "../img/rau-ram.jpg", description: "Rau răm thơm nồng nhẹ, dùng kèm cháo và món gỏi." },
+            sp017: { id: "sp017", name: "Rau muống 300g", price: 19000, oldPrice: 27000, sale: 30, brand: "Organic", unit: "300g", origin: "TP.HCM", img: "../img/raumuong.jpg", description: "Rau muống tươi sạch, phù hợp cho bữa cơm hằng ngày." },
+            sp018: { id: "sp018", name: "Hành lá 300g", price: 18000, oldPrice: 0, sale: 0, brand: "Organic", unit: "300g", origin: "Long An", img: "../img/hanh-la.jpg", description: "Hành lá xanh tươi, thơm nhẹ, tiện dùng cho nhiều món ăn." }
+        };
+
+        function formatPrice(price) {
+            return price.toLocaleString("vi-VN") + "đ";
+        }
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem("cart")) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        function updateBadge() {
+            const cart = getCart();
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById("cart-badge");
+            if (badge) badge.textContent = totalQty;
+        }
+
+        function getProductIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return (params.get("id") || "sp001").toLowerCase();
+        }
+
+        function renderProduct(product) {
+            document.title = product.name + " - Chi tiết sản phẩm";
+            document.getElementById("product-breadcrumb").textContent = product.name;
+            document.getElementById("product-name").textContent = product.name;
+            document.getElementById("product-id").textContent = product.id.toUpperCase();
+            document.getElementById("product-image").src = product.img;
+            document.getElementById("product-image").alt = product.name;
+            document.getElementById("product-price").textContent = formatPrice(product.price);
+            document.getElementById("product-description").textContent = product.description;
+            document.getElementById("product-brand").textContent = "Thương hiệu: " + product.brand;
+            document.getElementById("product-unit").textContent = "Đơn vị tính: " + product.unit;
+            document.getElementById("product-origin").textContent = "Xuất xứ: " + product.origin;
+
+            const oldPriceEl = document.getElementById("product-old-price");
+            const saleBadgeEl = document.getElementById("product-sale-badge");
+            if (product.oldPrice > 0 && product.sale > 0) {
+                oldPriceEl.textContent = formatPrice(product.oldPrice);
+                saleBadgeEl.textContent = "-" + product.sale + "%";
+            } else {
+                oldPriceEl.textContent = "";
+                saleBadgeEl.textContent = "";
+            }
+        }
+
+        function addToCart(product, qty) {
+            const cart = getCart();
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    img: product.img,
+                    qty: qty
+                });
+            }
+            saveCart(cart);
+            updateBadge();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const productId = getProductIdFromUrl();
+            const product = products[productId] || products.sp001;
+            let qty = 1;
+
+            renderProduct(product);
+            updateBadge();
+
+            const qtyInput = document.getElementById("qty-input");
+            const msg = document.getElementById("add-cart-message");
+
+            document.getElementById("btn-qty-plus").addEventListener("click", function () {
+                qty += 1;
+                qtyInput.value = qty;
+            });
+
+            document.getElementById("btn-qty-minus").addEventListener("click", function () {
+                if (qty > 1) qty -= 1;
+                qtyInput.value = qty;
+            });
+
+            document.getElementById("btn-add-cart").addEventListener("click", function () {
+                addToCart(product, qty);
+                msg.textContent = "Đã thêm " + qty + " sản phẩm vào giỏ hàng";
+                setTimeout(function () {
+                    msg.textContent = "";
+                }, 1500);
+            });
+        });
+    </script>
 </body>
 </html>

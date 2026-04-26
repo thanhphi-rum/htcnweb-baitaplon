@@ -12,7 +12,7 @@
     <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
                 <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -602,6 +602,29 @@
                     self.classList.replace('btn-secondary', 'btn-success');
                 }, 1200);
             });
+        });
+
+        // Điều hướng sang trang chi tiết khi bấm tên/ảnh sản phẩm
+        document.querySelectorAll('#product-list .card').forEach(function(card) {
+            const addBtn = card.querySelector('.btn-add-cart');
+            if (!addBtn) return;
+            const productId = addBtn.dataset.id;
+            const image = card.querySelector('img');
+            const title = card.querySelector('h6');
+
+            function goToDetail() {
+                window.location.href = 'detail.html?id=' + productId;
+            }
+
+            if (image) {
+                image.style.cursor = 'pointer';
+                image.addEventListener('click', goToDetail);
+            }
+            if (title) {
+                title.style.cursor = 'pointer';
+                title.classList.add('text-success');
+                title.addEventListener('click', goToDetail);
+            }
         });
 
         // Cập nhật badge khi tải trang
