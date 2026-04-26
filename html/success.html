@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Đặt hàng thành công</title>
-
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
 </head>
 
@@ -52,92 +50,158 @@
     </header>
 
 
-<div class="container my-5">
-    <div class="card shadow-lg p-5 text-center">
+    <div class="container my-5">
+        <div class="card shadow-lg p-5 text-center">
 
-        <h2 class="text-success mb-3">
-            <i class="bi bi-check-circle-fill"></i>
-            Đặt hàng thành công!
-        </h2>
+            <h2 class="text-success mb-3">
+                Đặt hàng thành công!
+            </h2>
 
-        <p class="mb-4">Cảm ơn bạn đã tin tưởng và mua hàng tại Rau Sạch.</p>
+            <p class="mb-4">Cảm ơn bạn đã tin tưởng và mua hàng tại Rau Sạch.</p>
 
-        <div id="orderInfo" class="text-start mt-4"></div>
+            <div id="orderInfo" class="text-start mt-4"></div>
 
-        <a href="homepage.html" class="btn btn-success mt-4">
-            Quay về trang chủ
-        </a>
+            <a href="homepage.html" class="btn btn-success mt-4">
+                Quay về trang chủ
+            </a>
 
+        </div>
     </div>
-</div>
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-5">
+            <div class="container-fluid bg-success">
+                <div class="row align-items-start px-5 pb-3">
+                    <div class="col-md-3 mt-4 text-white">
+                        <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
+                        <ul class="ps-4">
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="news.html">Giới thiệu</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mt-4 text-white">
+                        <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
+                        <ul class="ps-4">
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="text-decoration-none text-white" href="#">Chính sách cộng tác viên</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mt-4 text-white">
+                        <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
+                        <p>
+                            <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                                12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
+                        </p>
+                        <p>
+                            <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                                0123 456 789
+                        </p>
+                        <p>
+                            <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                                support@rauxanh.com
+                        </p>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <h5 class="text-uppercase fw-bold text-white mb-3">Địa chỉ</h5>
+                        <div>
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
+                                width="100%" 
+                                height="150" 
+                                style="border:0;"
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </footer>
+
+    <script>
 
 
-<footer class="bg-success text-white text-center py-3">
-    © 2026 Rau Sạch
-</footer>
+    let order = JSON.parse(localStorage.getItem("order"));
+    let container = document.querySelector(".card");
 
-<script>
+    if(order){
+        let productList = "";
+        order.cart.forEach(item => {
+            productList += `
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>${item.name} (x${item.quantity})</span>
+                    <span>${(item.price * item.quantity).toLocaleString()}đ</span>
+                </li>
+            `;
+        });
 
+        container.innerHTML = `
+            <h2 class="text-success mb-3">
+                <i class="bi bi-check-circle-fill"></i>
+                Đặt hàng thành công!
+            </h2>
 
-let order = JSON.parse(localStorage.getItem("order"));
-let container = document.querySelector(".card");
+            <p class="mb-4">Cảm ơn bạn đã tin tưởng và mua hàng tại Rau Sạch.</p>
 
-if(order){
-    let productList = "";
-    order.cart.forEach(item => {
-        productList += `
-            <li class="list-group-item d-flex justify-content-between">
-                <span>${item.name} (x${item.quantity})</span>
-                <span>${(item.price * item.quantity).toLocaleString()}đ</span>
-            </li>
+            <p><strong>Mã đơn:</strong> ${order.id}</p>
+            <p><strong>Khách hàng:</strong> ${order.customer.name}</p>
+            <p><strong>Phương thức thanh toán:</strong> ${order.payment}</p>
+
+            <ul class="list-group mb-3">
+                ${productList}
+            </ul>
+
+            <h5 class="text-danger">
+                Tổng tiền: ${order.total.toLocaleString()}đ
+            </h5>
+
+            <a href="homepage.html" class="btn btn-success mt-3">
+                Quay về trang chủ
+            </a>
         `;
-    });
 
-    container.innerHTML = `
-        <h2 class="text-success mb-3">
-            <i class="bi bi-check-circle-fill"></i>
-            Đặt hàng thành công!
-        </h2>
+        //xóa order laoij trừ F5 lại web
+        localStorage.removeItem("order");
 
-        <p class="mb-4">Cảm ơn bạn đã tin tưởng và mua hàng tại Rau Sạch.</p>
+    }else{
 
-        <p><strong>Mã đơn:</strong> ${order.id}</p>
-        <p><strong>Khách hàng:</strong> ${order.customer.name}</p>
-        <p><strong>Phương thức thanh toán:</strong> ${order.payment}</p>
+        //không có đơn -> không được 
+        container.innerHTML = `
+            <h2 class="text-danger mb-3">
+                <i class="bi bi-x-circle-fill"></i>
+                Không có đơn hàng!
+            </h2>
 
-        <ul class="list-group mb-3">
-            ${productList}
-        </ul>
+            <p>Bạn không có đơn hàng hợp lệ để thanh toán.</p>
 
-        <h5 class="text-danger">
-            Tổng tiền: ${order.total.toLocaleString()}đ
-        </h5>
+            <a href="homepage.html" class="btn btn-secondary mt-3">
+                Quay về trang chủ
+            </a>
+        `;
 
-        <a href="homepage.html" class="btn btn-success mt-3">
-            Quay về trang chủ
-        </a>
-    `;
-
-    //xóa order laoij trừ F5 lại web
-    localStorage.removeItem("order");
-
-}else{
-
-    //không có đơn -> không được 
-    container.innerHTML = `
-        <h2 class="text-danger mb-3">
-            <i class="bi bi-x-circle-fill"></i>
-            Không có đơn hàng!
-        </h2>
-
-        <p>Bạn không có đơn hàng hợp lệ để thanh toán.</p>
-
-        <a href="homepage.html" class="btn btn-secondary mt-3">
-            Quay về trang chủ
-        </a>
-    `;
-
-}
-</script>
+    }
+    </script>
 </body>
 </html>

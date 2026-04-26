@@ -54,22 +54,25 @@
             <div class="col-lg-7">
                 <div class="card shadow-sm p-4">
                     <h4 class="mb-4">Thông tin giao hàng</h4>
-                    <form action="success.html">
+                    <form id="payment-form">
                         <div class="mb-3">
                             <label class="form-label">Họ và tên</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" id="txtten" class="form-control" required placeholder="Nguyen Van A" onblur="checkHT()">
+                            <span id="Error_1"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Số điện thoại</label>
-                            <input type="tel" class="form-control" required>
+                            <input type="tel" id="txtSDT" class="form-control" required onblur="checkSDT()">
+                            <span id="Error_2"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Địa chỉ</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" id="txtDC" class="form-control" required placeholder="12 Nguyen Van Bao, Go Vap, TP.HCM" onblur="checkDC()">
+                            <span id="Error_3"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Ghi chú</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea id="txtGH" class="form-control" rows="3"></textarea>
                         </div>
                     <h5 class="mt-4 mb-3">Phương thức thanh toán</h5>
                     <div class="payment-method">
@@ -94,23 +97,18 @@
             <div class="col-lg-5">
                 <div class="card shadow-sm p-4">
                     <h4 class="mb-4">Đơn hàng của bạn</h4>
-                    <div class="d-flex justify-content-between">
-                        <span>Rau muống x1</span>
-                        <span>15.000đ</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Cà rốt x1</span>
-                        <span>18.000đ</span>
-                    </div>
+                    <!-- Danh sách sản phẩm (render bằng JS) -->
+                    <div id="order-items"></div>
                     <hr>
                     <div class="d-flex justify-content-between fw-bold">
                         <span>Tổng cộng</span>
-                        <span class="text-success">33.000đ</span>
+                        <span class="text-success" id="order-total">0đ</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- Footer -->
     <footer class="mt-5 pt-5">
             <div class="container-fluid bg-success">
@@ -180,7 +178,166 @@
                     </div>
                 </div>
             </div>
-            
     </footer>
+    
+    <script>
+        function checkHT() {
+            var regex = /^[A-Z]{1}[a-z]*(\s[A-Z]{1}[a-z]*)*$/;
+            var hoTen = document.getElementById("txtten").value;
+            var errorElement = document.getElementById("Error_1");
+
+            if(regex.test(hoTen)) {
+                errorElement.innerHTML = "Họ và tên hợp lệ";
+                errorElement.style.color = "green";
+                return true;
+            } else {
+                errorElement.innerHTML = "Vui lòng nhập đúng họ tên";
+                errorElement.style.color = "red";
+                return false;
+            }
+        }
+        function checkSDT() {
+            var regex = /^(03|05|07|08|09)\d{8}$/;
+            var sdt = document.getElementById("txtSDT").value;
+            var errorElement = document.getElementById("Error_2");
+
+            if(regex.test(sdt)) {
+                errorElement.innerHTML = "Số điện thoại hợp lệ";
+                errorElement.style.color = "green";
+                return true;
+            } else {
+                errorElement.innerHTML = "Vui lòng nhập đúng số điện thoại";
+                errorElement.style.color = "red";
+                return false;
+            }
+        }
+        function checkDC() {
+            var regex = /^[A-Za-z0-9,.\ \s]+$/;
+            var dc = document.getElementById("txtDC").value;
+            var errorElement = document.getElementById("Error_3");
+
+            if(regex.test(dc)) {
+                errorElement.innerHTML = "Địa chỉ hợp lệ";
+                errorElement.style.color = "green";
+                return true;
+            } else {
+                errorElement.innerHTML = "Vui lòng nhập đúng địa chỉ";
+                errorElement.style.color = "red";
+                return false;
+            }
+        }
+        // ===== Lấy giỏ hàng từ localStorage =====
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        // ===== Định dạng tiền VNĐ =====
+        function formatPrice(price) {
+            return price.toLocaleString('vi-VN') + 'đ';
+        }
+
+        // ===== Cập nhật badge giỏ hàng trên navbar =====
+        function updateBadge() {
+            const cart = getCart();
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = totalQty;
+        }
+
+        // ===== Render danh sách sản phẩm trong "Đơn hàng của bạn" =====
+        function renderOrderSummary() {
+            const cart = getCart();
+            const container = document.getElementById('order-items');
+            const totalEl   = document.getElementById('order-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-muted text-center">Giỏ hàng đang trống.</p>';
+                totalEl.textContent = '0đ';
+                return;
+            }
+
+            let total = 0;
+            let html  = '';
+
+            cart.forEach(function(item) {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                html += `
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>${item.name} x${item.qty}</span>
+                        <span>${formatPrice(subtotal)}</span>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            totalEl.textContent = formatPrice(total);
+        }
+
+        // ===== Tạo mã đơn hàng ngẫu nhiên =====
+        function generateOrderId() {
+            return 'DH' + Date.now().toString().slice(-6);
+        }
+
+        // ===== Xử lý submit form thanh toán =====
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const cart = getCart();
+            if (cart.length === 0) {
+                alert('Giỏ hàng đang trống, không thể đặt hàng!');
+                return;
+            }
+
+            // Chạy validation — nếu có lỗi thì dừng lại
+            const validHT  = checkHT();
+            const validSDT = checkSDT();
+            const validDC  = checkDC();
+            if (!validHT || !validSDT || !validDC) return;
+
+            const name    = document.getElementById('txtten').value.trim();
+            const phone   = document.getElementById('txtSDT').value.trim();
+            const address = document.getElementById('txtDC').value.trim();
+            const note    = document.getElementById('txtGH').value.trim();
+            const payment = document.querySelector('input[name="payment"]:checked');
+
+            if (!payment) {
+                alert('Vui lòng chọn phương thức thanh toán!');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+            // Lưu đơn hàng vào localStorage (để success.html đọc)
+            const order = {
+                id: generateOrderId(),
+                customer: {
+                    name:    name,
+                    phone:   phone,
+                    address: address,
+                    note:    note
+                },
+                payment: payment.value,
+                cart: cart.map(item => ({
+                    name:     item.name,
+                    price:    item.price,
+                    quantity: item.qty
+                })),
+                total: total
+            };
+
+            localStorage.setItem('order', JSON.stringify(order));
+
+            // Xóa giỏ hàng sau khi đặt hàng
+            localStorage.removeItem('cart');
+
+            // Chuyển đến trang thành công
+            window.location.href = 'success.html';
+        });
+
+        // ===== Khởi chạy =====
+        renderOrderSummary();
+        updateBadge();
+    </script>
 </body>
 </html>
