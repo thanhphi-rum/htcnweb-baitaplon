@@ -6,49 +6,185 @@
     <title>Giỏ hàng</title>
     <link rel="stylesheet" href="../css/mainstyle.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-icons.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        // Lấy giỏ hàng từ LocalStorage
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        // Lưu giỏ hàng vào LocalStorage
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Định dạng tiền VNĐ
+        function formatPrice(price) {
+            return price.toLocaleString('vi-VN') + 'đ';
+        }
+
+        // Cập nhật số lượng giỏ hàng từ LocalStorage
+        function updateBadge() {
+            const cart = getCart();
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = totalQty;
+        }
+
+        // Render giỏ hàng
+        function renderCart() {
+            const cart = getCart();
+            const container = document.getElementById('cart-items');
+            const emptyMsg  = document.getElementById('cart-empty');
+            const summary   = document.getElementById('cart-summary');
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyMsg.style.display  = 'block';
+                summary.style.display   = 'none';
+                document.getElementById('cart-total').textContent = '0đ';
+                updateBadge();
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+            summary.style.display  = '';
+
+            let total = 0;
+
+            cart.forEach(function(item) {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+
+                const row = document.createElement('div');
+                row.className = 'row align-items-center border rounded mt-3 mb-2 py-3 shadow-sm bg-white';
+                row.innerHTML = `
+                    <div class="col-md-2 text-center">
+                        <img src="${item.img}" class="img-fluid" style="max-width:100px;" alt="${item.name}">
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h6 class="mb-0">${item.name}</h6>
+                    </div>
+                    <div class="col-md-2 text-center text-primary fw-bold">
+                        <span>${formatPrice(item.price)}</span>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group input-group-sm w-75 mx-auto">
+                            <button class="btn btn-outline-secondary btn-decrease" data-id="${item.id}">-</button>
+                            <input type="text" class="form-control text-center qty-input" value="${item.qty}" data-id="${item.id}" readonly>
+                            <button class="btn btn-outline-secondary btn-increase" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center fw-bold text-danger">
+                        <span>${formatPrice(subtotal)}</span>
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <button class="btn btn-link text-danger p-0 btn-remove" data-id="${item.id}" title="Xóa">
+                            <img class="w-50" src="../icon/icons8-trash-48.png" alt="Xóa">
+                        </button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+
+            document.getElementById('cart-total').textContent = formatPrice(total);
+            updateBadge();
+
+            // Gắn sự kiện sau khi render
+            document.querySelectorAll('.btn-increase').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    changeQty(this.dataset.id, 1);
+                });
+            });
+            document.querySelectorAll('.btn-decrease').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    changeQty(this.dataset.id, -1);
+                });
+            });
+            document.querySelectorAll('.btn-remove').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    removeItem(this.dataset.id);
+                });
+            });
+        }
+
+        // Thay đổi số lượng sản phẩm
+        function changeQty(id, delta) {
+            let cart = getCart();
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            saveCart(cart);
+            renderCart();
+        }
+
+        // Xóa sản phẩm khỏi giỏ hàng
+        function removeItem(id) {
+            let cart = getCart().filter(i => i.id !== id);
+            saveCart(cart);
+            renderCart();
+        }
+
+        // Khởi tạo sau khi DOM sẵn sàng
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderBtn = document.getElementById('btn-order');
+            if (orderBtn) {
+                orderBtn.addEventListener('click', function() {
+                    const cart = getCart();
+                    if (cart.length === 0) {
+                        alert('Giỏ hàng đang trống!');
+                        return;
+                    }
+                    window.location.href = 'payment.html';
+                });
+            }
+
+            renderCart();
+        });
+    </script>
 </head>
 <body>
     <div class="container-fluid p-0">
         <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sản phẩm</a>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="#">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="#">Rau lá</a></li>
-             
-                            <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
-                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
-                        </a>
-                    </li>
-                </ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="#">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="#">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
+                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                                <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
         <!-- Section -->
         <section class="mt-5">
@@ -162,134 +298,5 @@
         </footer>
     </div>
 
-    <script>
-        // ===== GIỎ HÀNG - localStorage =====
-
-        function getCart() {
-            return JSON.parse(localStorage.getItem('cart')) || [];
-        }
-
-        function saveCart(cart) {
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-
-        function formatPrice(price) {
-            return price.toLocaleString('vi-VN') + 'đ';
-        }
-
-        function updateBadge() {
-            const cart = getCart();
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = totalQty;
-        }
-
-        function renderCart() {
-            const cart = getCart();
-            const container = document.getElementById('cart-items');
-            const emptyMsg  = document.getElementById('cart-empty');
-            const summary   = document.getElementById('cart-summary');
-            container.innerHTML = '';
-
-            if (cart.length === 0) {
-                emptyMsg.style.display  = 'block';
-                summary.style.display   = 'none';
-                document.getElementById('cart-total').textContent = '0đ';
-                updateBadge();
-                return;
-            }
-
-            emptyMsg.style.display = 'none';
-            summary.style.display  = '';
-
-            let total = 0;
-
-            cart.forEach(function(item) {
-                const subtotal = item.price * item.qty;
-                total += subtotal;
-
-                const row = document.createElement('div');
-                row.className = 'row align-items-center border rounded mt-3 mb-2 py-3 shadow-sm bg-white';
-                row.innerHTML = `
-                    <div class="col-md-2 text-center">
-                        <img src="${item.img}" class="img-fluid" style="max-width:100px;" alt="${item.name}">
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <h6 class="mb-0">${item.name}</h6>
-                    </div>
-                    <div class="col-md-2 text-center text-primary fw-bold">
-                        <span>${formatPrice(item.price)}</span>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="input-group input-group-sm w-75 mx-auto">
-                            <button class="btn btn-outline-secondary btn-decrease" data-id="${item.id}">-</button>
-                            <input type="text" class="form-control text-center qty-input" value="${item.qty}" data-id="${item.id}" readonly>
-                            <button class="btn btn-outline-secondary btn-increase" data-id="${item.id}">+</button>
-                        </div>
-                    </div>
-                    <div class="col-md-2 text-center fw-bold text-danger">
-                        <span>${formatPrice(subtotal)}</span>
-                    </div>
-                    <div class="col-md-1 text-center">
-                        <button class="btn btn-link text-danger p-0 btn-remove" data-id="${item.id}" title="Xóa">
-                            <img class="w-50" src="../icon/icons8-trash-48.png" alt="Xóa">
-                        </button>
-                    </div>
-                `;
-                container.appendChild(row);
-            });
-
-            document.getElementById('cart-total').textContent = formatPrice(total);
-            updateBadge();
-
-            // Gắn sự kiện sau khi render
-            document.querySelectorAll('.btn-increase').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    changeQty(this.dataset.id, 1);
-                });
-            });
-            document.querySelectorAll('.btn-decrease').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    changeQty(this.dataset.id, -1);
-                });
-            });
-            document.querySelectorAll('.btn-remove').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    removeItem(this.dataset.id);
-                });
-            });
-        }
-
-        function changeQty(id, delta) {
-            let cart = getCart();
-            const item = cart.find(i => i.id === id);
-            if (!item) return;
-            item.qty += delta;
-            if (item.qty <= 0) {
-                cart = cart.filter(i => i.id !== id);
-            }
-            saveCart(cart);
-            renderCart();
-        }
-
-        function removeItem(id) {
-            let cart = getCart().filter(i => i.id !== id);
-            saveCart(cart);
-            renderCart();
-        }
-
-        // Nút đặt hàng
-        document.getElementById('btn-order').addEventListener('click', function() {
-            const cart = getCart();
-            if (cart.length === 0) {
-                alert('Giỏ hàng đang trống!');
-                return;
-            }
-            window.location.href = 'payment.html';
-        });
-
-        // Khởi tạo
-        renderCart();
-    </script>
 </body>
 </html>
