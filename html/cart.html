@@ -6,49 +6,47 @@
     <title>Giỏ hàng</title>
     <link rel="stylesheet" href="../css/mainstyle.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-icons.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
     <div class="container-fluid p-0">
         <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                    <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sản phẩm</a>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="#">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="#">Rau lá</a></li>
-             
-                            <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
-                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
-                        </a>
-                    </li>
-                </ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="#">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="#">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html" style="position:relative;">
+                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                                <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
         <!-- Section -->
         <section class="mt-5">
@@ -163,20 +161,23 @@
     </div>
 
     <script>
-        // ===== GIỎ HÀNG - localStorage =====
 
+        // Lấy giỏ hàng từ LocalStorage
         function getCart() {
             return JSON.parse(localStorage.getItem('cart')) || [];
         }
 
+        // Lưu giỏ hàng vào LocalStorage
         function saveCart(cart) {
             localStorage.setItem('cart', JSON.stringify(cart));
         }
 
+        // Định dạng tiền VNĐ
         function formatPrice(price) {
             return price.toLocaleString('vi-VN') + 'đ';
         }
 
+        // Cập nhật số lượng giỏ hàng từ LocalStorage
         function updateBadge() {
             const cart = getCart();
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -184,6 +185,7 @@
             if (badge) badge.textContent = totalQty;
         }
 
+        // Render giỏ hàng
         function renderCart() {
             const cart = getCart();
             const container = document.getElementById('cart-items');
@@ -223,7 +225,7 @@
                     <div class="col-md-2">
                         <div class="input-group input-group-sm w-75 mx-auto">
                             <button class="btn btn-outline-secondary btn-decrease" data-id="${item.id}">-</button>
-                            <input type="text" class="form-control text-center qty-input" value="${item.qty}" data-id="${item.id}" readonly>
+                            <input type="text" class="form-control text-center" value="${item.qty}" readonly>
                             <button class="btn btn-outline-secondary btn-increase" data-id="${item.id}">+</button>
                         </div>
                     </div>
@@ -260,6 +262,7 @@
             });
         }
 
+        // Thay đổi số lượng sản phẩm
         function changeQty(id, delta) {
             let cart = getCart();
             const item = cart.find(i => i.id === id);
@@ -272,24 +275,27 @@
             renderCart();
         }
 
+        // Xóa sản phẩm khỏi giỏ hàng
         function removeItem(id) {
             let cart = getCart().filter(i => i.id !== id);
             saveCart(cart);
             renderCart();
         }
 
-        // Nút đặt hàng
-        document.getElementById('btn-order').addEventListener('click', function() {
-            const cart = getCart();
-            if (cart.length === 0) {
-                alert('Giỏ hàng đang trống!');
-                return;
-            }
-            window.location.href = 'payment.html';
-        });
+        const orderBtn = document.getElementById('btn-order');
+        if (orderBtn) {
+            orderBtn.addEventListener('click', function() {
+                const cart = getCart();
+                if (cart.length === 0) {
+                    alert('Giỏ hàng đang trống!');
+                    return;
+                }
+                window.location.href = 'payment.html';
+            });
+        }
 
-        // Khởi tạo
         renderCart();
     </script>
+    
 </body>
 </html>

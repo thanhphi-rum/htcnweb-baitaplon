@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Giới Thiệu</title>
-    <meta name="description"
-        content="Tìm hiểu về Rau Sạch Xanh - cam kết mang đến rau củ sạch, tươi ngon mỗi ngày. Gặp gỡ đội ngũ thành viên tâm huyết của chúng tôi.">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <style>
-        /* ===== Hero Section ===== */
+        /* Tổng quan */
         .hero-about {
             background: linear-gradient(135deg, #1a6632 0%, #28a745 60%, #52c97c 100%);
             padding: 80px 0 60px;
@@ -29,7 +28,7 @@
             max-width: 600px;
         }
 
-        /* ===== Stats ===== */
+        /* Mục tiêu */
         .stat-card {
             background: white;
             border-radius: 16px;
@@ -56,7 +55,7 @@
             margin-top: 4px;
         }
 
-        /* ===== Story Section ===== */
+        /* Câu chuyện */
         .section-title {
             font-size: 30px;
             font-weight: 700;
@@ -85,7 +84,7 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
-        /* ===== Values ===== */
+        /* Giá trị */
         .value-icon {
             width: 60px;
             height: 60px;
@@ -110,7 +109,7 @@
             transform: translateY(-5px);
         }
 
-        /* ===== Team Section ===== */
+        /* Thành viên */
         .team-section {
             background-color: #f8fdf9;
         }
@@ -137,20 +136,6 @@
             display: block;
         }
 
-        .member-avatar-placeholder {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 4px solid #28a745;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            font-weight: 700;
-            color: white;
-            margin: 0 auto;
-        }
-
         .member-role {
             font-size: 13px;
             font-weight: 600;
@@ -161,46 +146,28 @@
             display: inline-block;
         }
 
-        .badge-green {
-            background-color: #d4edda;
-            color: #155724;
-        }
-
-        .badge-blue {
-            background-color: #d1ecf1;
-            color: #0c5460;
-        }
-
-        .badge-purple {
-            background-color: #e8d5f5;
-            color: #6f42c1;
-        }
-
-        .badge-orange {
-            background-color: #fde8d0;
-            color: #c45e0a;
-        }
-
-        /* ===== Footer ===== */
+        /* Footer */
         footer a:hover {
             color: #d4edda !important;
         }
-
-        .skill-badge {
-            color: #fff;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 6px 10px;
-        }
     </style>
+    <script>
+        // Cập nhật số lượng giỏ hàng từ localStorage
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = totalQty;
+        }
+    </script>
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
                 <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -226,7 +193,7 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
+                        <a class="nav-link" href="cart.html" style="position:relative;">
                             <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
                             <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
                         </a>
@@ -236,7 +203,7 @@
         </div>
     </header>
 
-    <!-- ===== TỔNG QUAN ===== -->
+    <!-- Tổng quan -->
     <section class="hero-about">
         <div class="container">
             <div class="row align-items-center">
@@ -259,7 +226,7 @@
         </div>
     </section>
 
-    <!-- ===== MỤC TIÊU ===== -->
+    <!-- Mục tiêu -->
     <section class="py-5 bg-white">
         <div class="container">
             <div class="row g-4 justify-content-center">
@@ -291,7 +258,7 @@
         </div>
     </section>
 
-    <!-- ===== CÂU CHUYỆN ===== -->
+    <!-- Câu chuyện -->
     <section id="our-story" class="py-5">
         <div class="container">
             <div class="row align-items-center g-5">
@@ -321,7 +288,7 @@
         </div>
     </section>
 
-    <!-- ===== GIÁ TRỊ ===== -->
+    <!-- Giá trị -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
@@ -373,12 +340,12 @@
         </div>
     </section>
 
-    <!-- GIỚI THIỆU THÀNH VIÊN -->
+    <!-- Giới thiệu thành viên -->
     <section class="py-5 team-section">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title d-block mx-auto">Thành viên nhóm</h2>
-                <p class="text-secondary mt-3">Những người đã xây dựng nên website Rau Sạch 🌿</p>
+                <p class="text-secondary mt-3">Những người đã xây dựng nên website Rau Xanh 🌿</p>
             </div>
             <div class="row g-4 justify-content-center">
 
@@ -388,14 +355,14 @@
                         <img src="../img/menber1.png" alt="Bùi Nguyễn Thanh Phi" class="member-img">
                         <div class="p-4">
                             <h6 class="fw-bold mb-1">Bùi Nguyễn Thanh Phi</h6>
-                            <span class="member-role badge-green">Nhóm trưởng</span>
+                            <span class="member-role bg-success-subtle text-success-emphasis">Nhóm trưởng</span>
                             <p class="text-secondary small mt-3 mb-2">
                                 Phụ trách thiết kế & lập trình trang Giỏ hàng, Giới thiệu & Testing
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
-                                <span class="badge bg-success skill-badge">Cart</span>
-                                <span class="badge bg-success skill-badge">About</span>
-                                <span class="badge bg-success skill-badge">Testing</span>
+                                <span class="badge bg-success small fw-semibold px-2 py-1">Cart</span>
+                                <span class="badge bg-success small fw-semibold px-2 py-1">About</span>
+                                <span class="badge bg-success small fw-semibold px-2 py-1">Testing</span>
                             </div>
                         </div>
                     </div>
@@ -407,14 +374,14 @@
                         <img src="../img/menber2.jpg" alt="Nguyễn Phước Tân" class="member-img">
                         <div class="p-4">
                             <h6 class="fw-bold mb-1">Nguyễn Phước Tân</h6>
-                            <span class="member-role badge-blue">Nhóm phó</span>
+                            <span class="member-role bg-info-subtle text-info-emphasis">Nhóm phó</span>
                             <p class="text-secondary small mt-3 mb-2">
                                 Phụ trách thiết kế & lập trình trang Đăng nhập, Đăng ký
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
-                                <span class="badge bg-primary skill-badge">Login</span>
-                                <span class="badge bg-primary skill-badge">Register</span>
-                                <span class="badge bg-primary skill-badge">MenberRegister</span>
+                                <span class="badge bg-primary small fw-semibold px-2 py-1">Login</span>
+                                <span class="badge bg-primary small fw-semibold px-2 py-1">Register</span>
+                                <span class="badge bg-primary small fw-semibold px-2 py-1">MenberRegister</span>
                             </div>
                         </div>
                     </div>
@@ -426,13 +393,13 @@
                         <img src="../img/menber3.jpg" alt="Nguyễn Đăng Khánh" class="member-img">
                         <div class="p-4">
                             <h6 class="fw-bold mb-1">Nguyễn Đăng Khánh</h6>
-                            <span class="member-role badge-orange">Thành viên</span>
+                            <span class="member-role bg-warning-subtle text-warning-emphasis">Thành viên</span>
                             <p class="text-secondary small mt-3 mb-2">
                                 hụ trách thiết kế & lập trình trang Thanh toán, Thanh toán thành công
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
-                                <span class="badge bg-warning text-dark skill-badge">Payment</span>
-                                <span class="badge bg-warning text-dark skill-badge">Success</span>
+                                <span class="badge bg-warning text-dark small fw-semibold px-2 py-1">Payment</span>
+                                <span class="badge bg-warning text-dark small fw-semibold px-2 py-1">Success</span>
                             </div>
                         </div>
                     </div>
@@ -444,13 +411,13 @@
                         <img src="../img/menber4.png" alt="Hồ Nhật Ninh" class="member-img">
                         <div class="p-4">
                             <h6 class="fw-bold mb-1">Hồ Nhật Ninh</h6>
-                            <span class="member-role badge-purple">Thành viên</span>
+                            <span class="member-role bg-secondary-subtle text-secondary-emphasis">Thành viên</span>
                             <p class="text-secondary small mt-3 mb-2">
                                 Phụ trách thiết kế & lập trình trang Trang chủ, Tin tức
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
-                                <span class="badge bg-secondary skill-badge">HomePage</span>
-                                <span class="badge bg-secondary skill-badge">New</span>
+                                <span class="badge bg-secondary small fw-semibold px-2 py-1">HomePage</span>
+                                <span class="badge bg-secondary small fw-semibold px-2 py-1">New</span>
                             </div>
                         </div>
                     </div>
@@ -460,7 +427,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- Footer -->
     <footer class="mt-5 pt-4">
         <div class="container-fluid bg-success">
             <div class="row align-items-start px-5 pb-3">
@@ -507,19 +474,8 @@
         </div>
     </footer>
 
-    <!-- ===== SCRIPT ===== -->
-    <script src="../js/bootstrap.bundle.min.js"></script>
     <script>
-        // Cập nhật số lượng giỏ hàng từ localStorage
-        function updateBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = totalQty;
-        }
         updateBadge();
     </script>
-
 </body>
-
 </html>
