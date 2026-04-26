@@ -224,7 +224,7 @@
                                 <div class="card text-center h-100">
                                     <img src="../img/rauden.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
                                     <div class="card-body">
-                                        <h6>Rau đền 300gr</h6>
+                                        <h6>Rau dền 300gr</h6>
                                         
                                         <h6 class="text-decoration-line-through text-muted">16.000đ</h6>
                                         <span class="text-success">8.000đ</span>
@@ -232,7 +232,7 @@
 
                                         <button class="btn btn-success btn-sm btn-add-cart"
                                             data-id="sp008"
-                                            data-name="Rau đền 300gr"
+                                            data-name="Rau dền 300gr"
                                             data-price="8000"
                                             data-brand="organic"
                                             data-sale=0
@@ -570,6 +570,29 @@
                 }, 1200);
             });
         });
+
+         document.querySelectorAll('#product-list .card').forEach(function(card) {
+            const addBtn = card.querySelector('.btn-add-cart');
+            if (!addBtn) return;
+            const productId = addBtn.dataset.id;
+            const image = card.querySelector('img');
+            const title = card.querySelector('h6');
+
+            function goToDetail() {
+                window.location.href = 'detail.html?id=' + productId;
+            }
+
+            if (image) {
+                image.style.cursor = 'pointer';
+                image.addEventListener('click', goToDetail);
+            }
+            if (title) {
+                title.style.cursor = 'pointer';
+                title.classList.add('text-success');
+                title.addEventListener('click', goToDetail);
+            }
+        });
+
 
         // Cập nhật badge khi tải trang
         updateBadge();
