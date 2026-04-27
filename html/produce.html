@@ -28,9 +28,9 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="#">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="#">Rau lá</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
              
                             <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
                         </ul>
@@ -81,7 +81,17 @@
                                 <option value="yes">Có</option>
                                 <option value="no">Không</option>
             
-                            </select><br>   
+                            </select><br>
+                            <p>Loại</p>
+
+                            <select class="form-select" id="filter-type" aria-label="Default select example">
+                                <option value="0" selected>Không ràng buộc</option>
+                                <option value="raucu">Rau củ</option>
+                                <option value="traicay">Trái cây</option>
+                                <option value="raula">Rau lá</option>
+                            </select><br>
+            
+                            </select><br>  
                     </nav>
                 </aside>
                     <section class="col-lg-9">
@@ -111,6 +121,7 @@
                                             data-price="19000"
                                             data-brand="organic"
                                             data-sale=30
+                                            data-type="raula"
                                             data-img="../img/raumuong.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -122,12 +133,13 @@
                                     <div class="card-body">
                                         <h6>Bông cải</h6>
                                         <p class="text-success">25.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart" style="margin-top: 12px;"
                                             data-id="sp002"
                                             data-name="Bông cải"
                                             data-brand="organic"
                                             data-sale=0
                                             data-price="25000"
+                                            data-type="raula"
                                             data-img="../img/cai.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -139,12 +151,13 @@
                                     <div class="card-body">
                                         <h6>Cà rốt 300gr</h6>
                                         <p class="text-success">18.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 12px;"
                                             data-id="sp003"
                                             data-name="Cà rốt 300gr"
                                             data-price="18000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raucu"
                                             data-img="../img/carot.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -156,12 +169,13 @@
                                     <div class="card-body">
                                         <h6>Khổ qua 300gr</h6>
                                         <p class="text-success">30.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 12px;"
                                             data-id="sp004"
                                             data-name="Khổ qua 300gr"
                                             data-price="30000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/khoqua.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -181,6 +195,7 @@
                                             data-price="9500"
                                             data-brand="organic"
                                             data-sale=49
+                                            data-type="raula"
                                             data-img="../img/mongtoi.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -192,12 +207,13 @@
                                     <div class="card-body">
                                         <h6>Táo 1kg</h6>
                                         <p class="text-success">50.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"  style="margin-top: 12px;"
                                             data-id="sp006"
                                             data-name="Táo 1kg"
                                             data-price="50000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="traicay"
                                             data-img="../img/táo.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -209,12 +225,13 @@
                                     <div class="card-body">
                                         <h6>Bí đỏ 1kg</h6>
                                         <p class="text-success">40.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 12px;"
                                             data-id="sp007"
                                             data-name="Bí đỏ 1kg"
                                             data-price="40000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="traicay"
                                             data-img="../img/bi-do.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -236,6 +253,7 @@
                                             data-price="8000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/rauden.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -247,12 +265,13 @@
                                     <div class="card-body">
                                         <h6>Rau tần 300gr</h6>
                                         <p class="text-success">17.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 12px;"
                                             data-id="sp009"
                                             data-name="Rau tần 300gr"
                                             data-price="17000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/rautan.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -273,6 +292,7 @@
                                             data-price="9500"
                                             data-brand="organic"
                                             data-sale=49
+                                            data-type="raula"
                                             data-img="../img/rau_lang.png">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -286,12 +306,13 @@
 
                                         <p class="text-success">29.000đ</p>
                                        
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 12px;"
                                             data-id="sp011"
                                             data-name="Cam 1kg"
                                             data-price="29000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="traicay"
                                             data-img="../img/cam.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -311,6 +332,7 @@
                                             data-price="69000"
                                             data-brand="organic"
                                             data-sale=42
+                                            data-type="traicay"
                                             data-img="../img/dua_luoi.png">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -322,12 +344,13 @@
                                     <div class="card-body">
                                         <h6>Rau ngót</h6>
                                         <p class="text-success">13.000đ</p>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 12px;"
                                             data-id="sp013"
                                             data-name="Rau ngót 300g"
                                             data-price="13000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/rau-ngot.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -348,6 +371,7 @@
                                             data-price="15000"
                                             data-brand="organic"
                                             data-sale=15
+                                            data-type="raucu"
                                             data-img="../img/khoai-tay.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -359,12 +383,13 @@
                                     <div class="card-body">
                                         <h6>Khoai lang 500g</h6>
                                         <h6 class="text-success">20.000đ</h6>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 25px;"
                                             data-id="sp015"
                                             data-name="Khoai lang 500g"
                                             data-price="20000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raucu"
                                             data-img="../img/khoai-lang.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -379,12 +404,13 @@
                                         <h6 class="text-decoration-line-through text-muted">5.000đ</h6>
                                         <span class="text-success">2.500đ</span>
                                         <span class="badge bg-danger d-inline-flex align-items-center justify-content-center px-2 py-1"style="border-radius:8px;">-50%</span>
-                                        <br><button class="btn btn-success btn-sm btn-add-cart"
+                                        <br><button class="btn btn-success btn-sm btn-add-cart" 
                                             data-id="sp016"
                                             data-name="Rau răm 50g"
                                             data-price="2500"
                                             data-brand="organic"
                                             data-sale=50
+                                            data-type="raula"
                                             data-img="../img/rau-ram.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -396,12 +422,13 @@
                                     <div class="card-body">
                                         <h6>Hành lá 300g</h6>
                                         <h6 class="text-success">18.000đ</h6>
-                                        <button class="btn btn-success btn-sm btn-add-cart"
+                                        <button class="btn btn-success btn-sm btn-add-cart"style="margin-top: 12px;"
                                             data-id="sp018"
                                             data-name="Hành lá 300g"
                                             data-price="18000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raucu"
                                             data-img="../img/hanh-la.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -494,6 +521,7 @@
             const brandValue = document.getElementById('filter-brand').value;
             const saleValue  = document.getElementById('filter-sale').value;
             const keyword = document.getElementById('search-input').value.toLowerCase();
+            const typeValue = document.getElementById('filter-type').value;
 
             const buttons = document.querySelectorAll('.btn-add-cart');
 
@@ -504,6 +532,7 @@
                 const brand = btn.dataset.brand;
                 const sale  = btn.dataset.sale;
                 const name  = btn.dataset.name.toLowerCase();
+                const type  = btn.dataset.type;
 
                 let show = true;
 
@@ -516,8 +545,12 @@
                 if (priceValue == "3" && !(price > 20000 && price <= 30000)) show = false;
                 if (priceValue == "4" && !(price > 30000 && price <= 50000)) show = false;
                 if (priceValue == "5" && !(price > 50000)) show = false;
+
                 if (saleValue === "yes" && sale == 0) show = false;
                 if (saleValue === "no" && sale > 0) show = false;
+
+                // LỌC THEO LOẠI
+                if (typeValue && typeValue !== "0" && type !== typeValue) show = false;
 
                 product.style.display = show ? "block" : "none";
             });
@@ -525,6 +558,7 @@
         document.getElementById('filter-price').addEventListener('change', filterProducts);
         document.getElementById('filter-brand').addEventListener('change', filterProducts);
         document.getElementById('filter-sale').addEventListener('change', filterProducts);
+        document.getElementById('filter-type').addEventListener('change', filterProducts);
         document.getElementById('search-btn').addEventListener('click', filterProducts);
        
         // ===== GIỎ HÀNG - localStorage =====
@@ -592,7 +626,14 @@
                 title.addEventListener('click', goToDetail);
             }
         });
+        
+        const params = new URLSearchParams(window.location.search);
+        const typeParam = params.get("type");
 
+        if (typeParam) {
+            document.getElementById('filter-type').value = typeParam;
+            filterProducts(); // gọi lọc luôn
+}
 
         // Cập nhật badge khi tải trang
         updateBadge();
