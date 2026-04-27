@@ -28,9 +28,9 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="#">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="#">Rau lá</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
              
                             <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
                         </ul>
@@ -81,7 +81,17 @@
                                 <option value="yes">Có</option>
                                 <option value="no">Không</option>
             
-                            </select><br>   
+                            </select><br>
+                            <p>Loại</p>
+
+                            <select class="form-select" id="filter-type" aria-label="Default select example">
+                                <option value="0" selected>Không ràng buộc</option>
+                                <option value="raucu">Rau củ</option>
+                                <option value="traicay">Trái cây</option>
+                                <option value="raula">Rau lá</option>
+                            </select><br>
+            
+                            </select><br>  
                     </nav>
                 </aside>
                     <section class="col-lg-9">
@@ -111,6 +121,7 @@
                                             data-price="19000"
                                             data-brand="organic"
                                             data-sale=30
+                                            data-type="raula"
                                             data-img="../img/raumuong.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -128,6 +139,7 @@
                                             data-brand="organic"
                                             data-sale=0
                                             data-price="25000"
+                                            data-type="raula"
                                             data-img="../img/cai.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -145,6 +157,7 @@
                                             data-price="18000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raucu"
                                             data-img="../img/carot.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -162,6 +175,7 @@
                                             data-price="30000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/khoqua.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -181,6 +195,7 @@
                                             data-price="9500"
                                             data-brand="organic"
                                             data-sale=49
+                                            data-type="raula"
                                             data-img="../img/mongtoi.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -198,6 +213,7 @@
                                             data-price="50000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="traicay"
                                             data-img="../img/táo.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -215,6 +231,7 @@
                                             data-price="40000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="traicay"
                                             data-img="../img/bi-do.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -236,6 +253,7 @@
                                             data-price="8000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/rauden.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -253,6 +271,7 @@
                                             data-price="17000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/rautan.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -273,6 +292,7 @@
                                             data-price="9500"
                                             data-brand="organic"
                                             data-sale=49
+                                            data-type="raula"
                                             data-img="../img/rau_lang.png">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -292,6 +312,7 @@
                                             data-price="29000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="traicay"
                                             data-img="../img/cam.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -311,6 +332,7 @@
                                             data-price="69000"
                                             data-brand="organic"
                                             data-sale=42
+                                            data-type="traicay"
                                             data-img="../img/dua_luoi.png">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -328,6 +350,7 @@
                                             data-price="13000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raula"
                                             data-img="../img/rau-ngot.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -348,6 +371,7 @@
                                             data-price="15000"
                                             data-brand="organic"
                                             data-sale=15
+                                            data-type="raucu"
                                             data-img="../img/khoai-tay.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -365,6 +389,7 @@
                                             data-price="20000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raucu"
                                             data-img="../img/khoai-lang.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -385,6 +410,7 @@
                                             data-price="2500"
                                             data-brand="organic"
                                             data-sale=50
+                                            data-type="raula"
                                             data-img="../img/rau-ram.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -402,6 +428,7 @@
                                             data-price="18000"
                                             data-brand="organic"
                                             data-sale=0
+                                            data-type="raucu"
                                             data-img="../img/hanh-la.jpg">Thêm vào giỏ</button>
                                     </div>
                                 </div>
@@ -494,6 +521,7 @@
             const brandValue = document.getElementById('filter-brand').value;
             const saleValue  = document.getElementById('filter-sale').value;
             const keyword = document.getElementById('search-input').value.toLowerCase();
+            const typeValue = document.getElementById('filter-type').value;
 
             const buttons = document.querySelectorAll('.btn-add-cart');
 
@@ -504,6 +532,7 @@
                 const brand = btn.dataset.brand;
                 const sale  = btn.dataset.sale;
                 const name  = btn.dataset.name.toLowerCase();
+                const type  = btn.dataset.type;
 
                 let show = true;
 
@@ -516,8 +545,12 @@
                 if (priceValue == "3" && !(price > 20000 && price <= 30000)) show = false;
                 if (priceValue == "4" && !(price > 30000 && price <= 50000)) show = false;
                 if (priceValue == "5" && !(price > 50000)) show = false;
+
                 if (saleValue === "yes" && sale == 0) show = false;
                 if (saleValue === "no" && sale > 0) show = false;
+
+                // LỌC THEO LOẠI
+                if (typeValue && typeValue !== "0" && type !== typeValue) show = false;
 
                 product.style.display = show ? "block" : "none";
             });
@@ -525,6 +558,7 @@
         document.getElementById('filter-price').addEventListener('change', filterProducts);
         document.getElementById('filter-brand').addEventListener('change', filterProducts);
         document.getElementById('filter-sale').addEventListener('change', filterProducts);
+        document.getElementById('filter-type').addEventListener('change', filterProducts);
         document.getElementById('search-btn').addEventListener('click', filterProducts);
        
         // ===== GIỎ HÀNG - localStorage =====
@@ -592,7 +626,14 @@
                 title.addEventListener('click', goToDetail);
             }
         });
+        
+        const params = new URLSearchParams(window.location.search);
+        const typeParam = params.get("type");
 
+        if (typeParam) {
+            document.getElementById('filter-type').value = typeParam;
+            filterProducts(); // gọi lọc luôn
+}
 
         // Cập nhật badge khi tải trang
         updateBadge();
