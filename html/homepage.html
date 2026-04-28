@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trang chủ - Rau Sạch</title>
+    <title>Trang chủ - Rau Xanh</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
 </head>
@@ -50,67 +50,77 @@
     <div class="container my-4">
         <div class="row">
             <div class="col-lg-12" >
-                <!-- Banner -->
+                <!-- Banner Carousel -->
                 <div class="container my-5">
-                <div class="position-relative rounded-4 overflow-hidden shadow">
+                <div id="bannerCarousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel" data-bs-interval="4000">
+                    
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
+                    </div>
 
-                    <!-- Background image -->
-                    <div style="
-                        background-image: url('../img/banner1.png');
-                        background-size: cover;
-                        background-position: center;
-                        height: 350px;
-                    "></div>
-
-                    <div class="position-absolute top-0 start-0 w-100 h-100"
-                        style="background: rgba(0,0,0,0.4);"></div>
-                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-                        
-                        <h2 class="fw-bold mb-3">Trở thành thành viên ngay hôm nay!</h2>
-                        
-                        <p class="fs-5 mb-4">
-                            Nhận ưu đãi độc quyền, tích điểm và mua sắm nhanh chóng hơn
-                        </p>
-
-                        <div class="d-flex justify-content-center gap-4 mb-4 flex-wrap">
-                            <span> <img src="../icon/icons8-money-96.png" alt="" style="height: 50px;"> Ưu đãi riêng</span>
-                            <span> <img src="../icon/icons8-cart-48.png" alt="" style="height: 50px;"> Tích điểm đổi quà</span>
-                            <span> <img src="../icon/icons8-delivery-truck-94.png" alt="" style="height: 50px;"> Giao hàng nhanh</span>
+                    <div class="carousel-inner">
+                        <!-- Slide 1: Thành viên -->
+                        <div class="carousel-item active">
+                            <div class="position-relative">
+                                <div style="
+                                    background-image: url('../img/banner1.png');
+                                    background-size: cover;
+                                    background-position: center;
+                                    height: 350px;
+                                "></div>
+                                <div class="position-absolute top-0 start-0 w-100 h-100"
+                                    style="background: rgba(0,0,0,0.4);"></div>
+                                <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3" style="width: 90%;">
+                                    <h2 class="fw-bold mb-3">Trở thành thành viên ngay hôm nay!</h2>
+                                    <p class="fs-5 mb-4">
+                                        Nhận ưu đãi độc quyền, tích điểm và mua sắm nhanh chóng hơn
+                                    </p>
+                                    <div class="d-flex justify-content-center gap-4 mb-4 flex-wrap">
+                                        <span style="display: inline-flex; align-items: center; gap: 6px;"> <img src="../icon/icons8-money-96.png" alt="" style="height: 28px;"> Ưu đãi riêng</span>
+                                        <span style="display: inline-flex; align-items: center; gap: 6px;"> <img src="../icon/icons8-cart-48.png" alt="" style="height: 28px;"> Tích điểm đổi quà</span>
+                                        <span style="display: inline-flex; align-items: center; gap: 6px;"> <img src="../icon/icons8-delivery-truck-94.png" alt="" style="height: 28px;"> Giao hàng nhanh</span>
+                                    </div>
+                                    <a href="register.html" class="btn btn-success btn-lg px-4">
+                                        Đăng ký ngay
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
-                        <a href="register.html" class="btn btn-success btn-lg px-4">
-                            Đăng ký ngay
-                        </a>
-
+                        <!-- Slide 2: Tin tức -->
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <div style="
+                                    background-image: url('../img/banner2.jpg');
+                                    background-size: cover;
+                                    background-position: center;
+                                    height: 350px;
+                                "></div>
+                                <div class="position-absolute top-0 start-0 w-100 h-100"
+                                    style="background: rgba(0,0,0,0.5);"></div>
+                                <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3" style="width: 90%;">
+                                    <h3 class="fw-bold mb-3">Cập nhật tin tức mới nhất</h3>
+                                    <p class="mb-3">
+                                        Khám phá mẹo chọn rau sạch, dinh dưỡng và thông tin hữu ích mỗi ngày
+                                    </p>
+                                    <a href="news.html" class="btn btn-warning px-4">
+                                        Xem tin tức
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
-                <div class="container my-5">
-                    <div class="position-relative rounded-4 overflow-hidden shadow">
-                        <div style="
-                            background-image: url('../img/banner2.jpg');
-                            background-size: cover;
-                            background-position: center;
-                            height: 250px;
-                        "></div>
-
-                        <div class="position-absolute top-0 start-0 w-100 h-100"
-                            style="background: rgba(0,0,0,0.5);"></div>
-
-                        <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-                            
-                            <h3 class="fw-bold mb-3">Cập nhật tin tức mới nhất</h3>
-                            
-                            <p class="mb-3">
-                                Khám phá mẹo chọn rau sạch, dinh dưỡng và thông tin hữu ích mỗi ngày
-                            </p>
-
-                            <a href="news.html" class="btn btn-warning px-4">
-                                Xem tin tức
-                            </a>
-
-                        </div>
-                    </div>
-        </div>
             </div>
                 </div>
                     <div class="d-flex">
