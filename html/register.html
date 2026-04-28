@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký - Rau Xanh</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-    
+        <script src="../js/bootstrap.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -40,7 +40,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="../html/homepage.html">
@@ -156,7 +155,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="mt-5 pt-5">
         <div class="container-fluid bg-success">
             <div class="row align-items-start px-5 pb-3">
@@ -228,57 +226,34 @@
     </footer>
 
     <script>
-       function validateForm() {
-    // Lấy dữ liệu từ các input
-    let name = document.getElementById("fullname").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let user = document.getElementById("username").value.trim();
-    let pass = document.getElementById("password").value;
-    let confirmPass = document.getElementById("confirm_password").value;
-    let agree = document.getElementById("agree").checked;
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        }
+        updateBadge();
 
-    // Biểu thức chính quy (Regex)
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let phoneRegex = /^(0[3|5|7|8|9])([0-9]{8})$/; // Kiểm tra đầu số VN và 10 số
-    let userRegex = /^[a-zA-Z0-9_]{6,}$/; // Tối thiểu 6 ký tự, không dấu
+        function validateForm() {
+            var user = document.getElementById("username").value.trim();
+            var pass = document.getElementById("password").value;
 
-    // Bắt đầu kiểm tra
-    if (name === "") {
-        alert("Vui lòng nhập họ và tên!");
-        return false;
-    }
-    if (!emailRegex.test(email)) {
-        alert("Email không đúng định dạng!");
-        return false;
-    }
-    if (!phoneRegex.test(phone)) {
-        alert("Số điện thoại phải có 10 số và đúng đầu số Việt Nam!");
-        return false;
-    }
-    if (!userRegex.test(user)) {
-        alert("Tên đăng nhập phải từ 6 ký tự trở lên và không chứa ký tự đặc biệt!");
-        return false;
-    }
-    if (pass.length < 6) {
-        alert("Mật khẩu phải có ít nhất 6 ký tự!");
-        return false;
-    }
-    if (pass !== confirmPass) {
-        alert("Mật khẩu nhập lại không khớp!");
-        return false;
-    }
-    if (!agree) {
-        alert("Bạn phải đồng ý với điều khoản sử dụng!");
-        return false;
-    }
+            if (user === "" || pass === "") {
+                return false;
+            }
 
-    alert("Đăng ký thành công!");
-    window.location.href = "login.html";
-    return false; 
-}
+            var users = JSON.parse(localStorage.getItem("users")) || [];
+
+            users.push({
+                username: user,
+                password: pass
+            });
+
+            localStorage.setItem("users", JSON.stringify(users));
+            
+            alert("Đăng ký thành công!");
+            window.location.href = "login.html"; 
+            return false;
+        }
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

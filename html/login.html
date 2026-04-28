@@ -6,7 +6,7 @@
     <title>Đăng Nhập - Rau Sạch</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
-    
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -204,43 +204,31 @@
             </div>
         </div>
     </footer>
+   <script>
+    function validateForm() {
+        let nameInput = document.getElementById("name").value.trim();
+        let passInput = document.getElementById("pass").value;
 
-    <script>
-        function validateForm() {
-        let name = document.getElementById("name").value.trim();
-        let pass = document.getElementById("pass").value;
-        let userRegex = /^[a-zA-Z0-9_]{6,}$/;
-
-        // Reset thông báo lỗi cũ
         document.getElementById("errName").innerHTML = "";
         document.getElementById("errPass").innerHTML = "";
 
-        // Kiểm tra tên đăng nhập
-        if (name === "") {
-            document.getElementById("errName").innerHTML = "Tên đăng nhập không được để trống";
-            return false;
-        }
-        if (!userRegex.test(name)) {
-            document.getElementById("errName").innerHTML = "Tên đăng nhập phải từ 6 ký tự trở lên";
-            return false;
-        }
+        if (nameInput === "") { alert("Vui lòng nhập tên đăng nhập!"); return false; }
+        if (passInput === "") { alert("Vui lòng nhập mật khẩu!"); return false; }
 
-        // Kiểm tra mật khẩu
-        if (pass === "") {
-            document.getElementById("errPass").innerHTML = "Mật khẩu không được để trống";
-            return false;
-        }
-        if (pass.length < 6) {
-            document.getElementById("errPass").innerHTML = "Mật khẩu phải từ 6 ký tự trở lên";
-            return false;
-        }
+        let users = JSON.parse(localStorage.getItem('users')) || [];
 
-        alert("Đăng nhập thành công!");
-        window.location.href = "homepage.html";
+        let foundUser = users.find(u => u.username === nameInput && u.password === passInput);
+
+        if (foundUser) {
+            localStorage.setItem('currentUser', JSON.stringify(foundUser));
+            
+            alert("Đăng nhập thành công! Chào mừng khách hàng");
+            window.location.href = "homepage.html";
+        } else {
+            alert("Tên đăng nhập hoặc mật khẩu không chính xác!");
+        }
         return false;
-        }
-    </script>
-
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    }
+</script>
 </body>
 </html>
