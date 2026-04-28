@@ -32,7 +32,7 @@
                             <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
                             <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
              
-                            <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
+                            <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
@@ -70,8 +70,7 @@
                             <select class="form-select" id="filter-brand" aria-label="Default select example">
                                 <option value="0" selected>Không ràng buộc</option>
                                 <option value="organic">Organic</option>
-                                <option value="cangio">Cần Giờ</option>
-                                <option value="khac">Khác</option>
+                                <option value="VietGap">VietGap</option>
                             </select><br>
 
                             <p>Khuyến mãi</p>
@@ -136,7 +135,7 @@
                                         <button class="btn btn-success btn-sm btn-add-cart" style="margin-top: 12px;"
                                             data-id="sp002"
                                             data-name="Bông cải"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-price="25000"
                                             data-type="raula"
@@ -173,7 +172,7 @@
                                             data-id="sp004"
                                             data-name="Khổ qua 300gr"
                                             data-price="30000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raula"
                                             data-img="../img/khoqua.jpg">Thêm vào giỏ</button>
@@ -211,7 +210,7 @@
                                             data-id="sp006"
                                             data-name="Táo 1kg"
                                             data-price="50000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="traicay"
                                             data-img="../img/táo.jpg">Thêm vào giỏ</button>
@@ -251,7 +250,7 @@
                                             data-id="sp008"
                                             data-name="Rau dền 300gr"
                                             data-price="8000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raula"
                                             data-img="../img/rauden.jpg">Thêm vào giỏ</button>
@@ -290,7 +289,7 @@
                                             data-id="sp010"
                                             data-name="Rau lang 300gr"
                                             data-price="9500"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=49
                                             data-type="raula"
                                             data-img="../img/rau_lang.png">Thêm vào giỏ</button>
@@ -330,7 +329,7 @@
                                             data-id="sp012"
                                             data-name="Dưa lưới 1kg"
                                             data-price="69000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=42
                                             data-type="traicay"
                                             data-img="../img/dua_luoi.png">Thêm vào giỏ</button>
@@ -387,7 +386,7 @@
                                             data-id="sp015"
                                             data-name="Khoai lang 500g"
                                             data-price="20000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raucu"
                                             data-img="../img/khoai-lang.jpg">Thêm vào giỏ</button>
@@ -426,7 +425,7 @@
                                             data-id="sp018"
                                             data-name="Hành lá 300g"
                                             data-price="18000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raucu"
                                             data-img="../img/hanh-la.jpg">Thêm vào giỏ</button>
@@ -551,6 +550,9 @@
 
                 // LỌC THEO LOẠI
                 if (typeValue && typeValue !== "0" && type !== typeValue) show = false;
+
+                // LỌC THEO NHÃN HIỆU
+                if (brandValue && brandValue !== "0" && brand !== brandValue) show = false;
 
                 product.style.display = show ? "block" : "none";
             });
