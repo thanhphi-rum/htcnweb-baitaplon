@@ -209,7 +209,6 @@
         let nameInput = document.getElementById("name").value.trim();
         let passInput = document.getElementById("pass").value;
 
-        // Reset lỗi
         document.getElementById("errName").innerHTML = "";
         document.getElementById("errPass").innerHTML = "";
 
@@ -223,7 +222,7 @@
         if (foundUser) {
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
             
-            alert("Đăng nhập thành công! Chào mừng " + foundUser.fullname);
+            alert("Đăng nhập thành công! Chào mừng khách hàng");
             window.location.href = "homepage.html";
         } else {
             alert("Tên đăng nhập hoặc mật khẩu không chính xác!");

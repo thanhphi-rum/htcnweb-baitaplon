@@ -40,7 +40,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="../html/homepage.html">
@@ -156,7 +155,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="mt-5 pt-5">
         <div class="container-fluid bg-success">
             <div class="row align-items-start px-5 pb-3">
@@ -227,53 +225,35 @@
         </div>
     </footer>
 
- <script>
+    <script>
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        }
+        updateBadge();
 
-    function validateForm() {
-        let name = document.getElementById("fullname").value.trim();
-        let email = document.getElementById("email").value.trim();
-        let phone = document.getElementById("phone").value.trim();
-        let user = document.getElementById("username").value.trim();
-        let pass = document.getElementById("password").value;
-        let confirmPass = document.getElementById("confirm_password").value;
-        let agree = document.getElementById("agree").checked;
+        function validateForm() {
+            var user = document.getElementById("username").value.trim();
+            var pass = document.getElementById("password").value;
 
-        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        let phoneRegex = /^(0[3|5|7|8|9])([0-9]{8})$/;
-        let userRegex = /^[a-zA-Z0-9_]{6,}$/;
+            if (user === "" || pass === "") {
+                return false;
+            }
 
-        // Ràng buộc dữ liệu cơ bản
-        if (!emailRegex.test(email)) { alert("Email không hợp lệ!"); return false; }
-        if (!phoneRegex.test(phone)) { alert("Số điện thoại không hợp lệ!"); return false; }
-        if (!userRegex.test(user)) { alert("Tên đăng nhập tối thiểu 6 ký tự không dấu!"); return false; }
-        if (pass.length < 6) { alert("Mật khẩu phải từ 6 ký tự!"); return false; }
-        if (pass !== confirmPass) { alert("Mật khẩu nhập lại không khớp!"); return false; }
-        if (!agree) { alert("Bạn chưa đồng ý điều khoản!"); return false; }
+            var users = JSON.parse(localStorage.getItem("users")) || [];
 
-        let users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push({
+                username: user,
+                password: pass
+            });
 
-        let isExist = users.some(u => u.username === user);
-        if (isExist) {
-            alert("Tên đăng nhập này đã có người sử dụng!");
+            localStorage.setItem("users", JSON.stringify(users));
+            
+            alert("Đăng ký thành công!");
+            window.location.href = "login.html"; 
             return false;
         }
-
-        let newUser = {
-            fullname: name,
-            email: email,
-            phone: phone,
-            username: user,
-            password: pass
-        };
-        users.push(newUser);
-
-
-        localStorage.setItem('users', JSON.stringify(users));
-
-        alert("Đăng ký thành công! Bạn có thể đăng nhập ngay.");
-        window.location.href = "login.html";
-        return false; 
-    }
-</script>
+    </script>
 </body>
 </html>
