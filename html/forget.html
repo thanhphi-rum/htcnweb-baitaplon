@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quên Mật Khẩu - Rau Sạch</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f4f7f6;
+        }
+        ul, li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        .nav-link {
+            width: 100%;
+            color: white !important;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            padding: 8px 15px;
+        }
+        .nav-link:hover {
+            background-color: #3ea066;
+            color: #fbbf24 !important;
+            border-radius: 10px;
+        }
+        .dropdown-menu {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-green {
+            background-color: #1a4a2e;
+            color: white;
+            border-radius: 10px 0 0 10px;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Sản phẩm
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
+                            <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
+                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container flex-grow-1 my-5 d-flex align-items-center justify-content-center">
+        <div class="card shadow-lg border-0" style="border-radius: 10px; max-width: 900px; width: 100%;">
+            <div class="row g-0">
+                
+                <div class="col-md-5 sidebar-green p-4 p-md-5 d-none d-md-flex flex-column justify-content-center">
+                    <div class="text-center mb-4">
+                        <span style="font-size: 65px; display: block; margin-bottom: 10px;">🔐</span>
+                    </div>
+                    <h3 class="fw-bold text-center text-warning mb-3">Lấy Lại Quyền Truy Cập</h3>
+                    <p class="text-center text-light small lh-lg" style="opacity: 0.9;">
+                        Chỉ với một vài bước cơ bản, bạn sẽ nhanh chóng khôi phục tài khoản để không bỏ lỡ những ưu đãi rau sạch mỗi ngày.
+                    </p>
+                    
+                    <ul class="mt-4 p-0 small fw-semibold" style="opacity: 0.9;">
+                        <li class="mb-3" style="color: #4ade80;">✔ Thao tác nhanh gọn</li>
+                        <li class="mb-3" style="color: #60a5fa;">✔ Bảo mật thông tin tuyệt đối</li>
+                        <li class="mb-3" style="color: #f87171;">✔ Hỗ trợ tận tâm 24/7</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-7 p-4 p-md-5 bg-white" style="border-radius: 0 10px 10px 0;">
+                    <h3 class="fw-bold text-success mb-2 text-center">Khôi Phục Tài Khoản</h3>
+                    <p class="text-muted text-center mb-4 small">Nhập email đăng ký, chúng tôi sẽ gửi đường dẫn khôi phục cho bạn.</p>
+
+                    <form id="forgotForm" onsubmit="return validateForgot()">
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-dark">Email của bạn <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email" required>
+                            <span id="errEmail" class="text-danger small mt-1 d-block"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-bold mb-3" style="border-radius: 8px;">
+                            NHẬN MÃ KHÔI PHỤC
+                        </button>
+
+                        <div class="text-center mt-3 border-top pt-3">
+                            <a href="login.html" class="text-decoration-none text-muted small fw-bold">
+                                ← Quay lại trang Đăng nhập
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-auto pt-5 bg-success">
+        <div class="container-fluid">
+            <div class="row align-items-start px-5 pb-3">
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
+                    <ul class="ps-4">
+                        <li style="margin-bottom: 5px;"><a class="text-decoration-none text-white" href="about.html">Giới thiệu</a></li>
+                        <li style="margin-bottom: 5px;"><a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a></li>
+                        <li style="margin-bottom: 5px;"><a class="text-decoration-none text-white" href="#">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
+                    <ul class="ps-4">
+                        <li style="margin-bottom: 5px;"><a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a></li>
+                        <li style="margin-bottom: 5px;"><a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a></li>
+                        <li style="margin-bottom: 5px;"><a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a></li>
+                        <li style="margin-bottom: 5px;"><a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
+                    <p><img style="width: 25px;" src="../icon/icons8-address-48.png" alt=""> 12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM</p>
+                    <p><img style="width: 25px;" src="../icon/icons8-phone-48.png" alt=""> 0123 456 789</p>
+                    <p><img style="width: 25px;" src="../icon/icons8-email-48.png" alt=""> support@rauxanh.com</p>
+                </div>
+                <div class="col-md-3 mt-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">Địa chỉ</h5>
+                    <div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
+                            width="100%" height="150" style="border:0; border-radius: 5px;"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        }
+        updateBadge();
+
+        function validateForgot() {
+            let email = document.getElementById("email").value.trim();
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            document.getElementById("errEmail").innerHTML = "";
+
+            if (email === "") {
+                document.getElementById("errEmail").innerHTML = "Vui lòng nhập email!";
+                document.getElementById("email").focus();
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                document.getElementById("errEmail").innerHTML = "Email không đúng định dạng (vd: sv123@gmail.com)";
+                document.getElementById("email").focus();
+                return false;
+            }
+
+            alert("Yêu cầu thành công! Vui lòng kiểm tra hộp thư email của bạn.");
+            window.location.href = "login.html"; 
+            return false;
+        }
+
+</script>
+</body>
+</html>
