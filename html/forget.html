@@ -175,12 +175,6 @@
     </footer>
 
     <script>
-        function updateBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-        }
-        updateBadge();
 
         function validateForgot() {
             let email = document.getElementById("email").value.trim();
