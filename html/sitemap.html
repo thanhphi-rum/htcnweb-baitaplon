@@ -13,31 +13,26 @@
         }
 
         .sitemap-title {
-            text-align: center;
-            margin: 40px 0 10px;
-            font-weight: 800;
-            color: #1b5e20;
             font-size: 2.2rem;
             letter-spacing: 1px;
-        }
-
-        .sitemap-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 1.05rem;
         }
 
         /* ===== TREE STRUCTURE ===== */
         .tree-container {
             display: flex;
             justify-content: center;
-            padding: 0 20px 60px;
+            align-items: center;
+            min-height: calc(100vh - 300px);
+            padding: 20px;
             overflow-x: auto;
         }
 
+        .tree {
+            flex-shrink: 0;
+        }
+
         .tree ul {
-            padding-top: 20px;
+            padding-top: 14px;
             position: relative;
             transition: all 0.3s;
             display: flex;
@@ -50,7 +45,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            padding: 20px 12px 0 12px;
+            padding: 14px 6px 0 6px;
             list-style: none;
         }
 
@@ -61,18 +56,18 @@
             position: absolute;
             top: 0;
             width: 50%;
-            height: 20px;
-            border-top: 2.5px solid #43a047;
+            height: 14px;
+            border-top: 2px solid #43a047;
         }
 
         .tree li::before {
             right: 50%;
-            border-right: 2.5px solid #43a047;
+            border-right: 2px solid #43a047;
         }
 
         .tree li::after {
             left: 50%;
-            border-left: 2.5px solid #43a047;
+            border-left: 2px solid #43a047;
         }
 
         /* Remove left connector from first child */
@@ -106,8 +101,8 @@
             top: 0;
             left: 50%;
             width: 0;
-            height: 20px;
-            border-left: 2.5px solid #43a047;
+            height: 14px;
+            border-left: 2px solid #43a047;
         }
 
         /* Only-child: just a straight vertical line */
@@ -120,17 +115,17 @@
         .node {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 22px;
-            border-radius: 14px;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 10px;
             background: #fff;
             border: 2px solid #a5d6a7;
-            box-shadow: 0 4px 16px rgba(56, 142, 60, 0.10);
+            box-shadow: 0 3px 10px rgba(56, 142, 60, 0.10);
             cursor: pointer;
             text-decoration: none;
             color: #2e7d32;
             font-weight: 600;
-            font-size: 0.92rem;
+            font-size: 0.78rem;
             transition: all 0.25s ease;
             position: relative;
             white-space: nowrap;
@@ -145,7 +140,7 @@
         }
 
         .node .icon {
-            font-size: 1.3rem;
+            font-size: 1rem;
         }
 
         /* Root node special styling */
@@ -153,10 +148,10 @@
             background: linear-gradient(135deg, #2e7d32, #43a047);
             color: #fff;
             border: none;
-            padding: 16px 32px;
-            font-size: 1.1rem;
+            padding: 10px 22px;
+            font-size: 0.9rem;
             font-weight: 700;
-            box-shadow: 0 6px 24px rgba(46, 125, 50, 0.3);
+            box-shadow: 0 4px 18px rgba(46, 125, 50, 0.3);
         }
 
         .node.root:hover {
@@ -203,54 +198,7 @@
             border-color: #283593;
         }
 
-        /* Legend */
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: #555;
-        }
-
-        .legend-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            border: 2px solid;
-        }
-
-        .legend-dot.green {
-            background: #2e7d32;
-            border-color: #2e7d32;
-        }
-
-        .legend-dot.light-green {
-            background: #e8f5e9;
-            border-color: #81c784;
-        }
-
-        .legend-dot.default {
-            background: #fff;
-            border-color: #a5d6a7;
-        }
-
-        .legend-dot.orange {
-            background: #fff;
-            border-color: #ffb74d;
-        }
-
-        .legend-dot.blue {
-            background: #fff;
-            border-color: #7986cb;
-        }
 
         /* Responsive */
         @media (max-width: 992px) {
@@ -313,9 +261,9 @@
                     <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
+                        <a class="nav-link position-relative" href="cart.html" id="cart-icon">
                             <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
+                            <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
                         </a>
                     </li>
                 </ul>
@@ -324,27 +272,8 @@
     </header>
 
     <!-- Sitemap Content -->
-    <h1 class="sitemap-title">🗺️ Sơ đồ trang web</h1>
-    <p class="sitemap-subtitle">Biểu diễn mối quan hệ giữa các trang trong website <strong>Rau Sạch Xanh</strong></p>
-
-    <!-- Legend -->
-    <div class="legend">
-        <div class="legend-item">
-            <span class="legend-dot green"></span> Trang chủ (Root)
-        </div>
-        <div class="legend-item">
-            <span class="legend-dot light-green"></span> Nhóm chức năng
-        </div>
-        <div class="legend-item">
-            <span class="legend-dot default"></span> Trang nội dung
-        </div>
-        <div class="legend-item">
-            <span class="legend-dot orange"></span> Xác thực
-        </div>
-        <div class="legend-item">
-            <span class="legend-dot blue"></span> Giỏ hàng & Thanh toán
-        </div>
-    </div>
+    <h1 class="sitemap-title text-center mt-5 mb-2 fw-bold text-success">🗺️ Sơ đồ trang web</h1>
+    <p class="text-center text-muted mb-5">Biểu diễn mối quan hệ giữa các trang trong website <strong>Rau Sạch Xanh</strong></p>
 
     <!-- Tree Diagram -->
     <div class="tree-container">
@@ -457,13 +386,13 @@
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
                     <ul class="ps-4">
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="news.html">Giới thiệu</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Facebook</a>
                         </li>
                     </ul>
@@ -471,19 +400,19 @@
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
                     <ul class="ps-4">
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Chính sách cộng tác viên</a>
                         </li>
                     </ul>
@@ -510,7 +439,7 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
                             width="100%" 
                             height="150" 
-                            style="border:0;"
+                            class="border-0"
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
