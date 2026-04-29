@@ -46,7 +46,7 @@
 
     <!-- Nội dung chính -->
     <div class="container my-5">
-        <h3 class="fw-bold text-success mb-4">📋 Lịch sử đơn hàng</h3>
+        <h3 class="fw-bold text-success mb-4">Lịch sử đơn hàng</h3>
 
         <!-- Thông báo khi chưa có đơn -->
         <div id="no-orders" class="text-center py-5 d-none">
@@ -185,5 +185,30 @@
         renderHistory();
         updateBadge();
     </script>
+<script>
+        // ===== AUTH - Kiểm tra đăng nhập & cập nhật navbar =====
+        var user = JSON.parse(localStorage.getItem('currentUser'));
+        var navAuth = document.getElementById('nav-auth');
+        if (user && navAuth) {
+            var displayName = user.fullname || user.username;
+            navAuth.className = 'nav-item dropdown';
+            navAuth.innerHTML =
+                '<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">' +
+                '    <img src="../icon/profile.png" alt="" style="width:22px;vertical-align:middle;" class="me-1">' +
+                '    ' + displayName +
+                '</a>' +
+                '<ul class="dropdown-menu dropdown-menu-end">' +
+                '    <li><span class="dropdown-item-text fw-bold text-success">' + displayName + '</span></li>' +
+                '    <li><hr class="dropdown-divider"></li>' +
+                '    <li><a class="dropdown-item" href="history.html">Lịch sử đơn hàng</a></li>' +
+                '    <li><a class="dropdown-item" href="#" id="btn-logout">Đăng xuất</a></li>' +
+                '</ul>';
+            document.getElementById('btn-logout').addEventListener('click', function (e) {
+                e.preventDefault();
+                localStorage.removeItem('currentUser');
+                window.location.reload();
+            });
+        }
+</script>
 </body>
 </html>
