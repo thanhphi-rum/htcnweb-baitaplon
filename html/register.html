@@ -107,7 +107,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Ngày sinh</label>
-                                <input type="date" class="form-control" id="dob">
+                                <input type="date" class="form-control" id="birthday">
                             </div>
 
                             <div class="row mb-3">
@@ -227,34 +227,49 @@
     </footer>
 
     <script>
-        function updateBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-        }
-        updateBadge();
-
         function validateForm() {
-            var user = document.getElementById("username").value.trim();
-            var pass = document.getElementById("password").value;
+        var username = document.getElementById("username").value.trim();
+        var password = document.getElementById("password").value;
 
-            if (user === "" || pass === "") {
-                return false;
-            }
+        var fullname = document.getElementById("fullname").value;
+        var email    = document.getElementById("email").value;
+        var phone    = document.getElementById("phone").value;
+        var address  = document.getElementById("address").value;
+        var birthday = document.getElementById("birthday").value;
 
-            var users = JSON.parse(localStorage.getItem("users")) || [];
-
-            users.push({
-                username: user,
-                password: pass
-            });
-
-            localStorage.setItem("users", JSON.stringify(users));
-            
-            alert("Đăng ký thành công!");
-            window.location.href = "login.html"; 
+        if (!username || !password || !fullname || !email || !phone) {
+            alert("Vui lòng nhập đầy đủ thông tin bắt buộc!");
             return false;
         }
+
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+
+        //  Check trùng username
+        var exists = users.find(u => u.username === username);
+        if (exists) {
+            alert("Tên đăng nhập đã tồn tại!");
+            return false;
+        }
+
+        var newUser = {
+            username: username,
+            password: password,
+            fullname: fullname,
+            email: email,
+            phone: phone,
+            address: address,
+            birthday: birthday,
+            avatar: ""
+        };
+
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Đăng ký thành công!");
+        window.location.href = "homepage.html";
+
+        return false;
+    }
     </script>
 </body>
 </html>

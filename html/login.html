@@ -206,30 +206,25 @@
         </div>
     </footer>
    <script>
-    function validateForm() {
-        let nameInput = document.getElementById("name").value.trim();
-        let passInput = document.getElementById("pass").value;
+    function login() {
+    const username = document.getElementById("name").value.trim();
+    const password = document.getElementById("pass").value;
 
-        document.getElementById("errName").innerHTML = "";
-        document.getElementById("errPass").innerHTML = "";
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        if (nameInput === "") { alert("Vui lòng nhập tên đăng nhập!"); return false; }
-        if (passInput === "") { alert("Vui lòng nhập mật khẩu!"); return false; }
+    const user = users.find(u => u.username === username && u.password === password);
 
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-
-        let foundUser = users.find(u => u.username === nameInput && u.password === passInput);
-
-        if (foundUser) {
-            localStorage.setItem('currentUser', JSON.stringify(foundUser));
-            
-            alert("Đăng nhập thành công! Chào mừng khách hàng");
-            window.location.href = "homepage.html";
-        } else {
-            alert("Tên đăng nhập hoặc mật khẩu không chính xác!");
-        }
+    if (!user) {
+        alert("Sai tài khoản hoặc mật khẩu!");
         return false;
     }
+
+    localStorage.setItem("currentUser", JSON.stringify(user));
+
+    alert("Đăng nhập thành công!");
+    window.location.href = "homepage.html";
+    return false;
+}
 </script>
 </body>
 </html>
