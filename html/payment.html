@@ -328,6 +328,13 @@
 
             localStorage.setItem('order', JSON.stringify(order));
 
+            // Lưu vào lịch sử đơn hàng
+            var orders = JSON.parse(localStorage.getItem('orders')) || [];
+            order.date = new Date().toLocaleString('vi-VN');
+            order.status = 'Đang xử lý';
+            orders.push(order);
+            localStorage.setItem('orders', JSON.stringify(orders));
+
             // Xóa giỏ hàng sau khi đặt hàng
             localStorage.removeItem('cart');
 
