@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trang chủ - Rau Xanh</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -20,7 +22,7 @@
 
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Sản phẩm
@@ -36,19 +38,14 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
                     <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
+                    <li class="nav-item" id="nav-auth"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
                     <li class="nav-item">
                         <a class="nav-link position-relative" href="cart.html" id="cart-icon">
                             <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
                             <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="profile.html" id="cart-icon">
-                            <img src="../icon/profile.png" alt="" style="width:28px;vertical-align:middle;">
-                            
-                        </a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -56,10 +53,10 @@
 
     <div class="container my-4">
         <div class="row">
-            <div class="col-lg-12" >
+            <div class="col-lg-12">
                 <!-- Banner Carousel -->
                 <div class="container my-5">
-                <div id="bannerCarousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div id="bannerCarousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel" data-bs-interval="4000">
                     
                     <!-- Indicators -->
                     <div class="carousel-indicators">
@@ -132,16 +129,18 @@
                     <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </button>
+                    </div>
                 </div>
             </div>
-                </div>
-                    <div class="d-flex">
-                        <h4 class="fw-bold py-3">Thực phẩm bán chạy</h4>
-                        <ul class="nav ms-auto ">
-                            <li class="nav-item"><a class="nav-link fs-4" href="produce.html">Tất cả sản phẩm ></a></li>
-                        </ul>
-                    </div>
-                        <div class="row g-4" id="product-list">
+
+            <!-- Thực phẩm bán chạy -->
+            <div class="d-flex">
+                <h4 class="fw-bold py-3">Thực phẩm bán chạy</h4>
+                <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fs-4" href="produce.html">Tất cả sản phẩm ></a></li>
+                </ul>
+            </div>
+            <div class="row g-4" id="product-list">
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
                                     <img src="../img/raumuong.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
@@ -216,12 +215,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex">
-                                <h4 class="fw-bold py-3">Giảm giá sâu</h4>
-                                <ul class="nav ms-auto ">
-                                <li class="nav-item"><a class="nav-link fs-4" href="produce.html">Tất cả sản phẩm ></a></li>
-                                </ul>
-                            </div>
+
+            <!-- Giảm giá sâu -->
+            <div class="d-flex">
+                <h4 class="fw-bold py-3">Giảm giá sâu</h4>
+                <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fs-4" href="produce.html">Tất cả sản phẩm ></a></li>
+                </ul>
+            </div>
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
                                     <img src="../img/rauden.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
@@ -299,17 +300,13 @@
                                     </div>
                                 </div>
                             </div>
-
-
-                        </div>
-                    
-                </div>
             </div>
         </div>
     </div>
+
     <!-- Footer -->
     <footer class="mt-5 pt-5">
-            <div class="container-fluid bg-success">
+        <div class="container-fluid bg-success">
                 <div class="row align-items-start px-5 pb-3">
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
@@ -375,13 +372,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
+        </div>
     </footer>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script>
 
-       
+    <script>
         // ===== GIỎ HÀNG - localStorage =====
         function getCart() {
             return JSON.parse(localStorage.getItem('cart')) || [];
@@ -451,6 +445,29 @@
 
         // Cập nhật badge khi tải trang
         updateBadge();
+
+        // ===== AUTH - Kiểm tra đăng nhập & cập nhật navbar =====
+        var user = JSON.parse(localStorage.getItem('currentUser'));
+        var navAuth = document.getElementById('nav-auth');
+        if (user && navAuth) {
+            var displayName = user.fullname || user.username;
+            navAuth.className = 'nav-item dropdown';
+            navAuth.innerHTML =
+                '<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">' +
+                '    <img src="../icon/profile.png" alt="" style="width:22px;vertical-align:middle;" class="me-1">' +
+                '    ' + displayName +
+                '</a>' +
+                '<ul class="dropdown-menu dropdown-menu-end">' +
+                '    <li><span class="dropdown-item-text fw-bold text-success">' + displayName + '</span></li>' +
+                '    <li><hr class="dropdown-divider"></li>' +
+                '    <li><a class="dropdown-item" href="#" id="btn-logout">Đăng xuất</a></li>' +
+                '</ul>';
+            document.getElementById('btn-logout').addEventListener('click', function (e) {
+                e.preventDefault();
+                localStorage.removeItem('currentUser');
+                window.location.href = 'homepage.html';
+            });
+        }
     </script>
 </body>
 </html>
