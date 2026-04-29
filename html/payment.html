@@ -359,9 +359,19 @@
             window.location.href = 'success.html';
         });
 
+        function requireLogin() {
+        const user = JSON.parse(localStorage.getItem("currentUser"));
+
+        if (!user) {
+            alert("Vui lòng đăng nhập trước!");
+            window.location.href = "login.html";
+        }
+}
+
         // ===== Khởi chạy =====
         renderOrderSummary();
         updateBadge();
+        requireLogin();
     </script>
 <script>
         function checkLogin() {
