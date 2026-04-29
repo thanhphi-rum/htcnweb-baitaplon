@@ -366,9 +366,19 @@
             alert("Vui lòng đăng nhập trước!");
             window.location.href = "login.html";
         }
+}   
+        function loadUserInfoToForm() {
+        const user = JSON.parse(localStorage.getItem("currentUser"));
+
+        if (!user) return;
+
+        document.getElementById("txtten").value = user.fullname || "";
+        document.getElementById("txtSDT").value = user.phone || "";
+        document.getElementById("txtDC").value = user.address || "";
 }
 
         // ===== Khởi chạy =====
+        loadUserInfoToForm();
         renderOrderSummary();
         updateBadge();
         requireLogin();
