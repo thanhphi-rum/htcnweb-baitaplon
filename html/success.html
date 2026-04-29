@@ -11,45 +11,61 @@
 <body class="bg-light">
 
 
-<header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- Header -->
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                    <img src="../img/logo1.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Sản phẩm
+                            </a>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
-             
-                            <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
-                    <li class="nav-item" id="nav-auth"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="cart.html" id="cart-icon">
-                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
-                        </a>
-                    </li>
-                </ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                        
+                        <!-- CHƯA LOGIN -->
+                        <li class="nav-item" id="nav-login">
+                            <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
+                        </li>
+
+                        <!-- ĐÃ LOGIN -->
+                        <li class="nav-item dropdown" id="nav-user" style="display:none;">
+                            <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
+                                Tài khoản
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="profile.html">Xem Profile</a></li>
+                                <li><a class="dropdown-item" href="history.html">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="cart.html" id="cart-icon">
+                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
-
+        </header>
 
     <div class="container my-5">
         <div class="card shadow-lg p-5 text-center">
@@ -205,29 +221,22 @@
     }
     </script>
 <script>
-        // ===== AUTH - Kiểm tra đăng nhập & cập nhật navbar =====
-        var user = JSON.parse(localStorage.getItem('currentUser'));
-        var navAuth = document.getElementById('nav-auth');
-        if (user && navAuth) {
-            var displayName = user.fullname || user.username;
-            navAuth.className = 'nav-item dropdown';
-            navAuth.innerHTML =
-                '<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">' +
-                '    <img src="../icon/profile.png" alt="" style="width:22px;vertical-align:middle;" class="me-1">' +
-                '    ' + displayName +
-                '</a>' +
-                '<ul class="dropdown-menu dropdown-menu-end">' +
-                '    <li><span class="dropdown-item-text fw-bold text-success">' + displayName + '</span></li>' +
-                '    <li><hr class="dropdown-divider"></li>' +
-                '    <li><a class="dropdown-item" href="history.html">Lịch sử đơn hàng</a></li>' +
-                '    <li><a class="dropdown-item" href="#" id="btn-logout">Đăng xuất</a></li>' +
-                '</ul>';
-            document.getElementById('btn-logout').addEventListener('click', function (e) {
-                e.preventDefault();
-                localStorage.removeItem('currentUser');
-                window.location.reload();
-            });
+        function checkLogin() {
+            const user = JSON.parse(localStorage.getItem("currentUser"));
+
+            if (user) {
+                document.getElementById("nav-login").style.display = "none";
+                document.getElementById("nav-user").style.display = "block";
+                document.getElementById("user-name").textContent = user.fullname || user.username;
+            } else {
+                document.getElementById("nav-login").style.display = "block";
+                document.getElementById("nav-user").style.display = "none";
+            }
         }
+
+
+        checkLogin();
+
 </script>
 </body>
 </html>
