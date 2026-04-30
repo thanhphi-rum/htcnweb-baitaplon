@@ -121,6 +121,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: white;
+            height: 100%;
         }
 
         .member-card:hover {
@@ -134,6 +135,19 @@
             object-fit: cover;
             object-position: top;
             display: block;
+        }
+
+        .member-card .p-4 {
+            padding: 24px 18px !important;
+        }
+
+        .member-card p {
+            line-height: 1.55;
+        }
+
+        .member-card .d-flex {
+            flex-wrap: wrap;
+            margin-top: 12px !important;
         }
 
         .member-role {
@@ -227,7 +241,7 @@
                 <div class="col-md-6 text-start">
                     <h1>Về Chúng Tôi</h1>
                     <p class="mt-3">
-                        Rau Sạch ra đời với sứ mệnh mang đến bữa ăn an toàn, tươi ngon cho mọi gia đình Việt.<br>
+                        Rau Xanh ra đời với sứ mệnh mang đến bữa ăn an toàn, tươi ngon cho mọi gia đình Việt.<br>
                         Chúng tôi tin rằng sức khỏe bắt đầu từ những gì bạn ăn mỗi ngày.
                     </p>
                     <a href="#our-story" class="btn btn-light btn-lg mt-4 px-5 fw-semibold">Khám phá ngay</a>
@@ -373,11 +387,13 @@
                             <h6 class="fw-bold mb-1">Bùi Nguyễn Thanh Phi</h6>
                             <span class="member-role badge bg-success">Nhóm trưởng</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                Phụ trách thiết kế & lập trình trang Giỏ hàng, Giới thiệu & Testing
+                                Phụ trách thiết kế & lập trình trang Giỏ hàng, Giới thiệu, Chi tiết sản phẩm, Sitemap & Testing
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-success small fw-semibold px-2 py-1">Cart</span>
                                 <span class="badge bg-success small fw-semibold px-2 py-1">About</span>
+                                <span class="badge bg-success small fw-semibold px-2 py-1">Detail</span>
+                                <span class="badge bg-success small fw-semibold px-2 py-1">Sitemap</span>
                                 <span class="badge bg-success small fw-semibold px-2 py-1">Testing</span>
                             </div>
                         </div>
@@ -392,12 +408,12 @@
                             <h6 class="fw-bold mb-1">Nguyễn Phước Tân</h6>
                             <span class="member-role badge bg-primary">Nhóm phó</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                Phụ trách thiết kế & lập trình trang Đăng nhập, Đăng ký
+                                Phụ trách thiết kế & lập trình trang Đăng nhập, Đăng ký, Quên mật khẩu
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-primary small fw-semibold px-2 py-1">Login</span>
                                 <span class="badge bg-primary small fw-semibold px-2 py-1">Register</span>
-                                <span class="badge bg-primary small fw-semibold px-2 py-1">MenberRegister</span>
+                                <span class="badge bg-primary small fw-semibold px-2 py-1">Forget</span>
                             </div>
                         </div>
                     </div>
@@ -411,7 +427,7 @@
                             <h6 class="fw-bold mb-1">Nguyễn Đăng Khánh</h6>
                             <span class="member-role badge bg-warning">Thành viên</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                hụ trách thiết kế & lập trình trang Thanh toán, Thanh toán thành công
+                                Phụ trách thiết kế & lập trình trang Thanh toán, Thanh toán thành công
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-warning small fw-semibold px-2 py-1">Payment</span>
@@ -429,11 +445,13 @@
                             <h6 class="fw-bold mb-1">Hồ Nhật Ninh</h6>
                             <span class="member-role badge bg-secondary">Thành viên</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                Phụ trách thiết kế & lập trình trang Trang chủ, Tin tức
+                                Phụ trách thiết kế & lập trình trang Trang chủ, Tin tức, Tài khoản & Lịch sử đơn đặt hàng
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-secondary small fw-semibold px-2 py-1">HomePage</span>
                                 <span class="badge bg-secondary small fw-semibold px-2 py-1">New</span>
+                                <span class="badge bg-secondary small fw-semibold px-2 py-1">Profile</span>
+                                <span class="badge bg-secondary small fw-semibold px-2 py-1">History</span>
                             </div>
                         </div>
                     </div>
