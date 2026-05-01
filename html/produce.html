@@ -38,13 +38,13 @@
                         <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
                         <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
                         
-                        <!-- CHƯA LOGIN -->
+                        <!-- Chưa đăng nhập -->
                         <li class="nav-item" id="nav-login">
                             <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
                         </li>
 
-                        <!-- ĐÃ LOGIN -->
-                        <li class="nav-item dropdown" id="nav-user" style="display:none;">
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown" id="nav-user" class="d-none">
                             <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
@@ -55,8 +55,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link position-relative" href="cart.html" id="cart-icon">
-                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" class="badge-xs">0</span>
                             </a>
                         </li>
 
@@ -106,7 +106,7 @@
                             <div class="input-group" style="max-width:280px;">
                                 <input class="form-control shadow-none" type="search" placeholder="Tìm sản phẩm..." id="search-input">
                                 <button class="btn btn-success" type="button" id="search-btn">
-                                    <img src="../icon/icons8-search-30.png" alt="Tìm" style="width:20px; height:20px;">
+                                    <img src="../icon/icons8-search-30.png" alt="Tìm" class="icon-xs">
                                 </button>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                         <div class="row g-4" id="product-list">
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/raumuong.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/raumuong.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau muống 300g</h6>
                                         
@@ -135,7 +135,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/cai.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/cai.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Bông cải</h6>
                                         <p class="text-success">25.000đ</p>
@@ -153,7 +153,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/carot.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/carot.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Cà rốt 300gr</h6>
                                         <p class="text-success">18.000đ</p>
@@ -171,7 +171,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/khoqua.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/khoqua.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Khổ qua 300gr</h6>
                                         <p class="text-success">30.000đ</p>
@@ -189,7 +189,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/mongtoi.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/mongtoi.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Mồng tơi 300gr</h6>
                                         <h6 class="text-decoration-line-through text-muted">19.500đ</h6>
@@ -209,7 +209,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/táo.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/táo.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Táo 1kg</h6>
                                         <p class="text-success">50.000đ</p>
@@ -227,7 +227,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/bi-do.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/bi-do.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Bí đỏ 1kg</h6>
                                         <p class="text-success">40.000đ</p>
@@ -245,7 +245,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rauden.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rauden.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau dền 300gr</h6>
                                         
@@ -267,7 +267,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rautan.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rautan.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau tần 300gr</h6>
                                         <p class="text-success">17.000đ</p>
@@ -285,7 +285,7 @@
                            
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rau_lang.png" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rau_lang.png" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau lang 300gr</h6>
                                         
@@ -306,7 +306,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/cam.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/cam.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Cam 1kg</h6>
 
@@ -326,7 +326,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/dua_luoi.png" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/dua_luoi.png" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Dưa lưới 1kg</h6>
                                         <h6 class="text-decoration-line-through text-muted">119.000đ</h6>
@@ -346,7 +346,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rau-ngot.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rau-ngot.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau ngót</h6>
                                         <p class="text-success">13.000đ</p>
@@ -364,7 +364,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/khoai-tay.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/khoai-tay.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Khoai tây 500g</h6>
                                         
@@ -385,7 +385,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/khoai-lang.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/khoai-lang.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Khoai lang 500g</h6>
                                         <h6 class="text-success">20.000đ</h6>
@@ -403,7 +403,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rau-ram.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rau-ram.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau răm 50g</h6>
                                         
@@ -424,7 +424,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/hanh-la.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/hanh-la.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Hành lá 300g</h6>
                                         <h6 class="text-success">18.000đ</h6>
@@ -487,15 +487,15 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
                                 12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
                                 0123 456 789
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
                                 support@rauxanh.com
                         </p>
                     </div>
@@ -667,4 +667,6 @@
 </script>
 </body>
 </html>
+
+
 

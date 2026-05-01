@@ -39,13 +39,13 @@
                         <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
                         <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
                         
-                        <!-- CHƯA LOGIN -->
+                        <!-- Chưa đăng nhập -->
                         <li class="nav-item" id="nav-login">
                             <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
                         </li>
 
-                        <!-- ĐÃ LOGIN -->
-                        <li class="nav-item dropdown" id="nav-user" style="display:none;">
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown d-none" id="nav-user">
                             <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
@@ -56,8 +56,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link position-relative" href="cart.html" id="cart-icon">
-                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle badge-xs">0</span>
                             </a>
                         </li>
 
@@ -83,23 +83,17 @@
                             <!-- Slide 1: Thành viên -->
                             <div class="carousel-item active">
                                 <div class="position-relative">
-                                    <div style="
-                                        background-image: url('../img/banner1.png');
-                                        background-size: cover;
-                                        background-position: center;
-                                        height: 350px;
-                                    "></div>
-                                    <div class="position-absolute top-0 start-0 w-100 h-100"
-                                        style="background: rgba(0,0,0,0.4);"></div>
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3" style="width: 90%;">
+                                    <div class="banner-slide" style="background-image: url('../img/banner1.png');"></div>
+                                    <div class="position-absolute top-0 start-0 w-100 h-100 banner-overlay"></div>
+                                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3 banner-caption">
                                         <h2 class="fw-bold mb-3">Trở thành thành viên ngay hôm nay!</h2>
                                         <p class="fs-5 mb-4">
                                             Nhận ưu đãi độc quyền, tích điểm và mua sắm nhanh chóng hơn
                                         </p>
                                         <div class="d-flex justify-content-center gap-4 mb-4 flex-wrap">
-                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-voucher-64.png" alt="" style="height: 28px;"> Ưu đãi riêng</span>
-                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-gift-48.png" alt="" style="height: 28px;"> Tích điểm đổi quà</span>
-                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-delivery-truck-94.png" alt="" style="height: 28px;"> Giao hàng nhanh</span>
+                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-voucher-64.png" alt="" class="icon-sm-height"> Ưu đãi riêng</span>
+                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-gift-48.png" alt="" class="icon-sm-height"> Tích điểm đổi quà</span>
+                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-delivery-truck-94.png" alt="" class="icon-sm-height"> Giao hàng nhanh</span>
                                         </div>
                                         <a href="register.html" class="btn btn-success btn-lg px-4">
                                             Đăng ký ngay
@@ -111,23 +105,17 @@
                             <!-- Slide 2: Tin tức -->
                             <div class="carousel-item">
                                 <div class="position-relative">
-                                    <div style="
-                                        background-image: url('../img/banner2.jpg');
-                                        background-size: cover;
-                                        background-position: center;
-                                        height: 350px;
-                                    "></div>
-                                    <div class="position-absolute top-0 start-0 w-100 h-100"
-                                        style="background: rgba(0,0,0,0.4);"></div>
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3" style="width: 90%;">
+                                    <div class="banner-slide" style="background-image: url('../img/banner2.jpg');"></div>
+                                    <div class="position-absolute top-0 start-0 w-100 h-100 banner-overlay"></div>
+                                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3 banner-caption">
                                         <h2 class="fw-bold mb-3">Cập nhật tin tức mới nhất</h2>
                                         <p class="fs-5 mb-4">
                                             Khám phá mẹo chọn rau sạch, dinh dưỡng và thông tin hữu ích mỗi ngày
                                         </p>
                                         <div class="d-flex justify-content-center gap-4 mb-4 flex-wrap">
-                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-nutrition-48.png" alt="" style="height: 28px;"> Dinh dưỡng</span>
-                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-health-48.png" alt="" style="height: 28px;"> Sức khỏe</span>
-                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-tips-64.png" alt="" style="height: 28px;"> Mẹo hay</span>
+                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-nutrition-48.png" alt="" class="icon-sm-height"> Dinh dưỡng</span>
+                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-health-48.png" alt="" class="icon-sm-height"> Sức khỏe</span>
+                                            <span class="d-inline-flex align-items-center gap-1"> <img src="../icon/icons8-tips-64.png" alt="" class="icon-sm-height"> Mẹo hay</span>
                                         </div>
                                         <a href="news.html" class="btn btn-success btn-lg px-4">
                                             Xem tin tức
@@ -158,7 +146,7 @@
                 <div class="row g-4" id="product-list">
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="card text-center h-100">
-                                        <img src="../img/raumuong.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/raumuong.jpg" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Rau muống 300g</h6>
                                             
@@ -178,7 +166,7 @@
                                 
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="card text-center h-100 ">
-                                        <img src="../img/bi-do.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/bi-do.jpg" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Bí đỏ 1kg</h6>
                                             <p class="text-success">40.000đ</p>
@@ -195,7 +183,7 @@
 
                                 <div class="col-12 col-sm-6 col-lg-3 ">
                                     <div class="card text-center h-100">
-                                        <img src="../img/khoai-tay.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/khoai-tay.jpg" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Khoai tây 500g</h6>
                                             
@@ -216,7 +204,7 @@
                                 
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="card text-center h-100">
-                                        <img src="../img/hanh-la.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/hanh-la.jpg" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Hành lá 300g</h6>
                                             <h6 class="text-success">18.000đ</h6>
@@ -240,7 +228,7 @@
                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="card text-center h-100">
-                                        <img src="../img/rauden.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/rauden.jpg" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Rau dền 300gr</h6>
                                             
@@ -261,7 +249,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="card text-center h-100">
-                                        <img src="../img/mongtoi.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/mongtoi.jpg" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Mồng tơi 300gr</h6>
                                             <h6 class="text-decoration-line-through text-muted">19.500đ</h6>
@@ -279,7 +267,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="card text-center h-100">
-                                        <img src="../img/rau-ram.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/rau-ram.jpg" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Rau răm 50g</h6>
                                             
@@ -298,7 +286,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="card text-center h-100">
-                                        <img src="../img/rau_lang.png" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                        <img src="../img/rau_lang.png" class="card-img-top p-3 card-img-contain">
                                         <div class="card-body">
                                             <h6>Rau lang 300gr</h6>
                                             
@@ -360,15 +348,15 @@
                         <div class="col-md-3 mt-4 text-white">
                             <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
                             <p>
-                                <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                                <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
                                     12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
                             </p>
                             <p>
-                                <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                                <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
                                     0123 456 789
                             </p>
                             <p>
-                                <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                                <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
                                     support@rauxanh.com
                             </p>
                         </div>
@@ -482,4 +470,6 @@
         </script>
     </body>
     </html>
+
+
 

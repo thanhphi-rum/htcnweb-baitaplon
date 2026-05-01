@@ -37,13 +37,13 @@
                         <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
                         <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
                         
-                        <!-- CHƯA LOGIN -->
+                        <!-- Chưa đăng nhập -->
                         <li class="nav-item" id="nav-login">
                             <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
                         </li>
 
-                        <!-- ĐÃ LOGIN -->
-                        <li class="nav-item dropdown" id="nav-user" style="display:none;">
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown" id="nav-user" class="d-none">
                             <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
@@ -54,8 +54,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link position-relative" href="cart.html" id="cart-icon">
-                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" class="badge-xs">0</span>
                             </a>
                         </li>
 
@@ -70,7 +70,7 @@
             <!-- Bài 1 -->
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/loiicnanrau.webp" class="card-img-top" style="height:200px;object-fit:cover;">
+                    <img src="../img/loiicnanrau.webp" class="card-img-top" class="card-img-cover">
                     <div class="card-body">
                         <h5 class="fw-bold">Lợi ích của việc ăn rau mỗi ngày</h5>
                         <p class="text-muted">Rau xanh cung cấp vitamin, khoáng chất và giúp tăng cường sức khỏe...</p>
@@ -82,7 +82,7 @@
             <!-- Bài 2 -->
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/an-rau-tot-cho-suc-khoe-7488.jpg" class="card-img-top" style="height:200px;object-fit:cover;">
+                    <img src="../img/an-rau-tot-cho-suc-khoe-7488.jpg" class="card-img-top" class="card-img-cover">
                     <div class="card-body">
                         <h5 class="fw-bold">Cách chọn rau sạch đúng chuẩn</h5>
                         <p class="text-muted">Không phải ai cũng biết cách chọn rau sạch...</p>
@@ -94,7 +94,7 @@
             <!-- Bài 3 -->
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/thucphansach.jpg" class="card-img-top" style="height:200px;object-fit:cover;">
+                    <img src="../img/thucphansach.jpg" class="card-img-top" class="card-img-cover">
                     <div class="card-body">
                         <h5 class="fw-bold">Thực phẩm sạch và sức khỏe</h5>
                         <p class="text-muted">Sử dụng thực phẩm sạch giúp giảm nguy cơ bệnh tật...</p>
@@ -107,7 +107,7 @@
     </div>
 
     <!-- Chi tiết bài viết -->
-    <div id="detail" class="mt-5" style="display:none;">
+    <div id="detail" class="mt-5" class="d-none">
         <h3 id="detail-title" class="fw-bold text-success"></h3>
         <p id="detail-content"></p>
         <button class="btn btn-secondary" onclick="hideDetail()">Đóng</button>
@@ -157,15 +157,15 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
                                 12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
                                 0123 456 789
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
                                 support@rauxanh.com
                         </p>
                     </div>
@@ -328,3 +328,4 @@
 </script>
 </body>
 </html>
+

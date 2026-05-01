@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký - Rau Xanh</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-        <script src="../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -69,13 +70,13 @@
                         <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
                         <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
                         
-                        <!-- CHƯA LOGIN -->
+                        <!-- Chưa đăng nhập -->
                         <li class="nav-item" id="nav-login">
                             <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
                         </li>
 
-                        <!-- ĐÃ LOGIN -->
-                        <li class="nav-item dropdown" id="nav-user" style="display:none;">
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown d-none" id="nav-user">
                             <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
@@ -86,8 +87,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link position-relative" href="cart.html" id="cart-icon">
-                                <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="font-size:0.65rem;">0</span>
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle badge-xs">0</span>
                             </a>
                         </li>
 
@@ -98,10 +99,10 @@
 
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 shadow-lg bg-white rounded-4 overflow-hidden" style="border-radius: 10px 0px 0px  10px;">
+            <div class="col-lg-10 shadow-lg bg-white rounded-4 overflow-hidden rounded-start-lg">
                 <div class="row">
                     
-                    <div class="col-md-4 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center" style="border-radius: 10px 0px 0px  10px;">
+                    <div class="col-md-4 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center rounded-start-lg">
                         <h2 class="fw-bold">Chào mừng!</h2>
                         <p class="mt-2">Đăng ký thành viên Rau Sạch để nhận ngay ưu đãi 15% cho đơn hàng đầu tiên.</p>
                         <ul class="mt-4 p-0">
@@ -163,7 +164,7 @@
                                 </label>
                             </div>
 
-                            <button type="submit" class="btn btn-success w-100 py-2 fw-bold" style="border-radius: 10px;">
+                            <button type="submit" class="btn btn-success w-100 py-2 fw-bold rounded-btn">
                                 ĐĂNG KÝ NGAY
                             </button>
                         </form>
@@ -213,15 +214,15 @@
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
                     <p>
-                        <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                        <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
                             12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
                     </p>
                     <p>
-                        <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                        <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
                             0123 456 789
                     </p>
                     <p>
-                        <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                        <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
                             support@rauxanh.com
                     </p>
                 </div>
@@ -308,3 +309,4 @@
 </script>
 </body>
 </html>
+

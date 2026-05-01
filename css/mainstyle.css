@@ -33,3 +33,57 @@
 .payment-option input:checked {
     accent-color: #198754;
 }
+
+/* Utility classes */
+.icon-inline-sm {
+    width: 28px;
+    vertical-align: middle;
+}
+
+.icon-xs {
+    width: 25px;
+}
+
+.badge-xs {
+    font-size: 0.65rem;
+}
+
+.banner-slide {
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+}
+
+.banner-overlay {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.banner-caption {
+    width: 90%;
+}
+
+.card-img-contain {
+    height: 150px;
+    object-fit: contain;
+}
+
+.icon-sm-height {
+    height: 28px;
+}
+
+.card-img-cover {
+    height: 200px;
+    object-fit: cover;
+}
+
+.rounded-start-lg {
+    border-radius: 10px 0 0 10px;
+}
+
+.rounded-end-lg {
+    border-radius: 0 10px 10px 0;
+}
+
+.rounded-btn {
+    border-radius: 10px;
+}
