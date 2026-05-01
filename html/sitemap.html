@@ -8,225 +8,103 @@
     <link rel="stylesheet" href="../css/mainstyle.css">
     <style>
         body {
-            background: linear-gradient(135deg, #f0faf4 0%, #e8f5e9 50%, #f1f8e9 100%);
+            background-color: #f8f9fa;
             min-height: 100vh;
         }
 
         .sitemap-title {
-            font-size: 2.2rem;
-            letter-spacing: 1px;
+            font-size: 2rem;
+            color: #2e7d32;
+            font-weight: bold;
         }
 
-        /* ===== TREE STRUCTURE ===== */
-        .tree-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: calc(100vh - 300px);
-            padding: 20px;
-            overflow-x: auto;
+        .sitemap-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
 
         .tree {
-            flex-shrink: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
         }
 
         .tree ul {
-            padding-top: 14px;
-            position: relative;
-            transition: all 0.3s;
-            display: flex;
-            justify-content: center;
-            gap: 0;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tree > ul {
+            padding-left: 20px;
         }
 
         .tree li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding-left: 25px;
             position: relative;
-            padding: 14px 6px 0 6px;
-            list-style: none;
+            margin-bottom: 5px;
         }
 
-        /* Vertical connector from parent to horizontal line */
-        .tree li::before,
-        .tree li::after {
-            content: '';
+        .tree li:before {
+            content: "├─ ";
             position: absolute;
-            top: 0;
-            width: 50%;
-            height: 14px;
-            border-top: 2px solid #43a047;
+            left: 0;
+            color: #43a047;
+            font-weight: bold;
         }
 
-        .tree li::before {
-            right: 50%;
-            border-right: 2px solid #43a047;
+        .tree li:last-child:before {
+            content: "└─ ";
         }
 
-        .tree li::after {
-            left: 50%;
-            border-left: 2px solid #43a047;
-        }
-
-        /* Remove left connector from first child */
-        .tree li:first-child::before {
-            border: none;
-        }
-
-        /* Remove right connector from last child */
-        .tree li:last-child::after {
-            border: none;
-        }
-
-        .tree li:first-child::after {
-            border-radius: 8px 0 0 0;
-        }
-
-        .tree li:last-child::before {
-            border-radius: 0 8px 0 0;
-        }
-
-        /* Remove top connectors from root */
-        .tree > ul > li::before,
-        .tree > ul > li::after {
-            border: none;
-        }
-
-        /* Vertical connector from node down to children */
-        .tree li ul::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 0;
-            height: 14px;
-            border-left: 2px solid #43a047;
-        }
-
-        /* Only-child: just a straight vertical line */
-        .tree li:only-child::before,
-        .tree li:only-child::after {
-            border: none;
-        }
-
-        /* ===== NODE CARDS ===== */
-        .node {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            border-radius: 10px;
-            background: #fff;
-            border: 2px solid #a5d6a7;
-            box-shadow: 0 3px 10px rgba(56, 142, 60, 0.10);
-            cursor: pointer;
-            text-decoration: none;
+        .tree li a {
             color: #2e7d32;
-            font-weight: 600;
-            font-size: 0.78rem;
-            transition: all 0.25s ease;
-            position: relative;
-            white-space: nowrap;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: all 0.2s ease;
         }
 
-        .node:hover {
-            background: #2e7d32;
-            color: #fff;
-            border-color: #2e7d32;
-            box-shadow: 0 8px 28px rgba(46, 125, 50, 0.25);
-            transform: translateY(-3px) scale(1.04);
-        }
-
-        .node .icon {
-            font-size: 1rem;
-        }
-
-        /* Root node special styling */
-        .node.root {
-            background: linear-gradient(135deg, #2e7d32, #43a047);
-            color: #fff;
-            border: none;
-            padding: 10px 22px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            box-shadow: 0 4px 18px rgba(46, 125, 50, 0.3);
-        }
-
-        .node.root:hover {
-            background: linear-gradient(135deg, #1b5e20, #2e7d32);
-            transform: translateY(-4px) scale(1.06);
-            box-shadow: 0 10px 32px rgba(27, 94, 32, 0.35);
-        }
-
-        /* Category header nodes */
-        .node.category {
-            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-            border-color: #81c784;
+        .tree li a:hover {
+            background-color: #e8f5e9;
             color: #1b5e20;
+            font-weight: 600;
+        }
+
+        .tree li ul {
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .tree li ul li {
+            padding-left: 35px;
+        }
+
+        .tree li ul li:before {
+            left: 10px;
+        }
+
+        .tree li.root > a {
             font-weight: 700;
-        }
-
-        .node.category:hover {
-            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            font-size: 1.1rem;
             color: #fff;
-            border-color: #1b5e20;
+            background: #2e7d32;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
         }
 
-        /* Auth flow nodes */
-        .node.auth {
-            border-color: #ffb74d;
-            color: #e65100;
-        }
-
-        .node.auth:hover {
-            background: #e65100;
-            color: #fff;
-            border-color: #e65100;
-        }
-
-        /* Cart/Payment flow nodes */
-        .node.cart {
-            border-color: #7986cb;
-            color: #283593;
-        }
-
-        .node.cart:hover {
-            background: #283593;
-            color: #fff;
-            border-color: #283593;
-        }
-
-
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .tree-container {
-                justify-content: flex-start;
-            }
-        }
-
-        /* Pulse animation on root */
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 6px 24px rgba(46, 125, 50, 0.3); }
-            50% { box-shadow: 0 6px 32px rgba(46, 125, 50, 0.5); }
-        }
-
-        .node.root {
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        .node.root:hover {
-            animation: none;
-        }
-
-        /* Arrow indicator for nodes with children */
-        .has-children > .node::after {
-            content: '▾';
-            margin-left: 4px;
-            font-size: 0.8rem;
-            opacity: 0.5;
+        .tree li.root:before {
+            content: "🏠 ";
+            position: absolute;
+            left: -5px;
+            color: #2e7d32;
+            font-weight: normal;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -288,124 +166,52 @@
         </header>
 
     <!-- Sitemap -->
-    <h1 class="sitemap-title text-center mt-5 mb-2 fw-bold text-success">🗺️ Sơ đồ trang web</h1>
-    <p class="text-center text-muted mb-5">Biểu diễn mối quan hệ giữa các trang trong website <strong>Rau Sạch Xanh</strong></p>
+    <div class="sitemap-container">
+        <h1 class="sitemap-title text-center mb-4">🗺️ Sơ đồ trang web</h1>
+        <p class="text-center text-muted mb-4">Cây cấu trúc website <strong>Rau Sạch Xanh</strong></p>
 
-    <!-- Sơ đồ cây -->
-    <div class="tree-container">
         <div class="tree">
             <ul>
-                <li class="has-children">
-                    <a href="homepage.html" class="node root">
-                        <span class="icon">🏠</span> Trang chủ
-                    </a>
+                <li class="root">
+                    <a href="homepage.html">Rau Sạch Xanh</a>
                     <ul>
-                        <!-- Sản phẩm -->
-                        <li class="has-children">
-                            <a href="produce.html" class="node category">
-                                <span class="icon">🥬</span> Sản phẩm
-                            </a>
+                        <li>
+                            <a href="produce.html">🥬 Sản phẩm</a>
                             <ul>
+                                <li><a href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a href="produce.html?type=raula">Rau lá</a></li>
                                 <li>
-                                    <a href="produce.html?type=raucu" class="node">
-                                        <span class="icon">🥕</span> Rau củ
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="produce.html?type=traicay" class="node">
-                                        <span class="icon">🍎</span> Trái cây
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="produce.html?type=raula" class="node">
-                                        <span class="icon">🥗</span> Rau lá
-                                    </a>
-                                </li>
-                                <li class="has-children">
-                                    <a href="detail.html" class="node">
-                                        <span class="icon">🔍</span> Chi tiết SP
-                                    </a>
+                                    <a href="detail.html">Chi tiết sản phẩm</a>
                                     <ul>
-                                        <li>
-                                            <a href="cart.html" class="node cart">
-                                                <span class="icon">🛒</span> Giỏ hàng
-                                            </a>
-                                        </li>
+                                        <li><a href="cart.html">🛒 Thêm vào giỏ</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-
-                        <!-- Giới thiệu -->
+                        <li><a href="about.html">ℹ️ Giới thiệu</a></li>
+                        <li><a href="news.html">📰 Tin tức</a></li>
                         <li>
-                            <a href="about.html" class="node">
-                                <span class="icon">ℹ️</span> Giới thiệu
-                            </a>
-                        </li>
-
-                        <!-- Tin tức -->
-                        <li>
-                            <a href="news.html" class="node">
-                                <span class="icon">📰</span> Tin tức
-                            </a>
-                        </li>
-
-                        <!-- Xác thực -->
-                        <li class="has-children">
-                            <a href="login.html" class="node auth">
-                                <span class="icon">🔐</span> Đăng nhập
-                            </a>
+                            <a href="login.html">🔐 Xác thực</a>
                             <ul>
-                                <li>
-                                    <a href="register.html" class="node auth">
-                                        <span class="icon">📝</span> Đăng ký
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="forget.html" class="node auth">
-                                        <span class="icon">🔑</span> Quên MK
-                                    </a>
-                                </li>
+                                <li><a href="login.html">Đăng nhập</a></li>
+                                <li><a href="register.html">Đăng ký</a></li>
+                                <li><a href="forget.html">Quên mật khẩu</a></li>
                             </ul>
                         </li>
-
-                        <!-- Tài khoản -->
-                        <li class="has-children">
-                            <a href="#" class="node auth">
-                                <span class="icon">👤</span> Tài khoản
-                            </a>
+                        <li>
+                            <a href="#">👤 Tài khoản</a>
                             <ul>
-                                <li>
-                                    <a href="profile.html" class="node auth">
-                                        <span class="icon">🆔</span> Xem Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="history.html" class="node auth">
-                                        <span class="icon">📜</span> Lịch sử mua hàng
-                                    </a>
-                                </li>
+                                <li><a href="profile.html">Xem Profile</a></li>
+                                <li><a href="history.html">Lịch sử mua hàng</a></li>
                             </ul>
                         </li>
-
-                        <!-- Giỏ hàng -->
-                        <li class="has-children">
-                            <a href="cart.html" class="node cart">
-                                <span class="icon">🛒</span> Giỏ hàng
-                            </a>
+                        <li>
+                            <a href="cart.html">🛒 Giỏ hàng & Thanh toán</a>
                             <ul>
-                                <li class="has-children">
-                                    <a href="payment.html" class="node cart">
-                                        <span class="icon">💳</span> Thanh toán
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="success.html" class="node cart">
-                                                <span class="icon">✅</span> Thành công
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><a href="cart.html">Giỏ hàng</a></li>
+                                <li><a href="payment.html">Thanh toán</a></li>
+                                <li><a href="success.html">✅ Hoàn tất</a></li>
                             </ul>
                         </li>
                     </ul>
