@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="..//css/bootstrap.min.css">
     <script src="../js/bootstrap.min.js"></script>
 </head>
+
 <body>
+    <style>
+        .card-img-cover {
+            width: 100%;
+            height: 200px;        
+            object-fit: cover;    
+        }
+</style>
 <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container">
@@ -65,57 +73,62 @@
         </header>
     <h1 class="text-center text-success fw-bold mb-5 mt-4">Tin tức & Kiến thức</h1>
     <div class="container">
+<div class="container my-4">
     <div class="row justify-content-center g-4">
 
-            <!-- Bài 1 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/loiicnanrau.webp" class="card-img-top" class="card-img-cover">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Lợi ích của việc ăn rau mỗi ngày</h5>
-                        <p class="text-muted">Rau xanh cung cấp vitamin, khoáng chất và giúp tăng cường sức khỏe...</p>
-                        <button class="btn btn-success btn-sm" onclick="showModal('detail1')">Xem thêm</button>
-                    </div>
+        <!-- Bài 1 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="../img/loiicnanrau.webp" class="card-img-top card-img-cover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold">Lợi ích của việc ăn rau mỗi ngày</h5>
+                    <p class="text-muted flex-grow-1">
+                        Rau xanh cung cấp vitamin, khoáng chất và giúp tăng cường sức khỏe...
+                    </p>
+                    <button class="btn btn-success btn-sm mt-auto" onclick="showModal('detail1')">
+                        Xem thêm
+                    </button>
                 </div>
             </div>
-
-            <!-- Bài 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/an-rau-tot-cho-suc-khoe-7488.jpg" class="card-img-top" class="card-img-cover">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Cách chọn rau sạch đúng chuẩn</h5>
-                        <p class="text-muted">Không phải ai cũng biết cách chọn rau sạch...</p>
-                        <button class="btn btn-success btn-sm" onclick="showModal('detail2')">Xem thêm</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bài 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/thucphansach.jpg" class="card-img-top" class="card-img-cover">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Thực phẩm sạch và sức khỏe</h5>
-                        <p class="text-muted">Sử dụng thực phẩm sạch giúp giảm nguy cơ bệnh tật...</p>
-                        <button class="btn btn-success btn-sm" onclick="showModal('detail3')">Xem thêm</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <!-- Chi tiết bài viết -->
-    <div id="detail" class="mt-5" class="d-none">
-        <h3 id="detail-title" class="fw-bold text-success"></h3>
-        <p id="detail-content"></p>
-        <button class="btn btn-secondary" onclick="hideDetail()">Đóng</button>
+        <!-- Bài 2 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="../img/an-rau-tot-cho-suc-khoe-7488.jpg" class="card-img-top card-img-cover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold">Cách chọn rau sạch đúng chuẩn</h5>
+                    <p class="text-muted flex-grow-1">
+                        Không phải ai cũng biết cách chọn rau sạch...
+                    </p>
+                    <button class="btn btn-success btn-sm mt-auto" onclick="showModal('detail2')">
+                        Xem thêm
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bài 3 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="../img/thucphansach.jpg" class="card-img-top card-img-cover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold">Thực phẩm sạch và sức khỏe</h5>
+                    <p class="text-muted flex-grow-1">
+                        Sử dụng thực phẩm sạch giúp giảm nguy cơ bệnh tật...
+                    </p>
+                    <button class="btn btn-success btn-sm mt-auto" onclick="showModal('detail3')">
+                        Xem thêm
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
+    
 
 </div>
-
-
     <!-- Footer -->
     <footer class="mt-5 pt-5">
             <div class="container-fluid bg-success">
@@ -304,10 +317,7 @@
             modal.show();
         }
 
-</script>
-
-
-    
+</script>   
 <script>
        function checkLogin() {
             const user = JSON.parse(localStorage.getItem("currentUser"));
