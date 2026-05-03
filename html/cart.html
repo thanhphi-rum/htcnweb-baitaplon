@@ -46,8 +46,8 @@
                         </li>
 
                         <!-- Đã đăng nhập -->
-                        <li class="nav-item dropdown" id="nav-user" class="d-none">
-                            <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
                             <ul class="dropdown-menu">
@@ -300,7 +300,7 @@
             saveCart(cart);
             renderCart();
         }
-
+        // Xử lý nút đặt hàng
         const orderBtn = document.getElementById('btn-order');
         if (orderBtn) {
             orderBtn.addEventListener('click', function() {
@@ -312,28 +312,23 @@
                 window.location.href = 'payment.html';
             });
         }
-
+        // Render giỏ hàng khi trang được tải
         renderCart();
-    </script>
-    
-<script>
+        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
         function checkLogin() {
             const user = JSON.parse(localStorage.getItem("currentUser"));
 
             if (user) {
-                document.getElementById("nav-login").style.display = "none";
-                document.getElementById("nav-user").style.display = "block";
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
                 document.getElementById("user-name").textContent = user.fullname || user.username;
             } else {
-                document.getElementById("nav-login").style.display = "block";
-                document.getElementById("nav-user").style.display = "none";
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
             }
         }
-
-
         checkLogin();
-
-</script>
+    </script>
 </body>
 </html>
 

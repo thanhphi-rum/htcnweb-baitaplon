@@ -7,39 +7,8 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #f4f7f6;
-        }
-
-        ul, li {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .dropdown-menu {
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .sidebar-green {
-            background-color: #1a4a2e;
-            color: white;
-            border-radius: 15px 0 0 15px;
-        }
-    </style>
 </head>
-<body>
+<body class="auth-page">
 <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container">
@@ -75,8 +44,8 @@
                         </li>
 
                         <!-- Đã đăng nhập -->
-                        <li class="nav-item dropdown" id="nav-user" class="d-none">
-                            <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
                             <ul class="dropdown-menu">
@@ -102,15 +71,15 @@
                 <div class="row">
                     <div class="col-md-5 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center" class="rounded-start-lg">
                         <div class="text-center mb-4">
-                            <img src="../icon/icons8-group-of-vegetables-96.png" alt="Lock" style=" width: 60px;">
+                            <img src="../icon/icons8-group-of-vegetables-96.png" alt="Lock" class="auth-lock-icon">
                         </div>
                         <h3 class="fw-bold text-center text-warning">Mừng Trở Lại!</h3>
-                        <p class="mt-3 text-center small" style="opacity: 0.9;">Đăng nhập để tiếp tục mua sắm những sản phẩm rau sạch tươi ngon nhất cho gia đình bạn.</p>
+                        <p class="mt-3 text-center small auth-opacity">Đăng nhập để tiếp tục mua sắm những sản phẩm rau sạch tươi ngon nhất cho gia đình bạn.</p>
                         
-                        <ul class="mt-4 p-0 small" style="opacity: 0.9;">
-                            <li class="mb-3" style="color: green;">✔ Quản lý đơn hàng dễ dàng</li>
-                            <li class="mb-3" style="color: blue;">✔ Nhận thông báo khuyến mãi</li>
-                            <li class="mb-3" style="color: red;">✔ Tích điểm đổi voucher</li>
+                        <ul class="mt-4 p-0 small auth-opacity">
+                            <li class="mb-3 color-green">✔ Quản lý đơn hàng dễ dàng</li>
+                            <li class="mb-3 color-blue">✔ Nhận thông báo khuyến mãi</li>
+                            <li class="mb-3 color-red">✔ Tích điểm đổi voucher</li>
                         </ul>
                     </div>
 
@@ -246,12 +215,12 @@
             const user = JSON.parse(localStorage.getItem("currentUser"));
 
             if (user) {
-                document.getElementById("nav-login").style.display = "none";
-                document.getElementById("nav-user").style.display = "block";
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
                 document.getElementById("user-name").textContent = user.fullname || user.username;
             } else {
-                document.getElementById("nav-login").style.display = "block";
-                document.getElementById("nav-user").style.display = "none";
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
             }
         }
 
