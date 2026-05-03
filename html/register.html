@@ -265,7 +265,7 @@
             if (user) {
                 document.getElementById("nav-login").classList.add("d-none");
                 document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname || user.username;
+                document.getElementById("user-name").textContent = user.fullname;
             } else {
                 document.getElementById("nav-login").classList.remove("d-none");
                 document.getElementById("nav-user").classList.add("d-none");
