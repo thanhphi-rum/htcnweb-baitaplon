@@ -8,163 +8,6 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <style>
-        /* Tổng quan */
-        .hero-about {
-            background: linear-gradient(135deg, #1a6632 0%, #28a745 60%, #52c97c 100%);
-            padding: 80px 0 60px;
-            color: white;
-        }
-
-        .hero-about h1 {
-            font-size: 45px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .hero-about p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        /* Mục tiêu */
-        .stat-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px 20px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
-        }
-
-        .stat-number {
-            font-size: 38px;
-            font-weight: 700;
-            color: #198754;
-        }
-
-        .stat-label {
-            color: #6c757d;
-            font-size: 15px;
-            margin-top: 4px;
-        }
-
-        /* Câu chuyện */
-        .section-title {
-            font-size: 30px;
-            font-weight: 700;
-            color: #1a6632;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: #28a745;
-            border-radius: 2px;
-        }
-
-        .story-img {
-            border-radius: 20px;
-            object-fit: cover;
-            width: 100%;
-            height: 320px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        /* Giá trị */
-        .value-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            margin-bottom: 14px;
-        }
-
-        .value-card {
-            border: none;
-            border-radius: 16px;
-            padding: 28px 20px;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Thành viên */
-        .team-section {
-            background-color: #f8fdf9;
-        }
-
-        .member-card {
-            border: none;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
-            height: 100%;
-        }
-
-        .member-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .member-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            object-position: top;
-            display: block;
-        }
-
-        .member-card .p-4 {
-            padding: 24px 18px !important;
-        }
-
-        .member-card p {
-            line-height: 1.55;
-        }
-
-        .member-card .d-flex {
-            flex-wrap: wrap;
-            margin-top: 12px !important;
-        }
-
-        .member-role {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 6px 16px !important;
-            border-radius: 20px;
-            display: inline-block;
-        }
-
-        /* Footer */
-        footer a:hover {
-            color: #d4edda !important;
-        }
-    </style>
     <script>
         // Cập nhật số lượng giỏ hàng từ localStorage
         function updateBadge() {
@@ -212,8 +55,8 @@
                         </li>
 
                         <!-- Đã đăng nhập -->
-                        <li class="nav-item dropdown" id="nav-user" class="d-none">
-                            <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
                             <ul class="dropdown-menu">
@@ -293,7 +136,7 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <img src="../img/banner.jpeg" alt="Câu chuyện Rau Sạch Xanh" class="story-img">
+                    <img src="../img/banner.png" alt="Câu chuyện Rau Sạch Xanh" class="story-img">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title">Câu chuyện của chúng tôi</h2>
@@ -309,7 +152,7 @@
                         Dự án được thực hiện trong khuôn khổ môn học <em>Hệ thống & Công nghệ Web</em>, với mục tiêu học
                         hỏi và thực hành các kỹ thuật phát triển web hiện đại.
                     </p>
-                    <a href="homepage.html" class="btn btn-success mt-3 px-4">
+                    <a href="produce.html" class="btn btn-success mt-3 px-4">
                         <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
                         Xem sản phẩm
                     </a>
@@ -331,7 +174,7 @@
                         <div class="value-icon bg-success bg-opacity-10 mx-auto">
                             <img src="../icon/icons8-group-of-vegetables-96.png" alt="" class="icon-inline-sm">
                         </div>
-                        <h5 class="fw-bold">Sạch &amp; An Toàn</h5>
+                        <h5 class="fw-bold">Sạch & An Toàn</h5>
                         <p class="text-secondary small mb-0">Tất cả sản phẩm đều được kiểm định, không hóa chất độc hại.
                         </p>
                     </div>
@@ -509,27 +352,22 @@
     </footer>
 
     <script>
+        // Cập nhật số lượng giỏ hàng khi trang được tải
         updateBadge();
-    </script>
-<script>
+        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
         function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
+                const user = JSON.parse(localStorage.getItem("currentUser"));
 
-            if (user) {
-                document.getElementById("nav-login").style.display = "none";
-                document.getElementById("nav-user").style.display = "block";
-                document.getElementById("user-name").textContent = user.fullname || user.username;
-            } else {
-                document.getElementById("nav-login").style.display = "block";
-                document.getElementById("nav-user").style.display = "none";
+                if (user) {
+                    document.getElementById("nav-login").classList.add("d-none");
+                    document.getElementById("nav-user").classList.remove("d-none");
+                    document.getElementById("user-name").textContent = user.fullname || user.username;
+                } else {
+                    document.getElementById("nav-login").classList.remove("d-none");
+                    document.getElementById("nav-user").classList.add("d-none");
+                }
             }
-        }
-
-
-        checkLogin();
-
-</script>
+            checkLogin();
+    </script>
 </body>
 </html>
-
-

@@ -6,109 +6,10 @@
     <title>Sitemap - Rau Xanh</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            min-height: 100vh;
-        }
-
-        .sitemap-title {
-            font-size: 2rem;
-            color: #2e7d32;
-            font-weight: bold;
-        }
-
-        .sitemap-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-
-        .tree {
-            font-family: Arial, sans-serif;
-            line-height: 1.8;
-        }
-
-        .tree ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .tree > ul {
-            padding-left: 20px;
-        }
-
-        .tree li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 5px;
-        }
-
-        .tree li:before {
-            content: "├─ ";
-            position: absolute;
-            left: 0;
-            color: #43a047;
-            font-weight: bold;
-        }
-
-        .tree li:last-child:before {
-            content: "└─ ";
-        }
-
-        .tree li a {
-            color: #2e7d32;
-            text-decoration: none;
-            padding: 4px 8px;
-            border-radius: 3px;
-            transition: all 0.2s ease;
-        }
-
-        .tree li a:hover {
-            background-color: #e8f5e9;
-            color: #1b5e20;
-            font-weight: 600;
-        }
-
-        .tree li ul {
-            padding-left: 0;
-            margin-left: 0;
-        }
-
-        .tree li ul li {
-            padding-left: 35px;
-        }
-
-        .tree li ul li:before {
-            left: 10px;
-        }
-
-        .tree li.root > a {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #fff;
-            background: #2e7d32;
-            padding: 8px 12px;
-            border-radius: 5px;
-            display: inline-block;
-        }
-
-        .tree li.root:before {
-            content: "🏠 ";
-            position: absolute;
-            left: -5px;
-            color: #2e7d32;
-            font-weight: normal;
-            font-size: 1rem;
-        }
-    </style>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    
 </head>
-<body>
+<body class="sitemap-page">
     <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container">
@@ -144,8 +45,8 @@
                         </li>
 
                         <!-- Đã đăng nhập -->
-                        <li class="nav-item dropdown" id="nav-user" class="d-none">
-                            <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
                             <ul class="dropdown-menu">
@@ -291,38 +192,35 @@
         </div>
     </footer>
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
     <script>
-        // Update cart badge
+        // Cập nhật số lượng giỏ hàng khi trang được tải
         function getCart() {
             return JSON.parse(localStorage.getItem('cart')) || [];
         }
+        // Hàm cập nhật badge giỏ hàng
         function updateBadge() {
             const cart = getCart();
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
             const badge = document.getElementById('cart-badge');
             if (badge) badge.textContent = totalQty;
         }
+        // Cập nhật badge giỏ hàng khi trang được tải
         updateBadge();
-    </script>
-<script>
+        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
         function checkLogin() {
             const user = JSON.parse(localStorage.getItem("currentUser"));
 
             if (user) {
-                document.getElementById("nav-login").style.display = "none";
-                document.getElementById("nav-user").style.display = "block";
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
                 document.getElementById("user-name").textContent = user.fullname || user.username;
             } else {
-                document.getElementById("nav-login").style.display = "block";
-                document.getElementById("nav-user").style.display = "none";
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
             }
         }
-
-
         checkLogin();
-
-</script>
+    </script>
 </body>
 </html>
 

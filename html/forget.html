@@ -8,41 +8,9 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #f4f7f6;
-        }
-
-        ul,
-        li {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .dropdown-menu {
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar-green {
-            background-color: #1a4a2e;
-            color: white;
-            border-radius: 10px 0 0 10px;
-        }
-    </style>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="auth-page d-flex flex-column min-vh-100">
 
     <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -79,8 +47,8 @@
                         </li>
 
                         <!-- Đã đăng nhập -->
-                        <li class="nav-item dropdown" id="nav-user" class="d-none">
-                            <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
                             <ul class="dropdown-menu">
@@ -101,23 +69,23 @@
         </header>
 
     <div class="container flex-grow-1 my-5 d-flex align-items-center justify-content-center">
-        <div class="card shadow-lg border-0" style="border-radius: 10px; max-width: 900px; width: 100%;">
+        <div class="card shadow-lg border-0 rounded-card-border">
             <div class="row g-0">
 
                 <div class="col-md-5 sidebar-green p-4 p-md-5 d-none d-md-flex flex-column justify-content-center">
                     <div class="text-center mb-4">
-                        <span style="font-size: 65px; display: block; margin-bottom: 10px;">🔐</span>
+                        <span class="auth-icon">🔐</span>
                     </div>
                     <h3 class="fw-bold text-center text-warning mb-3">Lấy Lại Quyền Truy Cập</h3>
-                    <p class="text-center text-light small lh-lg" style="opacity: 0.9;">
+                    <p class="text-center text-light small lh-lg auth-opacity">
                         Chỉ với một vài bước cơ bản, bạn sẽ nhanh chóng khôi phục tài khoản để không bỏ lỡ những ưu đãi
                         rau sạch mỗi ngày.
                     </p>
 
-                    <ul class="mt-4 p-0 small fw-semibold" style="opacity: 0.9;">
-                        <li class="mb-3" style="color: #4ade80;">✔ Thao tác nhanh gọn</li>
-                        <li class="mb-3" style="color: #60a5fa;">✔ Bảo mật thông tin tuyệt đối</li>
-                        <li class="mb-3" style="color: #f87171;">✔ Hỗ trợ tận tâm 24/7</li>
+                    <ul class="mt-4 p-0 small fw-semibold auth-opacity">
+                        <li class="mb-3 color-green">✔ Thao tác nhanh gọn</li>
+                        <li class="mb-3 color-blue">✔ Bảo mật thông tin tuyệt đối</li>
+                        <li class="mb-3 color-red">✔ Hỗ trợ tận tâm 24/7</li>
                     </ul>
                 </div>
 
@@ -136,8 +104,7 @@
                             <span id="errEmail" class="text-danger small mt-1 d-block"></span>
                         </div>
 
-                        <button type="submit" class="btn btn-success w-100 py-2 fw-bold mb-3"
-                            style="border-radius: 8px;">
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-bold mb-3 rounded-btn-8">
                             NHẬN MÃ KHÔI PHỤC
                         </button>
 
@@ -192,7 +159,7 @@
                     <div>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s"
-                            width="100%" height="150" style="border:0; border-radius: 5px;" allowfullscreen=""
+                            width="100%" height="150" class="border-0 rounded-iframe" allowfullscreen=""
                             loading="lazy">
                         </iframe>
                     </div>
@@ -232,12 +199,12 @@
             const user = JSON.parse(localStorage.getItem("currentUser"));
 
             if (user) {
-                document.getElementById("nav-login").style.display = "none";
-                document.getElementById("nav-user").style.display = "block";
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
                 document.getElementById("user-name").textContent = user.fullname || user.username;
             } else {
-                document.getElementById("nav-login").style.display = "block";
-                document.getElementById("nav-user").style.display = "none";
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
             }
         }
 

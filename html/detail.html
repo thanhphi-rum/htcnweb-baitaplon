@@ -7,23 +7,10 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <style>
-        .detail-product-img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 300px;
-            object-fit: contain;
-        }
-
-        #add-cart-message {
-            min-height: 20px;
-        }
-
-    </style>
 </head>
+
 <body>
-    <!-- Header -->
+
     <!-- Header -->
         <header class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container">
@@ -59,8 +46,8 @@
                         </li>
 
                         <!-- Đã đăng nhập -->
-                        <li class="nav-item dropdown" id="nav-user" class="d-none">
-                            <a class="nav-link dropdown-toggle" href="pro" data-bs-toggle="dropdown" id="user-name">
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
                                 Tài khoản
                             </a>
                             <ul class="dropdown-menu">
@@ -80,6 +67,7 @@
             </div>
         </header>
 
+    <!-- Section -->
     <section class="container my-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -103,7 +91,7 @@
 
                     <div class="mb-3 pb-2 border-bottom">
                         <span id="product-old-price" class="text-decoration-line-through text-muted me-2"></span>
-                        <span id="product-price" class="text-success fw-bold" style="font-size: 2rem;">19.000đ</span>
+                        <span id="product-price" class="text-success fw-bold">19.000đ</span>
                         <span id="product-sale-badge" class="badge bg-danger ms-2"></span>
                     </div>
 
@@ -119,7 +107,7 @@
 
                     <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
                         <label for="qty-input" class="mb-0">Số lượng:</label>
-                        <div class="input-group" style="max-width: 140px;">
+                        <div class="input-group input-group-small">
                             <button type="button" class="btn btn-outline-secondary" id="btn-qty-minus">-</button>
                             <input type="text" class="form-control text-center" id="qty-input" value="1" readonly>
                             <button type="button" class="btn btn-outline-secondary" id="btn-qty-plus">+</button>
@@ -206,8 +194,9 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
+        // Dữ liệu sản phẩm mẫu
         const products = {
             sp001: { id: "sp001", name: "Rau muống 300g", price: 19000, oldPrice: 27000, sale: 30, brand: "Organic", unit: "300g", origin: "TP.HCM", img: "../img/raumuong.jpg", description: "Rau muống non, giòn ngọt, phù hợp luộc hoặc xào tỏi." },
             sp002: { id: "sp002", name: "Bông cải", price: 25000, oldPrice: 0, sale: 0, brand: "Organic", unit: "500g", origin: "Đà Lạt", img: "../img/cai.jpg", description: "Bông cải xanh tươi, giàu vitamin, thích hợp nấu súp và xào." },
@@ -228,31 +217,31 @@
             sp017: { id: "sp017", name: "Rau muống 300g", price: 19000, oldPrice: 27000, sale: 30, brand: "Organic", unit: "300g", origin: "TP.HCM", img: "../img/raumuong.jpg", description: "Rau muống tươi sạch, phù hợp cho bữa cơm hằng ngày." },
             sp018: { id: "sp018", name: "Hành lá 300g", price: 18000, oldPrice: 0, sale: 0, brand: "Organic", unit: "300g", origin: "Long An", img: "../img/hanh-la.jpg", description: "Hành lá xanh tươi, thơm nhẹ, tiện dùng cho nhiều món ăn." }
         };
-
+        // Hàm định dạng giá tiền theo chuẩn Việt Nam
         function formatPrice(price) {
             return price.toLocaleString("vi-VN") + "đ";
         }
-
+        // Lấy giỏ hàng từ localStorage
         function getCart() {
             return JSON.parse(localStorage.getItem("cart")) || [];
         }
-
+        // Lưu giỏ hàng vào localStorage
         function saveCart(cart) {
             localStorage.setItem("cart", JSON.stringify(cart));
         }
-
+        // Cập nhật số lượng trên badge giỏ hàng
         function updateBadge() {
             const cart = getCart();
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
             const badge = document.getElementById("cart-badge");
             if (badge) badge.textContent = totalQty;
         }
-
+        // Lấy ID sản phẩm từ URL
         function getProductIdFromUrl() {
             const params = new URLSearchParams(window.location.search);
             return (params.get("id") || "sp001").toLowerCase();
         }
-
+        // Hiển thị thông tin sản phẩm
         function renderProduct(product) {
             document.title = product.name + " - Chi tiết sản phẩm";
             document.getElementById("product-breadcrumb").textContent = product.name;
@@ -276,7 +265,7 @@
                 saleBadgeEl.textContent = "";
             }
         }
-
+        // Thêm sản phẩm vào giỏ hàng
         function addToCart(product, qty) {
             const cart = getCart();
             const existing = cart.find(item => item.id === product.id);
@@ -316,33 +305,33 @@
                 qtyInput.value = qty;
             });
 
-            document.getElementById("btn-add-cart").addEventListener("click", function () {
+            document.getElementById("btn-add-cart").addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Add to cart clicked!');
                 addToCart(product, qty);
+                console.log('Cart saved:', getCart());
                 msg.textContent = "Đã thêm " + qty + " sản phẩm vào giỏ hàng";
                 setTimeout(function () {
                     msg.textContent = "";
                 }, 1500);
             });
         });
-    </script>
-<script>
+        // Kiểm tra trạng thái đăng nhập
         function checkLogin() {
             const user = JSON.parse(localStorage.getItem("currentUser"));
 
             if (user) {
-                document.getElementById("nav-login").style.display = "none";
-                document.getElementById("nav-user").style.display = "block";
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
                 document.getElementById("user-name").textContent = user.fullname || user.username;
             } else {
-                document.getElementById("nav-login").style.display = "block";
-                document.getElementById("nav-user").style.display = "none";
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
             }
         }
-
-
         checkLogin();
-
-</script>
+    </script>
 </body>
 </html>
 
