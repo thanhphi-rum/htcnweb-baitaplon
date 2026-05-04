@@ -3,102 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tin tức - Rau Xanh</title>
     <link rel="stylesheet" href="..//css/bootstrap.min.css">
     <script src="../js/bootstrap.min.js"></script>
 </head>
+
 <body>
+    <style>
+        .card-img-cover {
+            width: 100%;
+            height: 200px;        
+            object-fit: cover;    
+        }
+</style>
+<!-- Header -->
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                    <img src="../img/logo1.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Sản phẩm
+                            </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                        
+                        <!-- Chưa đăng nhập -->
+                        <li class="nav-item" id="nav-login">
+                            <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
+                        </li>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
-             
-                            <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
-                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
-                        </a>
-                    </li>
-                </ul>
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
+                                Tài khoản
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="profile.html">Xem Profile</a></li>
+                                <li><a class="dropdown-item" href="history.html">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="cart.html" id="cart-icon">
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" class="badge-xs">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
     <h1 class="text-center text-success fw-bold mb-5 mt-4">Tin tức & Kiến thức</h1>
     <div class="container">
+<div class="container my-4">
     <div class="row justify-content-center g-4">
 
-            <!-- Bài 1 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/loiicnanrau.webp" class="card-img-top" style="height:200px;object-fit:cover;">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Lợi ích của việc ăn rau mỗi ngày</h5>
-                        <p class="text-muted">Rau xanh cung cấp vitamin, khoáng chất và giúp tăng cường sức khỏe...</p>
-                        <button class="btn btn-success btn-sm" onclick="showModal('detail1')">Xem thêm</button>
-                    </div>
+        <!-- Bài 1 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="../img/loiicnanrau.webp" class="card-img-top card-img-cover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold">Lợi ích của việc ăn rau mỗi ngày</h5>
+                    <p class="text-muted flex-grow-1">
+                        Rau xanh cung cấp vitamin, khoáng chất và giúp tăng cường sức khỏe...
+                    </p>
+                    <button class="btn btn-success btn-sm mt-auto" onclick="showModal('detail1')">
+                        Xem thêm
+                    </button>
                 </div>
             </div>
-
-            <!-- Bài 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/an-rau-tot-cho-suc-khoe-7488.jpg" class="card-img-top" style="height:200px;object-fit:cover;">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Cách chọn rau sạch đúng chuẩn</h5>
-                        <p class="text-muted">Không phải ai cũng biết cách chọn rau sạch...</p>
-                        <button class="btn btn-success btn-sm" onclick="showModal('detail2')">Xem thêm</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bài 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="../img/thucphansach.jpg" class="card-img-top" style="height:200px;object-fit:cover;">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Thực phẩm sạch và sức khỏe</h5>
-                        <p class="text-muted">Sử dụng thực phẩm sạch giúp giảm nguy cơ bệnh tật...</p>
-                        <button class="btn btn-success btn-sm" onclick="showModal('detail3')">Xem thêm</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <!-- Chi tiết bài viết -->
-    <div id="detail" class="mt-5" style="display:none;">
-        <h3 id="detail-title" class="fw-bold text-success"></h3>
-        <p id="detail-content"></p>
-        <button class="btn btn-secondary" onclick="hideDetail()">Đóng</button>
+        <!-- Bài 2 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="../img/an-rau-tot-cho-suc-khoe-7488.jpg" class="card-img-top card-img-cover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold">Cách chọn rau sạch đúng chuẩn</h5>
+                    <p class="text-muted flex-grow-1">
+                        Không phải ai cũng biết cách chọn rau sạch...
+                    </p>
+                    <button class="btn btn-success btn-sm mt-auto" onclick="showModal('detail2')">
+                        Xem thêm
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bài 3 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="../img/thucphansach.jpg" class="card-img-top card-img-cover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold">Thực phẩm sạch và sức khỏe</h5>
+                    <p class="text-muted flex-grow-1">
+                        Sử dụng thực phẩm sạch giúp giảm nguy cơ bệnh tật...
+                    </p>
+                    <button class="btn btn-success btn-sm mt-auto" onclick="showModal('detail3')">
+                        Xem thêm
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
+    
 
 </div>
-
-
     <!-- Footer -->
     <footer class="mt-5 pt-5">
             <div class="container-fluid bg-success">
@@ -106,13 +136,13 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
                         <ul class="ps-4">
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Giới thiệu</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Facebook</a>
                             </li>
                         </ul>
@@ -120,19 +150,19 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
                         <ul class="ps-4">
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Chính sách cộng tác viên</a>
                             </li>
                         </ul>
@@ -140,15 +170,15 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
                                 12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
                                 0123 456 789
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
                                 support@rauxanh.com
                         </p>
                     </div>
@@ -159,7 +189,7 @@
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
                                 width="100%" 
                                 height="150" 
-                                style="border:0;"
+                                class="border-0"
                                 allowfullscreen="" 
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade">
@@ -287,9 +317,25 @@
             modal.show();
         }
 
+</script>   
+<script>
+       function checkLogin() {
+            const user = JSON.parse(localStorage.getItem("currentUser"));
+
+            if (user) {
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
+                document.getElementById("user-name").textContent = user.fullname ;
+            } else {
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
+            }
+        }
+
+
+        checkLogin();
+
 </script>
-
-
-    
 </body>
 </html>
+

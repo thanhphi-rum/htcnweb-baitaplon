@@ -4,153 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Giới Thiệu</title>
+    <title>Giới Thiệu - Rau Xanh</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <style>
-        /* Tổng quan */
-        .hero-about {
-            background: linear-gradient(135deg, #1a6632 0%, #28a745 60%, #52c97c 100%);
-            padding: 80px 0 60px;
-            color: white;
-        }
-
-        .hero-about h1 {
-            font-size: 45px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .hero-about p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        /* Mục tiêu */
-        .stat-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px 20px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
-        }
-
-        .stat-number {
-            font-size: 38px;
-            font-weight: 700;
-            color: #198754;
-        }
-
-        .stat-label {
-            color: #6c757d;
-            font-size: 15px;
-            margin-top: 4px;
-        }
-
-        /* Câu chuyện */
-        .section-title {
-            font-size: 30px;
-            font-weight: 700;
-            color: #1a6632;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: #28a745;
-            border-radius: 2px;
-        }
-
-        .story-img {
-            border-radius: 20px;
-            object-fit: cover;
-            width: 100%;
-            height: 320px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        /* Giá trị */
-        .value-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            margin-bottom: 14px;
-        }
-
-        .value-card {
-            border: none;
-            border-radius: 16px;
-            padding: 28px 20px;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Thành viên */
-        .team-section {
-            background-color: #f8fdf9;
-        }
-
-        .member-card {
-            border: none;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
-        }
-
-        .member-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .member-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            object-position: top;
-            display: block;
-        }
-
-        .member-role {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 6px 16px !important;
-            border-radius: 20px;
-            display: inline-block;
-        }
-
-        /* Footer */
-        footer a:hover {
-            color: #d4edda !important;
-        }
-    </style>
     <script>
         // Cập nhật số lượng giỏ hàng từ localStorage
         function updateBadge() {
@@ -163,45 +20,61 @@
 </head>
 
 <body>
+<!-- Header -->
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                    <img src="../img/logo1.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- Header -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Sản phẩm
+                            </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                        
+                        <!-- Chưa đăng nhập -->
+                        <li class="nav-item" id="nav-login">
+                            <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
+                        </li>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
-             
-                            <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html" style="position:relative;">
-                            <img git src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
-                        </a>
-                    </li>
-                </ul>
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
+                                Tài khoản
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="profile.html">Xem Profile</a></li>
+                                <li><a class="dropdown-item" href="history.html">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="cart.html" id="cart-icon">
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" class="badge-xs">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
     <!-- Tổng quan -->
     <section class="hero-about">
@@ -211,12 +84,12 @@
                 <div class="col-md-6 text-start">
                     <h1>Về Chúng Tôi</h1>
                     <p class="mt-3">
-                        Rau Sạch ra đời với sứ mệnh mang đến bữa ăn an toàn, tươi ngon cho mọi gia đình Việt.<br>
+                        Rau Xanh ra đời với sứ mệnh mang đến bữa ăn an toàn, tươi ngon cho mọi gia đình Việt.<br>
                         Chúng tôi tin rằng sức khỏe bắt đầu từ những gì bạn ăn mỗi ngày.
                     </p>
                     <a href="#our-story" class="btn btn-light btn-lg mt-4 px-5 fw-semibold">Khám phá ngay</a>
                 </div>
-                <!-- Video ngắn giới thiệu -->
+                <!-- Video giới thiệu -->
                 <div class="col-md-6 mt-4 mt-md-0 d-flex justify-content-md-end justify-content-center">
                     <video autoplay loop muted playsinline style="width: 82%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
                         <source src="../video/about.mp4" type="video/mp4">
@@ -263,7 +136,7 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <img src="../img/banner.jpeg" alt="Câu chuyện Rau Sạch Xanh" class="story-img">
+                    <img src="../img/banner.png" alt="Câu chuyện Rau Sạch Xanh" class="story-img">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title">Câu chuyện của chúng tôi</h2>
@@ -279,8 +152,8 @@
                         Dự án được thực hiện trong khuôn khổ môn học <em>Hệ thống & Công nghệ Web</em>, với mục tiêu học
                         hỏi và thực hành các kỹ thuật phát triển web hiện đại.
                     </p>
-                    <a href="homepage.html" class="btn btn-success mt-3 px-4">
-                        <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
+                    <a href="produce.html" class="btn btn-success mt-3 px-4">
+                        <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
                         Xem sản phẩm
                     </a>
                 </div>
@@ -299,9 +172,9 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="value-card text-center">
                         <div class="value-icon bg-success bg-opacity-10 mx-auto">
-                            <img src="../icon/icons8-group-of-vegetables-96.png" alt="" style="width: 28px; vertical-align: middle;">
+                            <img src="../icon/icons8-group-of-vegetables-96.png" alt="" class="icon-inline-sm">
                         </div>
-                        <h5 class="fw-bold">Sạch &amp; An Toàn</h5>
+                        <h5 class="fw-bold">Sạch & An Toàn</h5>
                         <p class="text-secondary small mb-0">Tất cả sản phẩm đều được kiểm định, không hóa chất độc hại.
                         </p>
                     </div>
@@ -309,7 +182,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="value-card text-center">
                         <div class="value-icon bg-primary bg-opacity-10 mx-auto">
-                            <img src="../icon/icons8-delivery-truck-94.png" alt="" style="width:28px;vertical-align:middle;">
+                            <img src="../icon/icons8-delivery-truck-94.png" alt="" class="icon-inline-sm">
                         </div>
                         <h5 class="fw-bold">Giao Hàng Nhanh</h5>
                         <p class="text-secondary small mb-0">Giao trong 2 giờ tại TP.HCM — tươi ngon từ vườn đến bàn ăn.
@@ -329,7 +202,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="value-card text-center">
                         <div class="value-icon bg-danger bg-opacity-10 mx-auto">
-                            <img src="../icon/icons8-heart-94.png" alt="" style="width: 28px; vertical-align: middle;">
+                            <img src="../icon/icons8-heart-94.png" alt="" class="icon-inline-sm">
                         </div>
                         <h5 class="fw-bold">Tận Tâm Phục Vụ</h5>
                         <p class="text-secondary small mb-0">Đội ngũ hỗ trợ nhiệt tình, sẵn sàng giải đáp mọi thắc mắc.
@@ -357,11 +230,13 @@
                             <h6 class="fw-bold mb-1">Bùi Nguyễn Thanh Phi</h6>
                             <span class="member-role badge bg-success">Nhóm trưởng</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                Phụ trách thiết kế & lập trình trang Giỏ hàng, Giới thiệu & Testing
+                                Phụ trách thiết kế & lập trình trang Giỏ hàng, Giới thiệu, Chi tiết sản phẩm, Sitemap & Testing
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-success small fw-semibold px-2 py-1">Cart</span>
                                 <span class="badge bg-success small fw-semibold px-2 py-1">About</span>
+                                <span class="badge bg-success small fw-semibold px-2 py-1">Detail</span>
+                                <span class="badge bg-success small fw-semibold px-2 py-1">Sitemap</span>
                                 <span class="badge bg-success small fw-semibold px-2 py-1">Testing</span>
                             </div>
                         </div>
@@ -376,12 +251,12 @@
                             <h6 class="fw-bold mb-1">Nguyễn Phước Tân</h6>
                             <span class="member-role badge bg-primary">Nhóm phó</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                Phụ trách thiết kế & lập trình trang Đăng nhập, Đăng ký
+                                Phụ trách thiết kế & lập trình trang Đăng nhập, Đăng ký, Quên mật khẩu
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-primary small fw-semibold px-2 py-1">Login</span>
                                 <span class="badge bg-primary small fw-semibold px-2 py-1">Register</span>
-                                <span class="badge bg-primary small fw-semibold px-2 py-1">MenberRegister</span>
+                                <span class="badge bg-primary small fw-semibold px-2 py-1">Forget</span>
                             </div>
                         </div>
                     </div>
@@ -395,7 +270,7 @@
                             <h6 class="fw-bold mb-1">Nguyễn Đăng Khánh</h6>
                             <span class="member-role badge bg-warning">Thành viên</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                hụ trách thiết kế & lập trình trang Thanh toán, Thanh toán thành công
+                                Phụ trách thiết kế & lập trình trang Thanh toán, Thanh toán thành công
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-warning small fw-semibold px-2 py-1">Payment</span>
@@ -413,11 +288,13 @@
                             <h6 class="fw-bold mb-1">Hồ Nhật Ninh</h6>
                             <span class="member-role badge bg-secondary">Thành viên</span>
                             <p class="text-secondary small mt-3 mb-2">
-                                Phụ trách thiết kế & lập trình trang Trang chủ, Tin tức
+                                Phụ trách thiết kế & lập trình trang Trang chủ, Tin tức, Tài khoản & Lịch sử đơn đặt hàng
                             </p>
                             <div class="d-flex justify-content-center gap-2 mt-2">
                                 <span class="badge bg-secondary small fw-semibold px-2 py-1">HomePage</span>
                                 <span class="badge bg-secondary small fw-semibold px-2 py-1">New</span>
+                                <span class="badge bg-secondary small fw-semibold px-2 py-1">Profile</span>
+                                <span class="badge bg-secondary small fw-semibold px-2 py-1">History</span>
                             </div>
                         </div>
                     </div>
@@ -434,39 +311,39 @@
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
                     <ul class="ps-4">
-                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="about.html">Giới
+                        <li class="mb-1"><a class="text-decoration-none text-white" href="about.html">Giới
                                 thiệu</a></li>
-                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Tầm nhìn và
+                        <li class="mb-1"><a class="text-decoration-none text-white" href="#">Tầm nhìn và
                                 Sứ mệnh</a></li>
-                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Facebook</a>
+                        <li class="mb-1"><a class="text-decoration-none text-white" href="#">Facebook</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
                     <ul class="ps-4">
-                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Chính sách
+                        <li class="mb-1"><a class="text-decoration-none text-white" href="#">Chính sách
                                 đổi trả</a></li>
-                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Chính sách
+                        <li class="mb-1"><a class="text-decoration-none text-white" href="#">Chính sách
                                 giao hàng</a></li>
-                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Hướng dẫn mua
+                        <li class="mb-1"><a class="text-decoration-none text-white" href="#">Hướng dẫn mua
                                 hàng</a></li>
-                        <li style="margin-bottom:5px;"><a class="text-decoration-none text-white" href="#">Câu hỏi
+                        <li class="mb-1"><a class="text-decoration-none text-white" href="#">Câu hỏi
                                 thường gặp</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
-                    <p><img style="width:22px;" src="../icon/icons8-address-48.png" alt=""> 12 Nguyễn Văn Bảo, Gò Vấp,
+                    <p><img class="icon-xs" src="../icon/icons8-address-48.png" alt=""> 12 Nguyễn Văn Bảo, Gò Vấp,
                         TP.HCM</p>
-                    <p><img style="width:22px;" src="../icon/icons8-phone-48.png" alt=""> 0123 456 789</p>
-                    <p><img style="width:22px;" src="../icon/icons8-email-48.png" alt=""> support@rauxanh.com</p>
+                    <p><img class="icon-xs" src="../icon/icons8-phone-48.png" alt=""> 0123 456 789</p>
+                    <p><img class="icon-xs" src="../icon/icons8-email-48.png" alt=""> support@rauxanh.com</p>
                 </div>
                 <div class="col-md-3 mt-4">
                     <h5 class="text-uppercase fw-bold text-white mb-3">Địa chỉ</h5>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s"
-                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="100%" height="150" class="border-0" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
@@ -475,7 +352,22 @@
     </footer>
 
     <script>
+        // Cập nhật số lượng giỏ hàng khi trang được tải
         updateBadge();
+        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
+        function checkLogin() {
+                const user = JSON.parse(localStorage.getItem("currentUser"));
+
+                if (user) {
+                    document.getElementById("nav-login").classList.add("d-none");
+                    document.getElementById("nav-user").classList.remove("d-none");
+                    document.getElementById("user-name").textContent = user.fullname;
+                } else {
+                    document.getElementById("nav-login").classList.remove("d-none");
+                    document.getElementById("nav-user").classList.add("d-none");
+                }
+            }
+            checkLogin();
     </script>
 </body>
 </html>

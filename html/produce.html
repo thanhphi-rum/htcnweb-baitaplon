@@ -3,51 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Website bán rau sạch</title>
+    <title>Sản phẩm - Rau Xanh</title>
     <link rel="stylesheet" href="../css/mainstyle.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
 </head>
 <body>
     <!-- Header -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                    <img src="../img/logo1.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Sản phẩm
+                            </a>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
-             
-                            <li><a class="dropdown-item" href="#">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
-                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
-                        </a>
-                    </li>
-                </ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                        
+                        <!-- Chưa đăng nhập -->
+                        <li class="nav-item" id="nav-login">
+                            <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
+                        </li>
+
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
+                                Tài khoản
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="profile.html">Xem Profile</a></li>
+                                <li><a class="dropdown-item" href="history.html">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="cart.html" id="cart-icon">
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" class="badge-xs">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
-
+        </header>
     <div class="container my-4">
         <div class="row">
             <div class="col-lg-12">
@@ -70,8 +86,7 @@
                             <select class="form-select" id="filter-brand" aria-label="Default select example">
                                 <option value="0" selected>Không ràng buộc</option>
                                 <option value="organic">Organic</option>
-                                <option value="cangio">Cần Giờ</option>
-                                <option value="khac">Khác</option>
+                                <option value="VietGap">VietGap</option>
                             </select><br>
 
                             <p>Khuyến mãi</p>
@@ -82,16 +97,16 @@
                                 <option value="no">Không</option>
             
                             </select><br>
-                            <p>Loại</p>
+
+                            <p>Loại sản phẩm</p>
 
                             <select class="form-select" id="filter-type" aria-label="Default select example">
                                 <option value="0" selected>Không ràng buộc</option>
                                 <option value="raucu">Rau củ</option>
-                                <option value="traicay">Trái cây</option>
                                 <option value="raula">Rau lá</option>
+                                <option value="traicay">Trái cây</option>
                             </select><br>
-            
-                            </select><br>  
+                            
                     </nav>
                 </aside>
                     <section class="col-lg-9">
@@ -100,7 +115,7 @@
                             <div class="input-group" style="max-width:280px;">
                                 <input class="form-control shadow-none" type="search" placeholder="Tìm sản phẩm..." id="search-input">
                                 <button class="btn btn-success" type="button" id="search-btn">
-                                    <img src="../icon/icons8-search-30.png" alt="Tìm" style="width:20px; height:20px;">
+                                    <img src="../icon/icons8-search-30.png" alt="Tìm" class="icon-xs">
                                 </button>
                             </div>
                         </div>
@@ -108,7 +123,7 @@
                         <div class="row g-4" id="product-list">
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/raumuong.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/raumuong.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau muống 300g</h6>
                                         
@@ -129,14 +144,14 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/cai.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/cai.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Bông cải</h6>
                                         <p class="text-success">25.000đ</p>
                                         <button class="btn btn-success btn-sm btn-add-cart" style="margin-top: 12px;"
                                             data-id="sp002"
                                             data-name="Bông cải"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-price="25000"
                                             data-type="raula"
@@ -147,7 +162,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/carot.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/carot.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Cà rốt 300gr</h6>
                                         <p class="text-success">18.000đ</p>
@@ -165,7 +180,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/khoqua.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/khoqua.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Khổ qua 300gr</h6>
                                         <p class="text-success">30.000đ</p>
@@ -173,7 +188,7 @@
                                             data-id="sp004"
                                             data-name="Khổ qua 300gr"
                                             data-price="30000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raula"
                                             data-img="../img/khoqua.jpg">Thêm vào giỏ</button>
@@ -183,7 +198,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/mongtoi.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/mongtoi.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Mồng tơi 300gr</h6>
                                         <h6 class="text-decoration-line-through text-muted">19.500đ</h6>
@@ -203,7 +218,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/táo.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/táo.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Táo 1kg</h6>
                                         <p class="text-success">50.000đ</p>
@@ -211,7 +226,7 @@
                                             data-id="sp006"
                                             data-name="Táo 1kg"
                                             data-price="50000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="traicay"
                                             data-img="../img/táo.jpg">Thêm vào giỏ</button>
@@ -221,7 +236,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/bi-do.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/bi-do.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Bí đỏ 1kg</h6>
                                         <p class="text-success">40.000đ</p>
@@ -239,7 +254,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rauden.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rauden.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau dền 300gr</h6>
                                         
@@ -251,7 +266,7 @@
                                             data-id="sp008"
                                             data-name="Rau dền 300gr"
                                             data-price="8000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raula"
                                             data-img="../img/rauden.jpg">Thêm vào giỏ</button>
@@ -261,7 +276,7 @@
 
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rautan.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rautan.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau tần 300gr</h6>
                                         <p class="text-success">17.000đ</p>
@@ -279,7 +294,7 @@
                            
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rau_lang.png" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rau_lang.png" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau lang 300gr</h6>
                                         
@@ -290,7 +305,7 @@
                                             data-id="sp010"
                                             data-name="Rau lang 300gr"
                                             data-price="9500"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=49
                                             data-type="raula"
                                             data-img="../img/rau_lang.png">Thêm vào giỏ</button>
@@ -300,7 +315,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/cam.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/cam.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Cam 1kg</h6>
 
@@ -320,7 +335,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/dua_luoi.png" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/dua_luoi.png" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Dưa lưới 1kg</h6>
                                         <h6 class="text-decoration-line-through text-muted">119.000đ</h6>
@@ -330,7 +345,7 @@
                                             data-id="sp012"
                                             data-name="Dưa lưới 1kg"
                                             data-price="69000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=42
                                             data-type="traicay"
                                             data-img="../img/dua_luoi.png">Thêm vào giỏ</button>
@@ -340,7 +355,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rau-ngot.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rau-ngot.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau ngót</h6>
                                         <p class="text-success">13.000đ</p>
@@ -358,7 +373,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/khoai-tay.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/khoai-tay.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Khoai tây 500g</h6>
                                         
@@ -379,7 +394,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/khoai-lang.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/khoai-lang.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Khoai lang 500g</h6>
                                         <h6 class="text-success">20.000đ</h6>
@@ -387,7 +402,7 @@
                                             data-id="sp015"
                                             data-name="Khoai lang 500g"
                                             data-price="20000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raucu"
                                             data-img="../img/khoai-lang.jpg">Thêm vào giỏ</button>
@@ -397,7 +412,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/rau-ram.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/rau-ram.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Rau răm 50g</h6>
                                         
@@ -418,7 +433,7 @@
                             
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="card text-center h-100">
-                                    <img src="../img/hanh-la.jpg" class="card-img-top p-3" style="height:150px; object-fit:contain;">
+                                    <img src="../img/hanh-la.jpg" class="card-img-top p-3" class="card-img-contain">
                                     <div class="card-body">
                                         <h6>Hành lá 300g</h6>
                                         <h6 class="text-success">18.000đ</h6>
@@ -426,7 +441,7 @@
                                             data-id="sp018"
                                             data-name="Hành lá 300g"
                                             data-price="18000"
-                                            data-brand="organic"
+                                            data-brand="VietGap"
                                             data-sale=0
                                             data-type="raucu"
                                             data-img="../img/hanh-la.jpg">Thêm vào giỏ</button>
@@ -447,13 +462,13 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
                         <ul class="ps-4">
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="news.html">Giới thiệu</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Facebook</a>
                             </li>
                         </ul>
@@ -461,19 +476,19 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
                         <ul class="ps-4">
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a>
                             </li>
-                            <li style="margin-bottom: 5px;">
+                            <li class="mb-1">
                                 <a class="text-decoration-none text-white" href="#">Chính sách cộng tác viên</a>
                             </li>
                         </ul>
@@ -481,15 +496,15 @@
                     <div class="col-md-3 mt-4 text-white">
                         <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
                                 12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
                                 0123 456 789
                         </p>
                         <p>
-                            <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                            <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
                                 support@rauxanh.com
                         </p>
                     </div>
@@ -500,7 +515,7 @@
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
                                 width="100%" 
                                 height="150" 
-                                style="border:0;"
+                                class="border-0"
                                 allowfullscreen="" 
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade">
@@ -514,7 +529,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script>
 
-        // Tìm kiếm sản phẩm (chỉ lọc trên trang hiện tại)
+        // Tìm kiếm sản phẩm 
 
         function filterProducts() {
             const priceValue = document.getElementById('filter-price').value;
@@ -552,6 +567,9 @@
                 // LỌC THEO LOẠI
                 if (typeValue && typeValue !== "0" && type !== typeValue) show = false;
 
+                // LỌC THEO NHÃN HIỆU
+                if (brandValue && brandValue !== "0" && brand !== brandValue) show = false;
+
                 product.style.display = show ? "block" : "none";
             });
 }
@@ -577,11 +595,15 @@
 
         // Gắn sự kiện cho tất cả nút "Thêm vào giỏ"
         document.querySelectorAll('.btn-add-cart').forEach(function(btn) {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Button clicked!');
                 const id    = this.dataset.id;
                 const name  = this.dataset.name;
                 const price = parseInt(this.dataset.price);
                 const img   = this.dataset.img;
+                console.log('Adding:', { id, name, price, img });
 
                 let cart = getCart();
                 const existing = cart.find(item => item.id === id);
@@ -638,6 +660,26 @@
         // Cập nhật badge khi tải trang
         updateBadge();
     </script>
+<script>
+        function checkLogin() {
+            const user = JSON.parse(localStorage.getItem("currentUser"));
+
+            if (user) {
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
+                document.getElementById("user-name").textContent = user.fullname ;
+            } else {
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
+            }
+        }
+
+
+        checkLogin();
+
+</script>
 </body>
 </html>
+
+
 

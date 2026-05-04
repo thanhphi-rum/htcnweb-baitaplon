@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Rau Xanh</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<body class="sitemap-page">
+    <!-- Header -->
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                    <img src="../img/logo1.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Sản phẩm
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                        
+                        <!-- Chưa đăng nhập -->
+                        <li class="nav-item" id="nav-login">
+                            <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
+                        </li>
+
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
+                                Tài khoản
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="profile.html">Xem Profile</a></li>
+                                <li><a class="dropdown-item" href="history.html">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="cart.html" id="cart-icon">
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" class="badge-xs">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+    <!-- Sitemap -->
+    <div class="sitemap-container">
+        <h1 class="sitemap-title text-center mb-4">🗺️ Sơ đồ trang web</h1>
+        <p class="text-center text-muted mb-4">Cây cấu trúc website <strong>Rau Xanh</strong></p>
+
+        <div class="tree">
+            <ul>
+                <li class="root">
+                    <a href="homepage.html">Rau Xanh</a>
+                    <ul>
+                        <li>
+                            <a href="produce.html">🥬 Sản phẩm</a>
+                            <ul>
+                                <li><a href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a href="produce.html?type=raula">Rau lá</a></li>
+                                <li>
+                                    <a href="detail.html">Chi tiết sản phẩm</a>
+                                    <ul>
+                                        <li><a href="cart.html">🛒 Thêm vào giỏ</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">ℹ️ Giới thiệu</a></li>
+                        <li><a href="news.html">📰 Tin tức</a></li>
+                        <li>
+                            <a href="login.html">🔐 Xác thực</a>
+                            <ul>
+                                <li><a href="login.html">Đăng nhập</a></li>
+                                <li><a href="register.html">Đăng ký</a></li>
+                                <li><a href="forget.html">Quên mật khẩu</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">👤 Tài khoản</a>
+                            <ul>
+                                <li><a href="profile.html">Xem Profile</a></li>
+                                <li><a href="history.html">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="cart.html">🛒 Giỏ hàng & Thanh toán</a>
+                            <ul>
+                                <li><a href="cart.html">Giỏ hàng</a></li>
+                                <li><a href="payment.html">Thanh toán</a></li>
+                                <li><a href="success.html">✅ Hoàn tất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-5">
+        <div class="container-fluid bg-success">
+            <div class="row align-items-start px-5 pb-3">
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
+                    <ul class="ps-4">
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="news.html">Giới thiệu</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="#">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
+                    <ul class="ps-4">
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-decoration-none text-white" href="#">Chính sách cộng tác viên</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-4 text-white">
+                    <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
+                    <p>
+                        <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
+                            12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
+                    </p>
+                    <p>
+                        <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
+                            0123 456 789
+                    </p>
+                    <p>
+                        <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
+                            support@rauxanh.com
+                    </p>
+                </div>
+                <div class="col-md-3 mt-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">Địa chỉ</h5>
+                    <div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
+                            width="100%" 
+                            height="150" 
+                            class="border-0"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cập nhật số lượng giỏ hàng khi trang được tải
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+        // Hàm cập nhật badge giỏ hàng
+        function updateBadge() {
+            const cart = getCart();
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cart-badge');
+            if (badge) badge.textContent = totalQty;
+        }
+        // Cập nhật badge giỏ hàng khi trang được tải
+        updateBadge();
+        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
+        function checkLogin() {
+            const user = JSON.parse(localStorage.getItem("currentUser"));
+
+            if (user) {
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
+                document.getElementById("user-name").textContent = user.fullname ;
+            } else {
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
+            }
+        }
+        checkLogin();
+    </script>
+</body>
+</html>
+
+

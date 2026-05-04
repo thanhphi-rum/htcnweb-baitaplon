@@ -7,94 +7,79 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #f4f7f6;
-        }
-
-        ul, li {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .dropdown-menu {
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .sidebar-green {
-            background-color: #1a4a2e;
-            color: white;
-            border-radius: 15px 0 0 15px;
-        }
-    </style>
 </head>
-<body>
+<body class="auth-page">
+<!-- Header -->
+        <header class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                    <img src="../img/logo1.png" alt="Rau Sạch" width="100px" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- Header -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="../html/homepage.html">
-                <img src="../img/logo.png" alt="Rau Sạch" width="100px" class="me-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Sản phẩm
+                            </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link " href="homepage.html">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
+                                <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
+                
+                                <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                        
+                        <!-- Chưa đăng nhập -->
+                        <li class="nav-item" id="nav-login">
+                            <a class="nav-link" href="login.html">Đăng nhập / Đăng ký</a>
+                        </li>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="produce.html?type=raucu">Rau củ</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=traicay">Trái cây</a></li>
-                            <li><a class="dropdown-item" href="produce.html?type=raula">Rau lá</a></li>
-             
-                            <li><a class="dropdown-item" href="produce.html">Tất cả sản phẩm</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập/ Đăng ký</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html" id="cart-icon" style="position:relative;">
-                            <img src="../icon/icons8-cart-48.png" alt="" style="width:28px;vertical-align:middle;">
-                            <span id="cart-badge" class="badge bg-danger" style="position:absolute;top:0;right:-8px;font-size:0.65rem;">0</span>
-                        </a>
-                    </li>
-                </ul>
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown d-none" id="nav-user">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-name">
+                                Tài khoản
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="profile.html">Xem Profile</a></li>
+                                <li><a class="dropdown-item" href="history.html">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="cart.html" id="cart-icon">
+                                <img src="../icon/icons8-cart-48.png" alt="" class="icon-inline-sm">
+                                <span id="cart-badge" class="badge bg-danger position-absolute top-0 start-100 translate-middle" class="badge-xs">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-lg-8 shadow-lg bg-white" style="border-radius: 10px 0px 0px  10px;">
+            <div class="col-lg-8 shadow-lg bg-white" class="rounded-start-lg">
                 <div class="row">
-                    <div class="col-md-5 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center" style="border-radius: 10px 0px 0px  10px;">
+                    <div class="col-md-5 sidebar-green p-5 d-none d-md-flex flex-column justify-content-center" class="rounded-start-lg">
                         <div class="text-center mb-4">
-                            <img src="../icon/icons8-group-of-vegetables-96.png" alt="Lock" style=" width: 60px;">
+                            <img src="../icon/icons8-group-of-vegetables-96.png" alt="Lock" class="auth-lock-icon">
                         </div>
                         <h3 class="fw-bold text-center text-warning">Mừng Trở Lại!</h3>
-                        <p class="mt-3 text-center small" style="opacity: 0.9;">Đăng nhập để tiếp tục mua sắm những sản phẩm rau sạch tươi ngon nhất cho gia đình bạn.</p>
+                        <p class="mt-3 text-center small auth-opacity">Đăng nhập để tiếp tục mua sắm những sản phẩm rau sạch tươi ngon nhất cho gia đình bạn.</p>
                         
-                        <ul class="mt-4 p-0 small" style="opacity: 0.9;">
-                            <li class="mb-3" style="color: green;">✔ Quản lý đơn hàng dễ dàng</li>
-                            <li class="mb-3" style="color: blue;">✔ Nhận thông báo khuyến mãi</li>
-                            <li class="mb-3" style="color: red;">✔ Tích điểm đổi voucher</li>
+                        <ul class="mt-4 p-0 small auth-opacity">
+                            <li class="mb-3 color-green">✔ Quản lý đơn hàng dễ dàng</li>
+                            <li class="mb-3 color-blue">✔ Nhận thông báo khuyến mãi</li>
+                            <li class="mb-3 color-red">✔ Tích điểm đổi voucher</li>
                         </ul>
                     </div>
 
@@ -124,7 +109,7 @@
                                 <a href="forget.html" class="text-success text-decoration-none small fw-bold">Quên mật khẩu?</a>
                             </div>
 
-                            <button type="submit" class="btn btn-success w-100 py-2 fw-bold" style="border-radius: 10px;">
+                            <button type="submit" class="btn btn-success w-100 py-2 fw-bold" class="rounded-btn">
                                 ĐĂNG NHẬP
                             </button>
                         </form>
@@ -141,13 +126,13 @@
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="fw-bold text-uppercase mb-3">Giới thiệu chung</h5>
                     <ul class="ps-4">
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="news.html">Giới thiệu</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Tầm nhìn và Sứ mệnh</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Facebook</a>
                         </li>
                     </ul>
@@ -155,19 +140,19 @@
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="text-uppercase fw-bold mb-3 text-white">Chính sách hỗ trợ</h5>
                     <ul class="ps-4">
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Chính sách đổi trả</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Chính sách giao hàng</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Hướng dẫn mua hàng</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Câu hỏi thường gặp</a>
                         </li>
-                        <li style="margin-bottom: 5px;">
+                        <li class="mb-1">
                             <a class="text-decoration-none text-white" href="#">Chính sách cộng tác viên</a>
                         </li>
                     </ul>
@@ -175,15 +160,15 @@
                 <div class="col-md-3 mt-4 text-white">
                     <h5 class="text-uppercase fw-bold mb-3">Thông tin liên hệ</h5>
                     <p>
-                        <img style="width: 25px;" src="../icon/icons8-address-48.png" alt="">
+                        <img class="icon-xs" src="../icon/icons8-address-48.png" alt="">
                             12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
                     </p>
                     <p>
-                        <img style="width: 25px;" src="../icon/icons8-phone-48.png" alt="">
+                        <img class="icon-xs" src="../icon/icons8-phone-48.png" alt="">
                             0123 456 789
                     </p>
                     <p>
-                        <img style="width: 25px;" src="../icon/icons8-email-48.png" alt="">
+                        <img class="icon-xs" src="../icon/icons8-email-48.png" alt="">
                             support@rauxanh.com
                     </p>
                 </div>
@@ -194,7 +179,7 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.4291189215683!2d106.6868454!3d10.822158900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1771125801107!5m2!1svi!2s" 
                             width="100%" 
                             height="150" 
-                            style="border:0;"
+                            class="border-0"
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
@@ -213,29 +198,43 @@
         updateBadge();
         
     function validateForm() {
-        let nameInput = document.getElementById("name").value.trim();
-        let passInput = document.getElementById("pass").value;
+    const username = document.getElementById("name").value.trim();
+    const password = document.getElementById("pass").value;
 
-        document.getElementById("errName").innerHTML = "";
-        document.getElementById("errPass").innerHTML = "";
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        if (nameInput === "") { alert("Vui lòng nhập tên đăng nhập!"); return false; }
-        if (passInput === "") { alert("Vui lòng nhập mật khẩu!"); return false; }
+    const user = users.find(u => u.username === username && u.password === password);
 
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-
-        let foundUser = users.find(u => u.username === nameInput && u.password === passInput);
-
-        if (foundUser) {
-            localStorage.setItem('currentUser', JSON.stringify(foundUser));
-            
-            alert("Đăng nhập thành công! Chào mừng khách hàng");
-            window.location.href = "homepage.html";
-        } else {
-            alert("Tên đăng nhập hoặc mật khẩu không chính xác!");
-        }
+    if (!user) {
+        alert("Sai tài khoản hoặc mật khẩu!");
         return false;
     }
+
+    localStorage.setItem("currentUser", JSON.stringify(user));
+
+    alert("Đăng nhập thành công!");
+    window.location.href = "homepage.html";
+    return false;
+}
+</script>
+<script>
+        function checkLogin() {
+            const user = JSON.parse(localStorage.getItem("currentUser"));
+
+            if (user) {
+                document.getElementById("nav-login").classList.add("d-none");
+                document.getElementById("nav-user").classList.remove("d-none");
+                document.getElementById("user-name").textContent = user.fullname;
+            } else {
+                document.getElementById("nav-login").classList.remove("d-none");
+                document.getElementById("nav-user").classList.add("d-none");
+            }
+        }
+
+
+        checkLogin();
+
 </script>
 </body>
 </html>
+
