@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -185,85 +185,7 @@
             </div>
             
     </footer>
-
-<script>
-
-    function loadProfile() {
-        const user = JSON.parse(localStorage.getItem('currentUser'));
-
-        //  chưa login thì đá về login
-        if (!user) {
-            alert("Bạn chưa đăng nhập!");
-            window.location.href = "login.html";
-            return;
-        }
-
-        document.getElementById('fullname').value = user.fullname || "";
-        document.getElementById('birthday').value = user.birthday || "";
-        document.getElementById('email').value    = user.email || "";
-        document.getElementById('phone').value    = user.phone || "";
-        document.getElementById('address').value  = user.address || "";
-
-        if (user.avatar) {
-            document.getElementById('avatar').src = user.avatar;
-        }
-    }
-
-    /* ================= SAVE PROFILE ================= */
-    function saveProfile() {
-        let user = JSON.parse(localStorage.getItem('currentUser'));
-
-        user.fullname = document.getElementById('fullname').value;
-        user.birthday = document.getElementById('birthday').value;
-        user.email    = document.getElementById('email').value;
-        user.phone    = document.getElementById('phone').value;
-        user.address  = document.getElementById('address').value;
-
-        // lưu currentUser
-        localStorage.setItem('currentUser', JSON.stringify(user));
-
-        // cập nhật lại danh sách users
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-
-        let index = users.findIndex(u => u.username === user.username);
-
-        if (index !== -1) {
-            users[index] = user;
-            localStorage.setItem('users', JSON.stringify(users));
-        }
-
-        alert("Cập nhật thành công!");
-    }
-
-    
-    function logout() {
-        localStorage.removeItem("currentUser");
-
-        alert("Đã đăng xuất!");
-
-        // quay về trang chủ
-        window.location.href = "homepage.html";
-    }
-
-    
-    window.onload = loadProfile;
-    function checkLogin() {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
-
-    if (user) {
-        document.getElementById("nav-login").classList.add("d-none");
-        document.getElementById("nav-user").classList.remove("d-none");
-        document.getElementById("user-name").textContent = user.fullname ;
-    } else {
-        document.getElementById("nav-login").classList.remove("d-none");
-        document.getElementById("nav-user").classList.add("d-none");
-    }
-}
-
-
-    checkLogin();
-</script>
-
+<script src="../js/main.js"></script>
 </body>
 </html>
 

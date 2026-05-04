@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -212,79 +212,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function validateForm() {
-            var username = document.getElementById("username").value.trim();
-            var password = document.getElementById("password").value;
-            var fullname = document.getElementById("fullname").value.trim();
-            var email    = document.getElementById("email").value.trim();
-            var phone    = document.getElementById("phone").value.trim();
-            var address  = document.getElementById("address").value.trim();
-            var birthday = document.getElementById("birthday").value;
-
-            // Xóa thông báo lỗi cũ nếu có
-            document.getElementById("errName").innerHTML = "";
-            document.getElementById("errPass").innerHTML = "";
-
-            if (!username || !password || !fullname || !email || !phone) {
-                alert("Vui lòng nhập đầy đủ thông tin bắt buộc!");
-                return false;
-            }
-
-            // Kiểm tra định dạng tên đăng nhập
-            let usernameRegex = /^[a-zA-Z0-9]{6,}$/;
-            if (!usernameRegex.test(username)) {
-                document.getElementById("errName").innerHTML = "Tên đăng nhập tối thiểu 6 ký tự, không dấu và không chứa ký tự đặc biệt!";
-                document.getElementById("username").focus();
-                return false;
-            }
-
-            var users = JSON.parse(localStorage.getItem("users")) || [];
-
-            // Kiểm tra xem tên đăng nhập đã tồn tại chưa
-            var exists = users.find(u => u.username === username);
-            if (exists) {
-                document.getElementById("errName").innerHTML = "Tên đăng nhập này đã được sử dụng!";
-                document.getElementById("username").focus();
-                return false;
-            }
-
-            var newUser = {
-                username: username,
-                password: password,
-                fullname: fullname,
-                email: email,
-                phone: phone,
-                address: address,
-                birthday: birthday,
-                avatar: ""
-            };
-
-            users.push(newUser);
-            localStorage.setItem("users", JSON.stringify(users));
-
-            alert("Đăng ký thành công!");
-            window.location.href = "login.html";
-
-            return false;
-        }
-    </script>
-    <script>
-        function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-
-        checkLogin();
-    </script>
+<script src="../js/main.js"></script>
 </body>
 </html>

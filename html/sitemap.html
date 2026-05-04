@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -191,36 +191,7 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Cập nhật số lượng giỏ hàng khi trang được tải
-        function getCart() {
-            return JSON.parse(localStorage.getItem('cart')) || [];
-        }
-        // Hàm cập nhật badge giỏ hàng
-        function updateBadge() {
-            const cart = getCart();
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = totalQty;
-        }
-        // Cập nhật badge giỏ hàng khi trang được tải
-        updateBadge();
-        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
-        function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname ;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-        checkLogin();
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
 

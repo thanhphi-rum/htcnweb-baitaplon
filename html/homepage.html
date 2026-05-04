@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+﻿    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -364,97 +364,8 @@
             </div>
         </footer>
 
-        <script>
-            // ===== GIỎ HÀNG - localStorage =====
-            function getCart() {
-                return JSON.parse(localStorage.getItem('cart')) || [];
-            }
-            function saveCart(cart) {
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-            function updateBadge() {
-                const cart = getCart();
-                const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-                const badge = document.getElementById('cart-badge');
-                if (badge) badge.textContent = totalQty;
-            }
-
-            // Gắn sự kiện cho tất cả nút "Thêm vào giỏ"
-            document.querySelectorAll('.btn-add-cart').forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('Button clicked!');
-                    const id    = this.dataset.id;
-                    const name  = this.dataset.name;
-                    const price = parseInt(this.dataset.price);
-                    const img   = this.dataset.img;
-                    console.log('Adding:', { id, name, price, img });
-
-                    let cart = getCart();
-                    const existing = cart.find(item => item.id === id);
-                    if (existing) {
-                        existing.qty += 1;
-                    } else {
-                        cart.push({ id, name, price, img, qty: 1 });
-                    }
-                    saveCart(cart);
-                    updateBadge();
-
-                    // Phản hồi nhanh cho người dùng
-                    const original = this.textContent;
-                    this.textContent = '✓ Đã thêm!';
-                    this.classList.replace('btn-success', 'btn-secondary');
-                    const self = this;
-                    setTimeout(function() {
-                        self.textContent = original;
-                        self.classList.replace('btn-secondary', 'btn-success');
-                    }, 1200);
-                });
-            });
-
-            // Điều hướng sang trang chi tiết khi bấm tên/ảnh sản phẩm
-            document.querySelectorAll('#product-list .card').forEach(function(card) {
-                const addBtn = card.querySelector('.btn-add-cart');
-                if (!addBtn) return;
-                const productId = addBtn.dataset.id;
-                const image = card.querySelector('img');
-                const title = card.querySelector('h6');
-
-                function goToDetail() {
-                    window.location.href = 'detail.html?id=' + productId;
-                }
-
-                if (image) {
-                    image.style.cursor = 'pointer';
-                    image.addEventListener('click', goToDetail);
-                }
-                if (title) {
-                    title.style.cursor = 'pointer';
-                    title.classList.add('text-success');
-                    title.addEventListener('click', goToDetail);
-                }
-            });
-
-            // Cập nhật badge khi tải trang
-            updateBadge();
-            
-            function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname ;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-
-        checkLogin();
-        </script>
-    </body>
+        <script src="../js/main.js"></script>
+            </body>
     </html>
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -189,52 +189,7 @@
             </div>
         </div>
     </footer>
-   <script>
-    function updateBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-        }
-        updateBadge();
-        
-    function validateForm() {
-    const username = document.getElementById("name").value.trim();
-    const password = document.getElementById("pass").value;
-
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-
-    const user = users.find(u => u.username === username && u.password === password);
-
-    if (!user) {
-        alert("Sai tài khoản hoặc mật khẩu!");
-        return false;
-    }
-
-    localStorage.setItem("currentUser", JSON.stringify(user));
-
-    alert("Đăng nhập thành công!");
-    window.location.href = "homepage.html";
-    return false;
-}
-</script>
-<script>
-        function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-
-
-        checkLogin();
-
-</script>
+<script src="../js/main.js"></script>
 </body>
 </html>
 

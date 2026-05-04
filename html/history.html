@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -121,110 +121,8 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // ===== GIỎ HÀNG =====
-        function getCart() {
-            return JSON.parse(localStorage.getItem('cart')) || [];
-        }
-        function updateBadge() {
-            var cart = getCart();
-            var totalQty = cart.reduce(function(sum, item) { return sum + item.qty; }, 0);
-            var badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = totalQty;
-        }
-        function formatPrice(price) {
-            return price.toLocaleString('vi-VN') + 'đ';
-        }
-
-        // ===== RENDER LỊCH SỬ ĐƠN HÀNG =====
-        function renderHistory() {
-            var orders = JSON.parse(localStorage.getItem('orders')) || [];
-            var container = document.getElementById('order-list');
-            var noOrders = document.getElementById('no-orders');
-
-            if (orders.length === 0) {
-                noOrders.classList.remove('d-none');
-                return;
-            }
-
-            // Hiển thị đơn mới nhất lên trước
-            orders = orders.reverse();
-
-            var html = '';
-            orders.forEach(function(order, index) {
-                // Tạo danh sách sản phẩm
-                var itemsHtml = '';
-                order.cart.forEach(function(item) {
-                    itemsHtml +=
-                        '<tr>' +
-                        '  <td>' + item.name + '</td>' +
-                        '  <td class="text-center">' + item.quantity + '</td>' +
-                        '  <td class="text-end">' + formatPrice(item.price * item.quantity) + '</td>' +
-                        '</tr>';
-                });
-
-                // Badge trạng thái
-                var statusClass = 'bg-warning text-dark';
-                if (order.status === 'Đã giao') statusClass = 'bg-success';
-                if (order.status === 'Đã hủy') statusClass = 'bg-danger';
-
-                html +=
-                    '<div class="card shadow-sm mb-4">' +
-                    '  <div class="card-header bg-white d-flex justify-content-between align-items-center">' +
-                    '    <div>' +
-                    '      <strong class="text-success">Đơn #' + order.id + '</strong>' +
-                    '      <span class="badge ' + statusClass + ' ms-2">' + order.status + '</span>' +
-                    '    </div>' +
-                    '    <small class="text-muted">' + (order.date || '') + '</small>' +
-                    '  </div>' +
-                    '  <div class="card-body">' +
-                    '    <div class="row">' +
-                    '      <div class="col-md-6">' +
-                    '        <p class="mb-1"><strong>Người nhận:</strong> ' + order.customer.name + '</p>' +
-                    '        <p class="mb-1"><strong>SĐT:</strong> ' + order.customer.phone + '</p>' +
-                    '        <p class="mb-1"><strong>Địa chỉ:</strong> ' + order.customer.address + '</p>' +
-                    '        <p class="mb-1"><strong>Thanh toán:</strong> ' + (order.payment === 'COD' ? 'Thanh toán khi nhận hàng' : 'Chuyển khoản') + '</p>' +
-                    (order.customer.note ? '<p class="mb-0"><strong>Ghi chú:</strong> ' + order.customer.note + '</p>' : '') +
-                    '      </div>' +
-                    '      <div class="col-md-6">' +
-                    '        <table class="table table-sm mb-0">' +
-                    '          <thead><tr><th>Sản phẩm</th><th class="text-center">SL</th><th class="text-end">Thành tiền</th></tr></thead>' +
-                    '          <tbody>' + itemsHtml + '</tbody>' +
-                    '          <tfoot><tr class="fw-bold"><td colspan="2">Tổng cộng</td><td class="text-end text-success">' + formatPrice(order.total) + '</td></tr></tfoot>' +
-                    '        </table>' +
-                    '      </div>' +
-                    '    </div>' +
-                    '  </div>' +
-                    '</div>';
-            });
-
-            container.innerHTML = html;
-        }
-
-        // ===== KHỞI CHẠY =====
-        renderHistory();
-        updateBadge();
-    </script>
-<script>
-        function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname ;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-
-
-        checkLogin();
-
-</script>
-</body>
+    <script src="../js/main.js"></script>
+    </body>
 </html>
 
 

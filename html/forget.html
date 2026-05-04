@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -167,51 +167,7 @@
             </div>
         </div>
     </footer>
-
-    <script>
-
-        function validateForgot() {
-            let email = document.getElementById("email").value.trim();
-            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            document.getElementById("errEmail").innerHTML = "";
-
-            if (email === "") {
-                document.getElementById("errEmail").innerHTML = "Vui lòng nhập email!";
-                document.getElementById("email").focus();
-                return false;
-            }
-
-            if (!emailRegex.test(email)) {
-                document.getElementById("errEmail").innerHTML = "Email không đúng định dạng (vd: sv123@gmail.com)";
-                document.getElementById("email").focus();
-                return false;
-            }
-
-            alert("Yêu cầu thành công! Vui lòng kiểm tra hộp thư email của bạn.");
-            window.location.href = "login.html";
-            return false;
-        }
-
-    </script>
-<script>
-        function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname ;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-
-
-        checkLogin();
-
-</script>
+<script src="../js/main.js"></script>
 </body>
 
 </html>

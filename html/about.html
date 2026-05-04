@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -8,15 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Cập nhật số lượng giỏ hàng từ localStorage
-        function updateBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const badge = document.getElementById('cart-badge');
-            if (badge) badge.textContent = totalQty;
-        }
-    </script>
+
 </head>
 
 <body>
@@ -351,23 +343,6 @@
         </div>
     </footer>
 
-    <script>
-        // Cập nhật số lượng giỏ hàng khi trang được tải
-        updateBadge();
-        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
-        function checkLogin() {
-                const user = JSON.parse(localStorage.getItem("currentUser"));
-
-                if (user) {
-                    document.getElementById("nav-login").classList.add("d-none");
-                    document.getElementById("nav-user").classList.remove("d-none");
-                    document.getElementById("user-name").textContent = user.fullname;
-                } else {
-                    document.getElementById("nav-login").classList.remove("d-none");
-                    document.getElementById("nav-user").classList.add("d-none");
-                }
-            }
-            checkLogin();
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

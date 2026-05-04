@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -216,126 +216,8 @@
             </div>
         </div>
         </div>
-    <script>
-        function showModal(id) {
-            const title = document.getElementById('modal-title');
-            const content = document.getElementById('modal-content');
-
-            
-            if (id === 'detail1') {
-                title.innerText = "Lợi ích khi ăn rau mỗi ngày";
-                content.innerHTML = `
-                    <p>Rau giàu vitamin, khoáng chất và chất chống oxy hóa giúp bảo vệ sức khỏe tim mạch, làn da và ngăn ngừa bệnh mạn tính.</p>
-
-                    <h6 class="fw-bold mt-3 text-success">1. Giảm nguy cơ mắc bệnh tim</h6>
-                    <p>Rau giúp giảm cholesterol xấu, chống viêm và stress oxy hóa. Các loại như bắp cải, bông cải xanh chứa nhiều vitamin C, carotenoid hỗ trợ tim mạch.</p>
-
-                    <h6 class="fw-bold mt-3 text-success">2. Duy trì làn da khỏe mạnh</h6>
-                    <p>Vitamin C, beta-carotene giúp sản sinh collagen, làm chậm lão hóa và bảo vệ da khỏi tia UV.</p>
-
-                    <h6 class="fw-bold mt-3 text-success">3. Tốt cho mắt</h6>
-                    <p>Lutein và zeaxanthin giúp giảm nguy cơ thoái hóa điểm vàng và đục thủy tinh thể.</p>
-
-                    <h6 class="fw-bold mt-3 text-success">4. Tăng cường miễn dịch</h6>
-                    <p>Chất xơ trong rau giúp hệ tiêu hóa khỏe mạnh và tăng cường vi khuẩn có lợi.</p>
-
-                    <h6 class="fw-bold mt-3 text-success">5. Giúp xương chắc khỏe</h6>
-                    <p>Rau lá xanh cung cấp canxi, vitamin K, magie giúp xương chắc khỏe và ngăn ngừa loãng xương.</p>
-                `;
-            }
-
-            if (id === 'detail2') {
-                title.innerText = "Cách chọn rau sạch đúng chuẩn";
-                content.innerHTML = `
-                    <p>Để chọn rau sạch, an toàn và tươi ngon, bạn cần chú ý đến màu sắc, hình dáng và cảm giác khi cầm. Rau sạch thường không quá "hoàn hảo" như rau sử dụng nhiều hóa chất.</p>
-
-                    <h6 class="fw-bold mt-3 text-success">1. Quan sát màu sắc và vẻ ngoài</h6>
-                    <ul>
-                        <li><b>Màu sắc:</b> Chọn rau có màu tự nhiên, không quá xanh đậm hoặc bóng loáng.</li>
-                        <li><b>Hình dáng:</b> Tránh rau quá to, đều bất thường.</li>
-                        <li><b>Sâu bệnh:</b> Rau sạch thường có vài lỗ sâu nhỏ, không dập nát.</li>
-                    </ul>
-
-                    <h6 class="fw-bold mt-3 text-success">2. Cảm nhận khi cầm nắm</h6>
-                    <ul>
-                        <li><b>Thân và lá:</b> Thân nhỏ, chắc, hơi dai.</li>
-                        <li><b>Cuống rau:</b> Giòn, không héo hay thâm.</li>
-                    </ul>
-
-                    <h6 class="fw-bold mt-3 text-success">3. Mẹo chọn theo từng loại</h6>
-                    <ul>
-                        <li><b>Rau ăn lá:</b> Lá tươi, không dập.</li>
-                        <li><b>Củ, quả:</b> Kích thước vừa phải, không trầy xước.</li>
-                    </ul>
-
-                    <h6 class="fw-bold mt-3 text-success">4. Lưu ý khi mua</h6>
-                    <ul>
-                        <li>Mua rau đúng mùa để hạn chế hóa chất.</li>
-                        <li>Chọn nơi bán uy tín, có nguồn gốc rõ ràng.</li>
-                    </ul>
-
-                    <div class="alert alert-success mt-3">
-                        <b>Kết luận:</b> Rau sạch không cần quá đẹp. Màu tự nhiên, thân chắc và có dấu hiệu sâu nhẹ là lựa chọn an toàn.
-                    </div>
-                `;
-            }
-            if (id === 'detail3') {
-                title.innerText = "Thực phẩm sạch và sức khỏe";
-                content.innerHTML = `
-                    <p>Thực phẩm sạch là nguồn thực phẩm an toàn, không chứa độc tố, hóa chất bảo quản hay vi khuẩn gây hại. Việc sử dụng thực phẩm sạch giúp tăng cường hệ miễn dịch, bảo vệ tim mạch và nâng cao sức khỏe toàn diện.</p>
-
-                    <h6 class="fw-bold mt-3 text-success">1. Vai trò của thực phẩm sạch</h6>
-                    <ul>
-                        <li><b>Tăng cường đề kháng:</b> Cung cấp đầy đủ vitamin và khoáng chất giúp cơ thể khỏe mạnh.</li>
-                        <li><b>Giảm gánh nặng cho cơ thể:</b> Ít độc tố giúp gan, thận hoạt động hiệu quả hơn.</li>
-                        <li><b>Phát triển toàn diện:</b> Hỗ trợ cả thể chất và trí tuệ.</li>
-                        <li><b>Phòng bệnh mãn tính:</b> Giảm nguy cơ ung thư, tim mạch và tiểu đường.</li>
-                    </ul>
-
-                    <h6 class="fw-bold mt-3 text-success">2. Tiêu chí nhận biết thực phẩm sạch</h6>
-                    <ul>
-                        <li><b>Nguồn gốc rõ ràng:</b> Có tem nhãn, chứng nhận an toàn (VietGAP, hữu cơ...).</li>
-                        <li><b>Tươi ngon tự nhiên:</b> Rau củ không úa, thịt có độ đàn hồi.</li>
-                        <li><b>Quy trình an toàn:</b> Không dùng hóa chất, thuốc kích thích.</li>
-                    </ul>
-
-                    <h6 class="fw-bold mt-3 text-success">3. Cách lựa chọn và sử dụng</h6>
-                    <ul>
-                        <li>Mua tại siêu thị hoặc cửa hàng uy tín.</li>
-                        <li>Ưu tiên thực phẩm theo mùa.</li>
-                        <li>Rửa sạch, ngâm nước muối hoặc dung dịch chuyên dụng trước khi dùng.</li>
-                    </ul>
-
-                    <div class="alert alert-success mt-3">
-                        <b>Kết luận:</b> Lựa chọn thực phẩm sạch là bước quan trọng để bảo vệ sức khỏe lâu dài cho bạn và gia đình.
-                    </div>
-                `;
-            }
-
-            // GỌI MODAL
-            const modal = new bootstrap.Modal(document.getElementById('newsModal'));
-            modal.show();
-        }
-
-</script>   
-<script>
-       function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname ;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-
-
-        checkLogin();
-
-</script>
-</body>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    </body>
 </html>
 

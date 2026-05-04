@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -156,89 +156,8 @@
             </div>
             
     </footer>
-
-    <script>
-
-
-    let order = JSON.parse(localStorage.getItem("order"));
-    let container = document.querySelector(".card");
-
-    if(order){
-        let productList = "";
-        order.cart.forEach(item => {
-            productList += `
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>${item.name} (x${item.quantity})</span>
-                    <span>${(item.price * item.quantity).toLocaleString()}đ</span>
-                </li>
-            `;
-        });
-
-        container.innerHTML = `
-            <h2 class="text-success mb-3">
-                <i class="bi bi-check-circle-fill"></i>
-                Đặt hàng thành công!
-            </h2>
-
-            <p class="mb-4">Cảm ơn bạn đã tin tưởng và mua hàng tại Rau Sạch.</p>
-
-            <p><strong>Mã đơn:</strong> ${order.id}</p>
-            <p><strong>Khách hàng:</strong> ${order.customer.name}</p>
-            <p><strong>Phương thức thanh toán:</strong> ${order.payment}</p>
-
-            <ul class="list-group mb-3">
-                ${productList}
-            </ul>
-
-            <h5 class="text-danger text-end">
-                Tổng tiền: ${order.total.toLocaleString()}đ
-            </h5>
-
-            <a href="homepage.html" class="btn btn-success mt-3">
-                Quay về trang chủ
-            </a>
-        `;
-
-        //xóa order laoij trừ F5 lại web
-        localStorage.removeItem("order");
-
-    }else{
-
-        //không có đơn -> không được 
-        container.innerHTML = `
-            <h2 class="text-danger mb-3">
-                <i class="bi bi-x-circle-fill"></i>
-                Không có đơn hàng!
-            </h2>
-
-            <p>Bạn không có đơn hàng hợp lệ để thanh toán.</p>
-
-            <a href="homepage.html" class="btn btn-secondary mt-3">
-                Quay về trang chủ
-            </a>
-        `;
-
-    }
-    </script>
-<script>
-        function checkLogin() {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
-
-            if (user) {
-                document.getElementById("nav-login").classList.add("d-none");
-                document.getElementById("nav-user").classList.remove("d-none");
-                document.getElementById("user-name").textContent = user.fullname ;
-            } else {
-                document.getElementById("nav-login").classList.remove("d-none");
-                document.getElementById("nav-user").classList.add("d-none");
-            }
-        }
-
-
-        checkLogin();
-
-</script>
-</body>
+    <script src="../js/main.js"></script>
+    </body>
 </html>
 
 
