@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký Tài Khoản - Rau Sạch</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-        <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -129,12 +129,12 @@
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold">Tên đăng nhập <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="username" placeholder="Tối thiểu 6 ký tự" required>
-                                    <span id="errName" class="text-danger small"></span>
+                                    <span id="errName" class="text-danger small mt-1 d-block"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold">Mật khẩu <span class="text-danger">*</span></label>
                                     <input type="password" class="form-control" id="password" required>
-                                    <span id="errPass" class="text-danger small"></span>
+                                    <span id="errPass" class="text-danger small mt-1 d-block"></span>
                                 </div>
                             </div>
 
@@ -236,12 +236,31 @@
         function validateForm() {
             var user = document.getElementById("username").value.trim();
             var pass = document.getElementById("password").value;
+            
+            // Xóa thông báo lỗi cũ nếu có
+            document.getElementById("errName").innerHTML = "";
 
             if (user === "" || pass === "") {
                 return false;
             }
 
+            // Kiểm tra định dạng tên đăng nhập
+            let usernameRegex = /^[a-zA-Z0-9]{6,}$/;
+            if (!usernameRegex.test(user)) {
+                document.getElementById("errName").innerHTML = "Tên đăng nhập tối thiểu 6 ký tự, không dấu và không chứa ký tự đặc biệt!";
+                document.getElementById("username").focus();
+                return false;
+            }
+
             var users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // (Tuỳ chọn thêm) Kiểm tra xem tên đăng nhập đã tồn tại chưa
+            let isExist = users.some(u => u.username === user);
+            if (isExist) {
+                document.getElementById("errName").innerHTML = "Tên đăng nhập này đã được sử dụng!";
+                document.getElementById("username").focus();
+                return false;
+            }
 
             users.push({
                 username: user,
